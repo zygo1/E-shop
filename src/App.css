@@ -8,6 +8,8 @@
     --primary:#2183f3;
     --itemColor: #ffffff;
     --white:  #f0f0f0e1;
+    --black:rgb(46, 46, 46);
+    --hover: rgb(0, 94, 202);
     /* --primary: rgb(38, 135, 127); */
     /* --secondary: rgb(202, 255, 224); */
   }
@@ -139,7 +141,9 @@
     transition: 0.25s ease-in-out;
     cursor: pointer;
   }
-  
+
+  /* TODO: check it twice */
+  /* !new css */
   .recommendations{
     display: flex;
     flex-direction: row;
@@ -150,20 +154,20 @@
   .recomHeader{
     margin: 10px;
     padding: 5px;
+    font-weight: 500;
+    font-family:'Montserrat', sans-serif;
   }
-  
-  /* TODO: check it twice */
-  /* !new css */
+
   .offerHeader{
     margin: 0px 0px 90px 10px;
     padding: 5px;
+    font-weight: 500;
+    font-family:'Montserrat', sans-serif;
   }
   .info{
     display: grid;
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:repeat(2,auto);
     grid-template-rows: repeat(1,250px);
-    justify-content: center;
-    align-items: center;
     place-items: center;
     gap: 50px;
   }
@@ -233,6 +237,8 @@
   
   @media (max-width:768px) {
     .info{
+      display: flex;
+      flex-direction: column;
         padding-bottom: 60px;
         font-size: 0.825rem;
     }
@@ -242,11 +248,19 @@
       padding: 5px;
       font-size: 1.1rem;
     }
+
+    .offer{
+      width: 250px;
+    }
   
     .recomHeader{
       font-size: 1.1rem;
     }
     
+    .recommendations{
+      margin: 5px 0px 10px 40px;
+    }
+
     .info div{
         margin: 4px;
     }
@@ -330,7 +344,7 @@
     width: 10%;
     height: 300px;
     background-color: var(--itemColor);
-    border-radius: 8px;
+    border-radius: 5px;
     border: none;
     box-shadow: 0px 0px 4px  rgb(104, 104, 104);
     padding: 20px;
@@ -339,7 +353,7 @@
   }
   
   .categories h3 {
-    color: var(--primary);
+    color: var(--black);
   }
   
   .categories ul {
@@ -350,9 +364,9 @@
   
   .categories li{
     border: none;
-    border-radius: 6px;
+    border-radius: 5px;
     padding: 7px;
-    color: var(--primary);
+    color: var(--black);
   }
   
   .categories li:hover{
@@ -374,7 +388,7 @@
   
   .items h2 {
     width: 100%;
-    color: var(--primary);
+    color:var(--black);
     margin-bottom: 7px;
   } 
   
@@ -389,8 +403,7 @@
     justify-content: center;
     align-items: start;
     box-shadow: 0px 0px 3px rgb(104, 104, 104);
-    /* border: 2px solid var(--primary); */
-    border-radius: 7px;
+    border-radius: 5px;
   } 
   
   .item:hover{
@@ -431,7 +444,7 @@
   
   .item button:hover{
     cursor: pointer;
-    background-color: rgb(0, 94, 202);
+    background-color: var(--hover);
     transition: 0.1s ease-in-out;
   }
   
@@ -500,13 +513,18 @@
     }
   
     .item{
-        margin: 2px;
-        padding: 5px;
+        margin: 10px 5px 10px 5px;
+        padding: 8px;
         font-size: 0.675rem;
     }
   
     .item button{
         font-size: 0.675rem;
+        width: 110px;
+    }
+
+    .item button img{
+      width: 25px;
     }
   
     .item img{
@@ -577,10 +595,83 @@
   
   .contactForm button:hover{
     cursor: pointer;
-    background-color: rgb(0, 107, 98);
+    background-color: var(--hover);
     transition: 0.1s ease-in-out;
   }
-  
-  .contactFaq{
-    background-color: red;
+
+  /*? New code _ */
+  .waysContact{
+    font-family: 'Montserrat', sans-serif;
+    margin: 50px;
+    padding: 10px;
   }
+  
+  .chatHeader > img{
+    height: 50px;
+  }
+
+  .emailHeader > img{
+    height: 50px;
+  }
+
+  .faqHeader > img{
+    height: 50px;
+  }
+
+.contactItems{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 150px 0px 150px;
+  flex-wrap: wrap;
+  gap: 150px;
+}
+
+/* .contactItems{
+  display: grid;
+  grid-template-columns: repeat(2,auto);
+  grid-template-rows: repeat(1,auto);
+  margin: 20px 50px 0px 50px;
+  width: 1400px;
+  gap: 110px;
+} */
+
+.contactItem{
+  background-color: var(--itemColor);
+  border: none;
+  border-radius: 5px;
+  margin: 7px;
+  padding: 30px;
+  cursor: pointer;
+}
+
+.contactItemChat{
+  background-color: var(--itemColor);
+  border: none;
+  border-radius: 5px;
+  margin: 7px;
+  padding: 30px;
+}
+
+.contactItemChat > button{
+  border: none;
+  border-radius: 8px;
+  margin: 10px 0px 0px 0px;
+  padding: 10px;
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.contactItemChat > button:hover{
+  cursor: pointer;
+  background-color: var(--hover);
+  transition: 0.2s ease-in-out;
+}
+
+@media (max-width:768px){
+  .contactItems{
+    margin: 0px 0px 30px 40px;
+    padding: 0px;
+  }
+}

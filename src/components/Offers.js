@@ -3,7 +3,7 @@ import placeholder from '.././assets/placeholder.svg';
 function Offers() {
     return (
         <>
-            <h2 className='offerHeader'>New Offers! New opportunities!</h2>
+            <h2 className='offerHeader'>New offers, new opportunities!</h2>
             <section className="info">
                 <div className='offer'>
                     <h4>Offer 1</h4>

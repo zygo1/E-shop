@@ -1,20 +1,15 @@
+import email from '.././assets/email.svg';
+
 function ContactEmail() {
     return (
-        <>
-            <h1 className="headerContact">Hello USER, do you need any help?</h1>
-            <section className="emailContact">
-                <h3 className="formTitle">Contact us via e-mail</h3>
-                <form className="contactForm">
-                    <label for="email" className="contactLabel">E-mail </label>
-                    <input type={"email"} name="email" id="email" className="contactText"></input>
-                    <label for="title" className="contactLabel">Title</label>
-                    <input type={"text"} name="title" id="title" className="contactText"></input>
-                    <label for="description" className="contactLabel">Description</label>
-                    <textarea type="text" name="description" id="description" className="contactText"></textarea>
-                    <button type="submit">Send</button>
-                </form>
-            </section>
-        </>
+        <section className='contactItem'>
+            <div className="emailHeader">
+                <img src={email} alt="" />
+                <h4>If you have any questions, send us an E-mail!</h4>
+            </div>
+            <p>Do you have any specific question? Fill out the form and we will contact you soon!</p>
+        </section>
+
     )
 };
 
