@@ -1,5 +1,6 @@
 import placeholder from '.././assets/placeholder.svg';
 import cart from '.././assets/shoppingcart.svg';
+import "./styles/Items.css";
 
 function Item() {
     return (

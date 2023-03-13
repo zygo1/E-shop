@@ -1,6 +1,6 @@
 import Item from './Item';
 import placeholder from '.././assets/placeholder.svg';
-
+import "./styles/RecomOffers.css";
 function Recommendations() {
     return (
         <>

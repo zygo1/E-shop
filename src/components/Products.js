@@ -1,6 +1,7 @@
 import Navbar from "./Navbar";
 import Item from "./Item";
 import ProductCategories from "./ProductCategories";
+import './styles/Products.css';
 
 function Products() {
     return (

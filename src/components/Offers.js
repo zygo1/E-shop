@@ -1,4 +1,5 @@
 import placeholder from '.././assets/placeholder.svg';
+import "./styles/RecomOffers.css";
 
 function Offers() {
     return (
