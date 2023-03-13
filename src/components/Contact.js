@@ -11,9 +11,9 @@ function Contact() {
                 <h2> Ways to Contact us!</h2>
             </div>
             <div className="contactItems">
-                <ContactChat />
                 <ContactEmail />
                 <ContactFaQ />
+                <ContactChat />
             </div>
 
         </>
