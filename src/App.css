@@ -4,7 +4,7 @@
   }
   
   :root{
-    --primary:#2183f2;
+    --primary:rgb(33, 131, 242);
     --secondary: rgb(241, 241, 241);
     --itemColor: rgb(255, 255, 255);
     --hover: rgb(0, 94, 202);
@@ -17,7 +17,7 @@
     font-family: 'Montserrat', sans-serif;
   }   
   
-  @media (max-width:768px) {
+  @media (max-width:960px) {
     img{
         width: 25px;
     }

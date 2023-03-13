@@ -18,15 +18,13 @@ function Navbar() {
 
     return (
         <header>
+            <div onClick={() => { navigate('/') }} className='quickmart'><Link to="/"><h2>QuickMart</h2></Link></div>
+            <div className='search'><input placeholder='Search...' type={"text"} name="search"></input><button><img src={search} /></button></div>
             <nav className="nav" ref={navRef}>
-                <ul className="navList">
-                    <li onClick={() => { navigate('/') }} className='quickmart'><Link to="/"><h2>QuickMart</h2></Link></li>
-                    <li className='search'><input placeholder='Search...' type={"text"} name="search" className="search"></input><button><img src={search} /></button></li>
-                    <li onClick={() => { navigate('/Products.js') }}><Link to="/Products.js">Products</Link></li>
-                    <li onClick={() => { navigate('/Contact.js') }}><Link to="/Contact.js">Contact</Link></li>
-                    <li onClick={() => { navigate('/Cart.js') }}><Link to="/Cart.js"><img src={cart} className="navImg" alt="Cart" /></Link></li>
-                    <li onClick={() => { navigate('/Profile.js') }}><Link to="/Profile.js"><img src={user} className="navImg" alt="Profile" /></Link></li>
-                </ul>
+                <Link onClick={() => { navigate('/Products.js') }} to="/Products.js">Products</Link>
+                <Link onClick={() => { navigate('/Contact.js') }} to="/Contact.js">Contact</Link>
+                <Link onClick={() => { navigate('/Cart.js') }} to="/Cart.js"><img src={cart} alt="Cart" /></Link>
+                <Link onClick={() => { navigate('/Profile.js') }} to="/Profile.js"><img src={user} alt="Profile" /></Link>
                 <button className='nav-btn nav-close-btn' onClick={showNavbar}>
                     <FaTimes />
                 </button>
