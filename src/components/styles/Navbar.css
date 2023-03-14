@@ -118,14 +118,20 @@ header{
     color: white;
   }
 
-  @media (min-width:768px){
-    
-  }
-
   @media (max-width: 968px){
+    .quickmart a h2{
+      font-size: 1.3rem ;
+    }
+
     .nav-btn {
       visibility: visible;
       opacity: 1;
+      font-size: 1rem;
+      margin: 5px 10px 0px 0px;
+    }
+
+    .nav-close-btn{
+      margin: 0px;
     }
 
     .nav {
@@ -146,9 +152,11 @@ header{
     .nav a {
       color: var(--white);
       margin: 0px;
+      font-size: 0.8rem;
     }
 
     .nav a img{
+      width: 20px;
       filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(108deg) brightness(104%) contrast(104%);
     }
 
@@ -166,13 +174,14 @@ header{
     }
     
     .search > input{
-      width: 80px;
-      height: 15px;
+      width: 70px;
+      height: 10px;
     }
 
     .search > button{
-      width: 30px;
-      height: 30px;
+      width: 27px;
+      height: 27px;
+      padding: 0px;
     }
 
     .search > button > img{
