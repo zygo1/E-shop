@@ -62,7 +62,7 @@ header{
 .search > button:hover img{
   filter: invert(100%) sepia(0%) saturate(7454%) hue-rotate(50deg) brightness(112%) contrast(112%);
 }
-/* ? */
+
 .nav{
     display: flex;
     flex-direction: row;
@@ -118,7 +118,11 @@ header{
     color: white;
   }
 
-  @media only screen and (max-width: 968px){
+  @media (min-width:768px){
+    
+  }
+
+  @media (max-width: 968px){
     .nav-btn {
       visibility: visible;
       opacity: 1;
@@ -130,7 +134,7 @@ header{
       align-items: center;
       justify-content: flex-start;
       background-color: var(--primary);
-      transition: 1s;
+      transition: 0.5s;
       transform: translateX(100vh);
       position: fixed;
       top: 0;
@@ -152,30 +156,30 @@ header{
       transform: none;
     }
 
-      .nav {
-          font-size: 0.575rem;
-      }
+    .nav {
+        font-size: 0.575rem;
+    }
+  
+    .nav a h2{
+      font-size: 0.9rem;
+      margin-left: 70px;
+    }
     
-      .nav a h2{
-        font-size: 0.9rem;
-        margin-left: 70px;
-      }
-      
-      .search > input{
-        width: 80px;
-        height: 15px;
-      }
-  
-      .search > button{
-        width: 30px;
-        height: 30px;
-      }
-  
-      .search > button > img{
-        width: 20px;
-        padding: 5px;
-      }
-  }
+    .search > input{
+      width: 80px;
+      height: 15px;
+    }
+
+    .search > button{
+      width: 30px;
+      height: 30px;
+    }
+
+    .search > button > img{
+      width: 20px;
+      padding: 5px;
+    }
+}
 
   a:link{
     text-decoration: none;

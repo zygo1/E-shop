@@ -69,3 +69,9 @@
   width:25px;
 }
   
+@media (max-width:968px){
+  .categoriesProfile{
+    padding: 0px 15px 0px 0px;
+    width: 120px;
+  }
+}
