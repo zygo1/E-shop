@@ -102,7 +102,7 @@ header{
     filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(108deg) brightness(104%) contrast(104%);
   }
 
-/* ? BUTTON NEW */
+/*? BUTTON NEW */
   .nav-btn {
     padding: 5px;
     cursor: pointer;
@@ -120,7 +120,7 @@ header{
 
   @media (max-width: 968px){
     .quickmart a h2{
-      font-size: 1.3rem ;
+      font-size: 1.2rem ;
     }
 
     .nav-btn {
@@ -149,6 +149,11 @@ header{
       width: 30%;
       z-index: 1;
     }
+    
+    .responsive-nav{
+      transform: none;
+    }
+    
     .nav a {
       color: var(--white);
       margin: 0px;
@@ -160,9 +165,6 @@ header{
       filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(108deg) brightness(104%) contrast(104%);
     }
 
-    .responsive-nav{
-      transform: none;
-    }
 
     .nav {
         font-size: 0.575rem;

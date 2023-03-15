@@ -1,5 +1,4 @@
 import placeholder from '.././assets/placeholder.svg';
-import cart from '.././assets/shoppingcart.svg';
 import "./styles/Items.css";
 
 function Item() {
@@ -7,8 +6,9 @@ function Item() {
         <div className="item">
             <img src={placeholder} alt="" />
             <p>Item 1</p>
+            <p>Small Description</p>
             <p>Price: 13.50</p>
-            <button>Add to Cart<img src={cart} className="addToCart" /></button>
+            <button>Add to Cart</button>
         </div>
     )
 };

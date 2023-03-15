@@ -1,6 +1,8 @@
 .recommendations{
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
     margin: 0px 0px 120px 0px;
   }
@@ -93,7 +95,8 @@
     }
 
     .offer{
-      width: 250px;
+      width: 200px;
+      margin: 0px auto 0px auto;
     }
   
     .recomHeader{
@@ -101,7 +104,7 @@
     }
     
     .recommendations{
-      margin: 5px 0px 10px 40px;
+      margin: 5px auto 10px auto;
     }
 
     .info div{
