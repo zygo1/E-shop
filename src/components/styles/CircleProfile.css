@@ -4,17 +4,17 @@
 }
 
 .orders{
-    background-color: rgb(54, 234, 247);
+    background-color: rgb(80, 195, 248);
     border-top-right-radius: 100%;
 }
 
 .settings{
-    background-color: rgb(0, 255, 128);
+    background-color:  rgb(80, 195, 248);
     border-bottom-left-radius: 100%;
 }
 
 .help{
-    background-color: rgb(248, 96, 26);
+    background-color: var(--primary);
     border-bottom-right-radius: 100%;
 }
 
@@ -22,15 +22,89 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 230px;
-    height: 230px;
+    width: 220px;
+    height: 220px;
     padding: 10px;
     margin: 5px;
+    font-size: 1rem;
+    border: none;
+    box-shadow: 0px 0px 4px rgb(78, 78, 78);
 }
 
-section{
+.account:hover, .help:hover{
+    cursor: pointer;
+    background-color: var(--hover) ;
+    transition: 0.2s linear;
+}
+
+.orders:hover, .settings:hover{
+    cursor: pointer;
+    background-color: rgb(0, 162, 255);
+    transition: 0.2s linear;
+}
+
+.profile-section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 80px 0px 0px 120px;
+}
+
+.circle{
     display: grid;
     grid-template-columns: repeat(2,0fr);
     grid-template-rows: repeat(2,0fr);
     justify-content: center;
+    position: relative;
+}
+
+.profile-image-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 4px rgb(78, 78, 78);
+    background-color: white;
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    position: relative;
+    left: -305px;
+    z-index: 1;
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+
+.pageHeader{
+    margin: 50px 0px 0px 40px;
+    font-size: 1.8rem;
+    color: rgb(88, 88, 88);
+}
+
+@media (max-width:968px){
+    .account, .orders, .settings, .help{
+        width: 110px;
+        height: 110px;
+        font-size: 0.7rem;
+        font-weight: 500;
+    }
+
+    .profile-image-center{
+        width: 75px;
+        height: 75px;
+        min-height: 75px;
+        min-width: 75px;
+        left: -157px;
+        font-size: 1.25rem;
+        font-weight: 800;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .pageHeader{
+        font-size: 1.3rem;
+        margin: 30px 0px 0px 40px;
+        color: rgb(88, 88, 88);
+    }
 }

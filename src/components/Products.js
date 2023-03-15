@@ -7,6 +7,7 @@ function Products() {
     return (
         <>
             <Navbar />
+            <p className='pageHeader'>Products</p>
             <section className="container">
                 <ProductCategories />
                 <div className="items">

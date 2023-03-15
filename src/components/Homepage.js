@@ -9,6 +9,7 @@ function Homepage() {
     return (
         <>
             <Navbar />
+            <p className='pageHeader'>Home</p>
             <Promotion />
             <Recommendations />
             <Offers />

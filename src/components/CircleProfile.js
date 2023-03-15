@@ -2,12 +2,19 @@ import './styles/CircleProfile.css';
 
 function CircleProfile() {
     return (
-        <section>
-            <div className="account">My Account</div>
-            <div className="orders">My Orders</div>
-            <div className="settings">My Settings</div>
-            <div className="help">Help</div>
-        </section>
+        <>
+            <p className='pageHeader'>Profile</p>
+            <section className='profile-section'>
+                <div className='circle'>
+                    <button className="account">My Account</button>
+                    <button className="orders">My Orders</button>
+                    <button className="settings">Settings</button>
+                    <button className="help">Help</button>
+                </div>
+                <div className='profile-image-center'>P</div>
+            </section>
+        </>
+
     )
 };
 

@@ -4,7 +4,7 @@ function Cart() {
     return (
         <>
             <Navbar />
-            <p>Cart</p>
+            <p className='pageHeader'>Cart</p>
         </>
     )
 };

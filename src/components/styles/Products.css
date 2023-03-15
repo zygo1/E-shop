@@ -107,11 +107,21 @@
 
     .categories h3{
       display: none;
-        /* font-size: 1rem;
-        border: none;
-        color: white; */
+     
+    }
+
+    .open-categories{
+      color: var(--black);
+      border: 2px solid var(--black);;
+      border-radius: 6px;
     }
   
+    .open-categories:hover{
+      background-color: var(--black);
+      color: white;
+      transition: 0.15s linear;
+    }
+
     .categories-list li{
       display: flex;
       flex-direction: column;
