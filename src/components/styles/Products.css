@@ -106,14 +106,19 @@
     }
 
     .categories h3{
-        font-size: 1rem;
+      display: none;
+        /* font-size: 1rem;
         border: none;
-        color: white;
+        color: white; */
     }
   
     .categories-list li{
-        font-size: 0.875rem;
-        color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.975rem;
+      color: white;
     }
   
   }
