@@ -1,13 +1,13 @@
 import placeholder from '.././assets/placeholder.svg';
+import React from 'react';
 import "./styles/Items.css";
 
-function Item() {
+function Item(props) {
     return (
         <div className="item">
-            <img src={placeholder} alt="" />
-            <p>Item 1</p>
-            <p>Small Description</p>
-            <p>Price: 13.50</p>
+            <img id='phone' src={props.img} alt="" />
+            <p>{props.description}</p>
+            <p>Price: {props.price} €</p>
             <button>Add to Cart</button>
         </div>
     )

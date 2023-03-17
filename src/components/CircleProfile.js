@@ -14,7 +14,6 @@ function CircleProfile() {
                 <div className='profile-image-center'>P</div>
             </section>
         </>
-
     )
 };
 

@@ -1,13 +1,24 @@
-import { useRef } from "react";
+import React, { useRef } from "react";
+import { useState } from "react";
 import { FaBox, FaTimes } from 'react-icons/fa';
 
 function ProductCategories() {
+    // Screen width < 968px
     const categRef = useRef();
-
     const showPopup = () => {
         categRef.current.classList.toggle('responsive-categories');
     };
 
+    // Category list clicks
+    const handleClick = (e) => {
+        const content = e.target.textContent;
+        console.log(content);
+        return content;
+    }
+
+    const handleListClick = (e) => {
+        const content = handleClick(e);
+    }
 
     return (
         <div>
@@ -17,7 +28,7 @@ function ProductCategories() {
             <nav className="categories" ref={categRef}>
                 <button onClick={showPopup} className="close-categories categ-btn"><FaTimes /></button>
                 <h3>Categories</h3>
-                <ul className="categories-list">
+                <ul className="categories-list" onClick={handleListClick}>
                     <li className="listElements">Technology</li>
                     <li className="listElements">Home & Garden</li>
                     <li className="listElements">Books</li>

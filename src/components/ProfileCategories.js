@@ -1,9 +1,11 @@
+import React, { useRef } from 'react';
 import profileimg from '.././assets/user.svg';
 import order from '.././assets/order.svg';
 import settings from '.././assets/settings.svg';
 import help from '.././assets/help.svg';
 
 function ProfileCategories() {
+
     return (
         <nav className="categoriesProfile">
             <ul>
