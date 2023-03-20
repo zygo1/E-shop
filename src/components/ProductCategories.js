@@ -26,7 +26,6 @@ function ProductCategories() {
                 <FaBox />Categories
             </button>
             <nav className="categories" ref={categRef}>
-                <button onClick={showPopup} className="close-categories categ-btn"><FaTimes /></button>
                 <h3>Categories</h3>
                 <ul className="categories-list" onClick={handleListClick}>
                     <li className="listElements">Technology</li>
@@ -38,6 +37,7 @@ function ProductCategories() {
                     <li className="listElements">Games</li>
                     <li className="listElements">Health & Beauty</li>
                 </ul>
+                <button onClick={showPopup} className="close-categories categ-btn"><FaTimes /></button>
             </nav>
         </div>
 
