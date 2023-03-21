@@ -1,4 +1,3 @@
-import placeholder from '.././assets/placeholder.svg';
 import React from 'react';
 import "./styles/Items.css";
 

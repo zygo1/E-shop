@@ -1,4 +1,5 @@
 import './styles/CircleProfile.css';
+import { Link } from 'react-router-dom';
 
 function CircleProfile() {
     return (
@@ -6,10 +7,10 @@ function CircleProfile() {
             <p className='pageHeader'>Profile</p>
             <section className='profile-section'>
                 <div className='circle'>
-                    <button className="account">My Account</button>
-                    <button className="orders">My Orders</button>
+                    <Link to="/MyAccount.js"><button className="account">My Account</button></Link>
+                    <Link to="/MyOrders.js"><button className="orders">My Orders</button></Link>
                     <button className="settings">Settings</button>
-                    <button className="help">Help</button>
+                    <Link to="/Contact.js"><button className="help">Help</button></Link>
                 </div>
                 <div className='profile-image-center'>P</div>
             </section>

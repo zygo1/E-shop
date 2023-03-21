@@ -1,0 +1,42 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin: 70px 0px 0px 0px;
+    font-size: 1.4rem;
+}
+
+.recentOrders, .recentViews{
+    text-align: flex-start;
+    background-color: rgb(201, 201, 201);
+    width: 750px;
+    height: 450px;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.recentOrders p:nth-child(2){
+    text-align: center;
+     margin: 175px 0px 0px 0px;
+     font-size: 1rem;
+}
+
+.recentItems{
+    display: grid;
+    grid-auto-flow: column;
+    margin: 35px 15px 0px 15px;
+    width: 100px;
+    height: auto;
+}
+
+.recentViews{
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-inline: contain;
+}
+
+.recentViews > p{
+    position: absolute;
+}

@@ -1,0 +1,90 @@
+.mainDiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.containerOrders{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start ;
+    justify-content: flex-start;
+    gap: 50px;
+    margin: 60px 0px 0px 15px;
+    padding: 20px;
+    background-color: rgb(201, 201, 201);
+    height: 210px;
+    width: 65%;
+}
+
+.stats{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 90px;
+}
+
+.containerOrders > img {
+    width: 120px;
+}
+
+.status{
+    color: rgb(34, 197, 56);
+    font-weight: 900;
+    font-size: 1.2rem;
+}
+
+.orderNumber,.shippingAddress{
+    display: grid;
+    gap: 10px;
+
+}
+
+.stats > button{
+    width: 120px;
+    height: 35px;
+    border: 1px solid var(--primary);
+    border-radius: 4px;
+}
+
+.stats > button:hover{
+    background-color: var(--primary);
+    color: white;
+    cursor: pointer;
+    transition: 0.2s linear;
+}
+
+.insideContent{
+    font-size: 0.825rem;
+}
+
+@media (max-width:1148px){
+    .containerOrders{
+        font-size: 0.72rem;
+        height: auto;
+        min-width: 280px;
+    }
+
+    .insideContent{
+        font-size: 0.55rem;
+    }
+
+    .containerOrders p:nth-child(1){
+        font-size: 0.9rem;
+    }
+
+    .containerOrders > img {
+        width: 70px;
+    }
+
+    .stats button{
+        font-size: 0.65rem;
+        width: 90px;
+        height: 20px;
+    }
+    
+    .stats{
+        gap: 30px;
+    }
+
+}

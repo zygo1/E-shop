@@ -3,6 +3,7 @@ import { useState } from 'react';
 import React, { useRef } from 'react';
 import Item from "./Item";
 import ProductCategories from "./ProductCategories";
+// Images
 import samsung_galaxy_s23 from '.././assets/samsung_galaxy_s23.jpeg';
 import sony_xperia_1_iv from '.././assets/sony_xperia_1_iv.jpeg';
 import sony_xperia_10_iv from '.././assets/sony_xperia_10_iv.jpeg';
