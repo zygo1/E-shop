@@ -77,12 +77,6 @@
     background-color: var(--hover);
     transition: 0.1s ease-in-out;
   }
-  
-  /*TODO: Image into the button */
-  /* .addToCart{
-    height: 30px;
-    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(108deg) brightness(104%) contrast(104%);
-  } */
     
   @media (max-width:968px){
     .items h2 {
@@ -92,13 +86,14 @@
     .item{
         margin: 10px 10px 10px 0px;
         padding: 8px;
-        min-width: 35vh;
+        min-width: 25vh;
         font-size: 0.675rem;
     }
 
     .item > p:nth-child(2){
       margin-top: 10px;
       font-size: 0.8rem;
+      flex-wrap: wrap;
     }
 
     .item > p:nth-child(3){
@@ -113,6 +108,6 @@
     }
   
     .item img{
-        width: 60px;
+        width: 70px;
     }
   } 

@@ -148,7 +148,6 @@ header{
       align-items: center;
       justify-content: flex-start;
       background-color: var(--primary);
-      transition: 0.6s;
       transform: translateX(100vh);
       position: fixed;
       top: 0;

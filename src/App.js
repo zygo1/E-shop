@@ -7,6 +7,7 @@ import Cart from './components/Cart';
 import Profile from './components/Profile';
 import MyAccount from './components/MyAccount';
 import MyOrders from './components/MyOrders';
+import ProfileSettings from './components/ProfileSettings';
 
 function App() {
   return (
@@ -19,8 +20,8 @@ function App() {
         <Route path='/Cart.js' element={<Cart />} />
         <Route path='/MyAccount.js' element={<MyAccount />} />
         <Route path='/MyOrders.js' element={<MyOrders />} />
+        <Route path='/ProfileSettings.js' element={<ProfileSettings />} />
       </Routes>
-
     </>
   );
 }
