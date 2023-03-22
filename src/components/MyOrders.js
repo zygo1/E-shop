@@ -1,5 +1,5 @@
 import Navbar from "./Navbar";
-import './styles/MyOrders.css';
+import '.././styles/MyOrders.css';
 import Order from "./Order";
 import xiaomi_redmi_note11s from '.././assets/xiaomi_redmi_note11s.jpeg';
 import sony_xperia_1_iv from '.././assets/sony_xperia_1_iv.jpeg';

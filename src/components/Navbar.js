@@ -2,7 +2,7 @@ import React from 'react';
 import { useRef } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import "./styles/Navbar.css";
+import ".././styles/Navbar.css";
 import cart from '.././assets/shoppingcart.svg';
 import user from '.././assets/user.svg';
 import search from '.././assets/search.svg';

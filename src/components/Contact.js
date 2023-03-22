@@ -1,9 +1,8 @@
-import Navbar from "./Navbar";
 import ContactFaQ from "./ContactFaQ";
 import ContactEmail from "./ContactEmail";
 import ContactChat from "./ContactChat";
 import contactImg from '.././assets/contact_img.svg';
-import "./styles/Contact.css"
+import ".././styles/Contact.css"
 
 function Contact() {
     return (

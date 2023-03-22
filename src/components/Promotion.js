@@ -1,5 +1,5 @@
 import shopping from '.././assets/web_shopping.svg';
-import "./styles/Promotion.css";
+import ".././styles/Promotion.css";
 
 function Promotion() {
     return (

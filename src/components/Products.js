@@ -1,15 +1,15 @@
-import Navbar from "./Navbar";
 import { useState } from 'react';
 import React, { useRef } from 'react';
 import Item from "./Item";
 import ProductCategories from "./ProductCategories";
+import '.././styles/Products.css';
 // Images
 import samsung_galaxy_s23 from '.././assets/samsung_galaxy_s23.jpeg';
 import sony_xperia_1_iv from '.././assets/sony_xperia_1_iv.jpeg';
 import sony_xperia_10_iv from '.././assets/sony_xperia_10_iv.jpeg';
 import xiaomi_poco_x5_pro from '.././assets/xiaomi_poco_x5_pro.jpeg';
 import xiaomi_redmi_note11s from '.././assets/xiaomi_redmi_note11s.jpeg';
-import './styles/Products.css';
+
 
 function Products() {
     const [category, setCategory] = useState();

@@ -1,6 +1,5 @@
-import Navbar from "./Navbar";
 import Item from "./Item";
-import './styles/MyAccount.css';
+import '.././styles/MyAccount.css';
 import samsung_galaxy_s23 from '.././assets/samsung_galaxy_s23.jpeg';
 import sony_xperia_1_iv from '.././assets/sony_xperia_1_iv.jpeg';
 import sony_xperia_10_iv from '.././assets/sony_xperia_10_iv.jpeg';

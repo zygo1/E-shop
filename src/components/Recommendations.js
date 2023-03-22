@@ -4,7 +4,7 @@ import sony_xperia_1_iv from '.././assets/sony_xperia_1_iv.jpeg';
 import sony_xperia_10_iv from '.././assets/sony_xperia_10_iv.jpeg';
 import xiaomi_poco_x5_pro from '.././assets/xiaomi_poco_x5_pro.jpeg';
 import xiaomi_redmi_note11s from '.././assets/xiaomi_redmi_note11s.jpeg';
-import "./styles/RecomOffers.css";
+import ".././styles/RecomOffers.css";
 
 function Recommendations() {
     return (
