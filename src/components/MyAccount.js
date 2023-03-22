@@ -1,6 +1,5 @@
 import Navbar from "./Navbar";
 import Item from "./Item";
-import { Link } from "react-router-dom";
 import './styles/MyAccount.css';
 import samsung_galaxy_s23 from '.././assets/samsung_galaxy_s23.jpeg';
 import sony_xperia_1_iv from '.././assets/sony_xperia_1_iv.jpeg';
@@ -11,9 +10,8 @@ import xiaomi_redmi_note11s from '.././assets/xiaomi_redmi_note11s.jpeg';
 function MyAccount() {
     return (
         <section>
-            <Navbar />
             <p className='pageHeader profileHeader'>My Account</p>
-            <div className="container">
+            <div className="accountContainer">
                 <div className="recentOrders">
                     <p>Recent Orders</p>
                     <p>There aren't any orders yet.</p>

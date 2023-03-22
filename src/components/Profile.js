@@ -6,7 +6,6 @@ import CircleProfile from "./CircleProfile";
 function Profile() {
     return (
         <>
-            <Navbar />
             <CircleProfile />
         </>
 

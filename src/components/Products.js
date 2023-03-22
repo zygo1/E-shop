@@ -19,9 +19,8 @@ function Products() {
     }
     return (
         <>
-            <Navbar />
             <p className='pageHeader'>Products</p>
-            <section className="container">
+            <section className="productsContainer">
                 <ProductCategories />
                 <div className="items">
                     <h2>Selected Category</h2>

@@ -8,7 +8,6 @@ import "./styles/Contact.css"
 function Contact() {
     return (
         <>
-            <Navbar />
             <p className='pageHeader'>Contact</p>
             <div className="waysContact">
                 <h2> Ways to Contact us!</h2>
