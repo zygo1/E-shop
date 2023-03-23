@@ -66,13 +66,13 @@
       align-items: center;
       justify-content: flex-start;
       background-color: var(--primary);
-      transition: 0.5s;
+      /* transition: 0.5s; */
       transform: translateY(100vh);
       position: fixed;
       bottom: -100px;
       right: -10px;
       margin: auto;
-      height: 111vh;
+      height: 90vh;
       width: 100%;
       z-index: 2;
     }

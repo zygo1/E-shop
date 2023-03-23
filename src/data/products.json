@@ -2,43 +2,43 @@
     "products": {
         "technology": [
             {
-                "id": 1,
+                "id": "samg1",
                 "name": "Samsung Galaxy S23 Ultra 5G Dual SIM (8GB/256GB)",
                 "price": "1189.99",
                 "img_path": "assets/samsung_galaxy_s23.jpeg"
             },
             {
-                "id": 2,
+                "id": "oneplus10",
                 "name": "OnePlus 10 Pro 5G Dual SIM (12GB/256GB)",
                 "price": "779.90",
                 "img_path": "assets/oneplus_10_pro_5g_12gb_256gb.jpeg"
             },
             {
-                "id": 6,
+                "id": "tcl1",
                 "name": "TCL 306 Dual SIM (3GB/32GB)",
                 "price": "177.90",
                 "img_path": "assets/tcl_306_dual_sim_3gb_32gb.jpeg"
             },
             {
-                "id": 3,
+                "id": "sonyx1",
                 "name": "Sony Xperia 1 IV 5G Dual SIM (12GB/256GB)",
                 "price": "1159.99",
                 "img_path": "assets/sony_xperia_1_iv.jpeg"
             },
             {
-                "id": 4,
+                "id": "sonyx10",
                 "name": "Sony Xperia 10 IV 5G Dual SIM (6GB/128GB)",
                 "price": "369.99",
                 "img_path": "assets/sony_xperia_10_iv.jpeg"
             },
             {
-                "id": 5,
+                "id": "xiaomip1",
                 "name": "Xiaomi Poco X5 Pro 5G Dual SIM (8GB/256GB)",
                 "price": "374.99",
                 "img_path": "assets/xiaomi_poco_x5_pro.jpeg"
             },
             {
-                "id": 0,
+                "id": "xiamired1",
                 "name": "Xiaomi Redmi Note 11S NFC Dual SIM (6GB/64GB)",
                 "price": "199.40",
                 "img_path": "assets/xiaomi_redmi_note11s.jpeg"

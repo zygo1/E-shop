@@ -14,15 +14,19 @@ function Navbar() {
         navRef.current.classList.toggle('responsive-nav'); // Everytime that showNavbar is called the 'responsive-nav' class toggles, (removed and added to <nav ref={navRef}>)
     }
 
+    const hideNavbar = () => {
+        navRef.current.classList.remove('responsive-nav');
+    }
+
     return (
         <header>
             <div className='quickmart'><Link to="/"><h2>QuickMart</h2></Link></div>
             <div className='search'><input placeholder='Search...' type={"text"} name="search"></input><button><img src={search} /></button></div>
             <nav className="nav" ref={navRef}>
-                <Link to="/Products.js">Products</Link>
-                <Link to="/Contact.js">Contact</Link>
-                <Link to="/Cart.js"><img src={cart} alt="Cart" /></Link>
-                <Link to="/Profile.js"><img src={user} alt="Profile" /></Link>
+                <Link onClick={hideNavbar} to="/Products.js">Products</Link>
+                <Link onClick={hideNavbar} to="/Contact.js">Contact</Link>
+                <Link onClick={hideNavbar} to="/Cart.js"><img src={cart} alt="Cart" /></Link>
+                <Link onClick={hideNavbar} to="/Profile.js"><img src={user} alt="Profile" /></Link>
                 <button className='nav-btn nav-close-btn' onClick={showNavbar}>
                     <FaTimes />
                 </button>
