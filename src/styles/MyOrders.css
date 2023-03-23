@@ -9,6 +9,8 @@
     flex-direction: row;
     align-items: flex-start ;
     justify-content: flex-start;
+    border: none;
+    border-radius: 8px;
     gap: 50px;
     margin: 60px 0px 0px 15px;
     padding: 20px;

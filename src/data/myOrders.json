@@ -1,13 +1,13 @@
 {
     "myOrders": [
         {
-            "itemID": 0,
+            "id": 0,
             "description": "Xiaomi Redmi Note 11S NFC Dual SIM (6GB/64GB)",
             "price": "199.40",
             "img_path": ".././assets/xiaomi_redmi_note11s.jpeg"
         },
         {
-            "itemID": 3,
+            "id": 3,
             "description": "Sony Xperia 1 IV 5G Dual SIM (12GB/256GB)",
             "price": "1159.99",
             "img_path": ".././assets/sony_xperia_1_iv.jpeg"

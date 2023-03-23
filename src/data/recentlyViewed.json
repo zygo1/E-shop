@@ -1,49 +1,49 @@
 {
     "views": [
         {
-            "itemID": 0,
+            "id": 0,
             "description": "Xiaomi Redmi Note 11S NFC Dual SIM (6GB/64GB)",
             "price": "199.40",
             "img_path": ".././assets/xiaomi_redmi_note11s.jpeg"
         },
         {
-            "itemID": 1,
+            "id": 1,
             "description": "Samsung Galaxy S23 Ultra 5G Dual SIM (8GB/256GB)",
             "price": "1189.99",
             "img_path": ".././assets/samsung_galaxy_s23.jpeg"
         },
         {
-            "itemID": 2,
+            "id": 2,
             "description": "Xiaomi Poco X5 Pro 5G Dual SIM (8GB/256GB)",
             "price": "374.99",
             "img_path": ".././assets/xiaomi_poco_x5_pro.jpeg"
         },
         {
-            "itemID": 3,
+            "id": 3,
             "description": "Sony Xperia 1 IV 5G Dual SIM (12GB/256GB)",
             "price": "1159.99",
             "img_path": ".././assets/sony_xperia_1_iv.jpeg"
         },
         {
-            "itemID": 4,
+            "id": 4,
             "description": "Sony Xperia 10 IV 5G Dual SIM (6GB/128GB)",
             "price": "369.99",
             "img_path": ".././assets/sony_xperia_10_iv.jpeg"
         },
         {
-            "itemID": 5,
+            "id": 5,
             "description": "Xiaomi Poco X5 Pro 5G Dual SIM (8GB/256GB)",
             "price": "374.99",
             "img_path": ".././assets/xiaomi_poco_x5_pro.jpeg"
         },
         {
-            "itemID": 6,
+            "id": 6,
             "description": "Sony Xperia 1 IV 5G Dual SIM (12GB/256GB)",
             "price": "1159.99",
             "img_path": ".././assets/sony_xperia_1_iv.jpeg"
         },
         {
-            "itemID": 7,
+            "id": 7,
             "description": "Samsung Galaxy S23 Ultra 5G Dual SIM (8GB/256GB)",
             "price": "1189.99",
             "img_path": ".././assets/samsung_galaxy_s23.jpeg"

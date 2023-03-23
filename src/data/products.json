@@ -2,34 +2,46 @@
     "products": {
         "technology": [
             {
-                "itemID": 1,
-                "description": "Samsung Galaxy S23 Ultra 5G Dual SIM (8GB/256GB)",
+                "id": 1,
+                "name": "Samsung Galaxy S23 Ultra 5G Dual SIM (8GB/256GB)",
                 "price": "1189.99",
-                "img_path": ".././assets/samsung_galaxy_s23.jpeg"
+                "img_path": "assets/samsung_galaxy_s23.jpeg"
             },
             {
-                "itemID": 3,
-                "description": "Sony Xperia 1 IV 5G Dual SIM (12GB/256GB)",
+                "id": 2,
+                "name": "OnePlus 10 Pro 5G Dual SIM (12GB/256GB)",
+                "price": "779.90",
+                "img_path": "assets/oneplus_10_pro_5g_12gb_256gb.jpeg"
+            },
+            {
+                "id": 6,
+                "name": "TCL 306 Dual SIM (3GB/32GB)",
+                "price": "177.90",
+                "img_path": "assets/tcl_306_dual_sim_3gb_32gb.jpeg"
+            },
+            {
+                "id": 3,
+                "name": "Sony Xperia 1 IV 5G Dual SIM (12GB/256GB)",
                 "price": "1159.99",
-                "img_path": ".././assets/sony_xperia_1_iv.jpeg"
+                "img_path": "assets/sony_xperia_1_iv.jpeg"
             },
             {
-                "itemID": 4,
-                "description": "Sony Xperia 10 IV 5G Dual SIM (6GB/128GB)",
+                "id": 4,
+                "name": "Sony Xperia 10 IV 5G Dual SIM (6GB/128GB)",
                 "price": "369.99",
-                "img_path": ".././assets/sony_xperia_10_iv.jpeg"
+                "img_path": "assets/sony_xperia_10_iv.jpeg"
             },
             {
-                "itemID": 5,
-                "description": "Xiaomi Poco X5 Pro 5G Dual SIM (8GB/256GB)",
+                "id": 5,
+                "name": "Xiaomi Poco X5 Pro 5G Dual SIM (8GB/256GB)",
                 "price": "374.99",
-                "img_path": ".././assets/xiaomi_poco_x5_pro.jpeg"
+                "img_path": "assets/xiaomi_poco_x5_pro.jpeg"
             },
             {
-                "itemID": 0,
-                "description": "Xiaomi Redmi Note 11S NFC Dual SIM (6GB/64GB)",
+                "id": 0,
+                "name": "Xiaomi Redmi Note 11S NFC Dual SIM (6GB/64GB)",
                 "price": "199.40",
-                "img_path": ".././assets/xiaomi_redmi_note11s.jpeg"
+                "img_path": "assets/xiaomi_redmi_note11s.jpeg"
             }
         ],
         "home_and_garden": [
