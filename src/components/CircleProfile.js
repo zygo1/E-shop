@@ -4,7 +4,10 @@ import { Link } from 'react-router-dom';
 function CircleProfile() {
     return (
         <>
-            <p className='pageHeader'>Profile</p>
+            <div className='logout-container'>
+                <p className='pageHeader'>Profile</p>
+                <Link to="/Profile.js/SignUp.js"><button className='logout'>Logout</button></Link>
+            </div>
             <section className='profile-section'>
                 <div className='circle'>
                     <Link to="/Profile.js/MyAccount.js"><button className="account">My Account</button></Link>

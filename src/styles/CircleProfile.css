@@ -1,25 +1,27 @@
-.account{
+.account {
     background-color: var(--primary);
     border-top-left-radius: 100%;
 }
 
-.orders{
+.orders {
     background-color: rgb(50, 190, 255);
     border-top-right-radius: 100%;
 }
 
-.settings{
-    /* background: linear-gradient(to bottom left, rgb(0, 171, 250), rgb(203, 238, 255)); */
-    background-color:  rgb(50, 190, 255);
+.settings {
+    background-color: rgb(50, 190, 255);
     border-bottom-left-radius: 100%;
 }
 
-.help{
+.help {
     background-color: var(--primary);
     border-bottom-right-radius: 100%;
 }
 
-.account, .orders, .settings, .help{
+.account,
+.orders,
+.settings,
+.help {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -33,31 +35,33 @@
     color: white;
 }
 
-.account:hover, .help:hover{
+.account:hover,
+.help:hover {
     cursor: pointer;
-    background-color: var(--hover) ;
+    background-color: var(--hover);
 }
 
-.orders:hover, .settings:hover{
+.orders:hover,
+.settings:hover {
     cursor: pointer;
     background-color: rgb(0, 162, 255);
 }
 
-.profile-section{
+.profile-section {
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
 }
 
-.circle{
+.circle {
     display: grid;
-    grid-template-columns: repeat(2,0fr);
-    grid-template-rows: repeat(2,0fr);
+    grid-template-columns: repeat(2, 0fr);
+    grid-template-rows: repeat(2, 0fr);
     position: relative;
 }
 
-.profile-image-center{
+.profile-image-center {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -72,21 +76,46 @@
     font-weight: 800;
 }
 
-.pageHeader{
+.pageHeader {
     margin: 50px 0px 0px 40px;
     font-size: 1.8rem;
     color: rgb(88, 88, 88);
 }
 
-@media (max-width:968px){
-    .account, .orders, .settings, .help{
+.logout-container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.logout {
+    padding: 8px;
+    margin: 0px 40px 0px 0px;
+    border: 2px solid rgb(255, 19, 19);
+    border-radius: 3px;
+    color: rgb(255, 19, 19);
+    font-weight: 700;
+}
+
+.logout:hover {
+    cursor: pointer;
+    color: white;
+    background-color: rgb(255, 19, 19);
+}
+
+@media (max-width:968px) {
+
+    .account,
+    .orders,
+    .settings,
+    .help {
         width: 110px;
         height: 110px;
         font-size: 0.7rem;
         font-weight: 500;
     }
 
-    .profile-image-center{
+    .profile-image-center {
         width: 75px;
         height: 75px;
         min-height: 75px;
@@ -95,12 +124,13 @@
         font-weight: 800;
     }
 
-    .pageHeader{
+    .pageHeader {
         font-size: 1.3rem;
         margin: 30px 0px 0px 40px;
         color: rgb(88, 88, 88);
     }
-    .profile-section{
+
+    .profile-section {
         margin: 80px 0px 0px 0px;
     }
 }

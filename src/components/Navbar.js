@@ -19,7 +19,7 @@ function Navbar() {
     }
 
     return (
-        <header>
+        <header className='navigation-bar-class'>
             <div className='quickmart'><Link to="/"><h2>QuickMart</h2></Link></div>
             <div className='search'><input placeholder='Search...' type={"text"} name="search"></input><button><img src={search} /></button></div>
             <nav className="nav" ref={navRef}>
