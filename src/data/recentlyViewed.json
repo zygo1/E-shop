@@ -4,49 +4,49 @@
             "id": "xiamired1",
             "description": "Xiaomi Redmi Note 11S NFC Dual SIM (6GB/64GB)",
             "price": "199.40",
-            "img_path": ".././assets/xiaomi_redmi_note11s.jpeg"
+            "img_path": "assets/xiaomi_redmi_note11s.jpeg"
         },
         {
             "id": "samg1",
             "description": "Samsung Galaxy S23 Ultra 5G Dual SIM (8GB/256GB)",
             "price": "1189.99",
-            "img_path": ".././assets/samsung_galaxy_s23.jpeg"
+            "img_path": "assets/samsung_galaxy_s23.jpeg"
         },
         {
             "id": "xiaomip1",
             "description": "Xiaomi Poco X5 Pro 5G Dual SIM (8GB/256GB)",
             "price": "374.99",
-            "img_path": ".././assets/xiaomi_poco_x5_pro.jpeg"
+            "img_path": "assets/xiaomi_poco_x5_pro.jpeg"
         },
         {
             "id": "sonyx1",
             "description": "Sony Xperia 1 IV 5G Dual SIM (12GB/256GB)",
             "price": "1159.99",
-            "img_path": ".././assets/sony_xperia_1_iv.jpeg"
+            "img_path": "assets/sony_xperia_1_iv.jpeg"
         },
         {
             "id": "sonyx10",
             "description": "Sony Xperia 10 IV 5G Dual SIM (6GB/128GB)",
             "price": "369.99",
-            "img_path": ".././assets/sony_xperia_10_iv.jpeg"
+            "img_path": "assets/sony_xperia_10_iv.jpeg"
         },
         {
             "id": "xiaomiP1",
             "description": "Xiaomi Poco X5 Pro 5G Dual SIM (8GB/256GB)",
             "price": "374.99",
-            "img_path": ".././assets/xiaomi_poco_x5_pro.jpeg"
+            "img_path": "assets/xiaomi_poco_x5_pro.jpeg"
         },
         {
             "id": "sonyx1",
             "description": "Sony Xperia 1 IV 5G Dual SIM (12GB/256GB)",
             "price": "1159.99",
-            "img_path": ".././assets/sony_xperia_1_iv.jpeg"
+            "img_path": "assets/sony_xperia_1_iv.jpeg"
         },
         {
             "id": "samg1",
             "description": "Samsung Galaxy S23 Ultra 5G Dual SIM (8GB/256GB)",
             "price": "1189.99",
-            "img_path": ".././assets/samsung_galaxy_s23.jpeg"
+            "img_path": "assets/samsung_galaxy_s23.jpeg"
         }
     ]
 }

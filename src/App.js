@@ -10,16 +10,15 @@ import MyOrders from './components/MyOrders';
 import ProfileSettings from './components/ProfileSettings';
 import Navbar from './components/Navbar';
 import SignUp from './components/SignUp';
+import ProfileCategories from './components/ProfileCategories';
 
 function App() {
   const location = useLocation();
 
-  // Check if the current route is for the signup page
   const isSignupPage = location.pathname.includes('/SignUp.js');
 
   return (
     <div>
-      {/* Render the Navbar component only if the current route is not for the signup page */}
       {!isSignupPage && <Navbar />}
       <Routes>
         <Route path='/' element={<Homepage />} />

@@ -155,6 +155,8 @@ header{
       height: 100%;
       width: 30vh;
       z-index: 2;
+      font-size: 0.575rem;
+      gap: 30px;
     }
     
     .responsive-nav{
@@ -165,6 +167,7 @@ header{
       color: var(--white);
       margin: 0px;
       font-size: 0.975rem;
+
     }
 
     .nav a:hover{
@@ -180,17 +183,11 @@ header{
       width: 20px;
       filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(108deg) brightness(104%) contrast(104%);
     }
-
-
-    .nav {
-        font-size: 0.575rem;
-    }
   
     .nav a h2{
       font-size: 0.9rem;
       margin-left: 70px;
     }
-    
 
     .search > input{
       width: 70px;

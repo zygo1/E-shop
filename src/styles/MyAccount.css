@@ -12,7 +12,7 @@
 .recentOrders, .recentViews{
     text-align: flex-start;
     background-color: rgb(201, 201, 201);
-    width: 750px;
+    width: 650px;
     height: 450px;
     border: none;
     border-radius: 10px;
@@ -21,8 +21,8 @@
 
 .recentOrders p:nth-child(2){
     text-align: center;
-     margin: 175px 0px 0px 0px;
-     font-size: 1rem;
+    margin: 175px 0px 0px 0px;
+    font-size: 1rem;
 }
 
 .recentItems{
@@ -51,5 +51,18 @@
 
     .recentOrders p:nth-child(2){
         font-size: 0.75rem;
+        margin: 105px 0px 0px 0px;
     }   
+
+    .recentViews{
+        margin: 0px 10px 0px 10px;
+        width: 450px;
+        height: 350px;
+    }
+
+    .recentOrders{
+        margin: 0px 10px 0px 10px;
+        width: 450px;
+        height: 250px;
+    }
 }

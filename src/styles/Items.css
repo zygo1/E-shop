@@ -24,8 +24,8 @@
     justify-content: center;
     flex-wrap: wrap;
     flex-basis: calc(33.33% - 100px);
-    min-width: 170px;
-    min-height: 320px;
+    min-width: 160px;
+    min-height: 290px;
     margin: 15px;
     padding: 15px;
     background-color: var(--itemColor);
@@ -88,6 +88,8 @@
         padding: 8px;
         min-width: 25vh;
         font-size: 0.675rem;
+        min-width: 130px;
+        min-height: 250px;
     }
 
     .item > p:nth-child(2){

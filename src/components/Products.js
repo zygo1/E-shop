@@ -30,7 +30,6 @@ function Products() {
             <section className="productsContainer">
                 <ProductCategories />
                 <div className="items">
-
                     {productList}
                 </div>
             </section>

@@ -1,3 +1,10 @@
+.logo-sign-up{
+    color: var(--primary);
+    font-size: 2.4rem;
+     font-weight: 700;
+     margin: 10px 0px -20px 20px;
+}
+
 .signup {
     display: flex;
     flex: 1;
@@ -92,4 +99,18 @@ sup {
     color: var(--primary);
     cursor: pointer;
     font-weight: 700;
+}
+
+@media (max-width:768px){
+    .sign-up-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .logo-sign-up{
+        font-size: 1.9rem;
+        margin: 15px 0px 30px 20px;
+    }
 }
