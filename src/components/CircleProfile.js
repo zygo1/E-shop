@@ -6,7 +6,7 @@ function CircleProfile() {
         <>
             <div className='logout-container'>
                 <p className='pageHeader'>Profile</p>
-                <Link to="/Profile.js/SignUp.js"><button className='logout'>Logout</button></Link>
+                <Link to="/SignUp.js"><button className='logout'>Logout</button></Link>
             </div>
             <section className='profile-section'>
                 <div className='circle'>

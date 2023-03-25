@@ -1,6 +1,7 @@
 import ".././styles/SignUp.css";
 import { useState } from "react";
 import { validateEmail } from "./validemail";
+import { Link } from "react-router-dom";
 
 
 const PasswordErrorMessage = () => {
@@ -82,9 +83,9 @@ function SignUp() {
                             <option value="business">Business</option>
                         </select>
                     </div>
-                    <button className="button-signup" type="submit" disabled={!getIsFormValid()}>
+                    <Link to="/"><button className="button-signup" type="submit" disabled={!getIsFormValid()}>
                         Create account
-                    </button>
+                    </button></Link>
                     <div className="sign-in">
                         <p>Do you have already and account? <span>Sign in!</span></p>
                     </div>
