@@ -1,10 +1,15 @@
 import ".././styles/Profile.css"
-import CircleProfile from "./CircleProfile";
+import ProfileCategories from "./ProfileCategories";
+import { Link } from 'react-router-dom';
 
 function Profile() {
     return (
         <>
-            <CircleProfile />
+            <div className='logout-container'>
+                <p className='pageHeader'>Profile</p>
+                <Link to="/SignUp.js"><button className='logout'>Logout</button></Link>
+            </div>
+            <ProfileCategories />
         </>
 
     )

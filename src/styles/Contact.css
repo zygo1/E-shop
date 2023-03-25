@@ -72,10 +72,9 @@
 
   .contactImage{
     display: flex;
-    justify-content: center;
     align-items: center;
-    height: 20vh;
-    margin: 50px 0px 0px 50px;
+    justify-content: center;
+    margin: 20px 0px 0px 50px;
   }
 
   .contactImage img {

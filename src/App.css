@@ -16,9 +16,22 @@
     background-color: var(--secondary);
     font-family: 'Montserrat', sans-serif;
   }   
+
+  .pageHeader {
+    margin: 50px 0px 0px 40px;
+    font-size: 1.8rem;
+    color: rgb(88, 88, 88);
+}
   
   @media (max-width:960px) {
     img{
         width: 25px;
     }
+
+    .pageHeader {
+      font-size: 1.3rem;
+      margin: 30px 0px 0px 40px;
+      color: rgb(88, 88, 88);
+  }
+
   }

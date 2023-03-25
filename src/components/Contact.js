@@ -15,9 +15,9 @@ function Contact() {
                 <ContactEmail />
                 <ContactFaQ />
                 <ContactChat />
-            </div>
-            <div className="contactImage">
-                <img src={contactImg} />
+                <div className="contactImage">
+                    <img src={contactImg} />
+                </div>
             </div>
         </>
 

@@ -23,11 +23,14 @@ function Products() {
     });
     return (
         <>
-            <p className='pageHeader'>Products</p>
+            <div className='products-header-container'>
+                <p className='pageHeader'>Products</p>
+                <h2>Selected Category</h2>
+            </div>
             <section className="productsContainer">
                 <ProductCategories />
                 <div className="items">
-                    <h2>Selected Category</h2>
+
                     {productList}
                 </div>
             </section>
