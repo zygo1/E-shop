@@ -5,12 +5,9 @@ import Products from './components/Products';
 import Contact from './components/Contact';
 import Cart from './components/Cart';
 import Profile from './components/Profile';
-import MyAccount from './components/MyAccount';
-import MyOrders from './components/MyOrders';
-import ProfileSettings from './components/ProfileSettings';
-import Navbar from './components/Navbar';
 import SignUp from './components/SignUp';
 import NavigationBar from './components/NavigationBar';
+import MyAccount from './components/MyAccount';
 
 function App() {
   const location = useLocation();
@@ -26,9 +23,6 @@ function App() {
         <Route path='/Contact.js' element={<Contact />} />
         <Route path='/Cart.js' element={<Cart />} />
         <Route path='/Profile.js/*' element={<Profile />} />
-        <Route path='/Profile.js/MyAccount.js' element={<MyAccount />} />
-        <Route path='/Profile.js/MyOrders.js' element={<MyOrders />} />
-        <Route path='/Profile.js/ProfileSettings.js' element={<ProfileSettings />} />
         <Route path='/SignUp.js' element={<SignUp />} />
       </Routes>
     </div>

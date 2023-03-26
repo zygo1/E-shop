@@ -61,11 +61,6 @@ sup {
     font-size: 12px;
 }
 
-.Row {
-    display: flex;
-    flex-direction: row;
-}
-
 .button-signup {
     padding: 12px;
     width: 240px;

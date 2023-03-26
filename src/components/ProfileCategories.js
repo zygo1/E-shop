@@ -12,10 +12,18 @@ function ProfileCategories() {
     return (
         <nav className="categoriesProfile">
             <ul>
-                <li onClick={() => { navigate("/Profile.js/MyAccount.js") }} className='profile-categ-items'><img src={profileimg} /><Link to="/Profile.js/MyAccount.js">My account</Link></li>
-                <li onClick={() => { navigate("/Profile.js/MyOrders.js") }} className='profile-categ-items'><img src={order} /><Link to="/Profile.js/MyOrders.js">Orders</Link></li>
-                <li onClick={() => { navigate("/Profile.js/ProfileSettings.js") }} className='profile-categ-items'><img src={settings} /><Link to="/Profile.js/ProfileSettings.js">Settings</Link></li>
-                <li onClick={() => { navigate("/Contact.js") }} className='profile-categ-items'><img src={help} /><Link to="/Contact.js">Help</Link></li>
+                <li onClick={() => { navigate("/Profile.js/MyAccount.js") }} className='profile-categ-items'>
+                    <img src={profileimg} /><Link to="/Profile.js/MyAccount.js">My account</Link>
+                </li>
+                <li onClick={() => { navigate("/Profile.js/MyOrders.js") }} className='profile-categ-items'>
+                    <img src={order} /><Link to="/Profile.js/MyOrders.js">Orders</Link>
+                </li>
+                <li onClick={() => { navigate("/Profile.js/ProfileSettings.js") }} className='profile-categ-items'>
+                    <img src={settings} /><Link to="/Profile.js/ProfileSettings.js">Settings</Link>
+                </li>
+                <li onClick={() => { navigate("/Contact.js") }} className='profile-categ-items'>
+                    <img src={help} /><Link to="/Contact.js">Help / Contact</Link>
+                </li>
             </ul>
         </nav>
     )

@@ -5,13 +5,6 @@
     justify-content: space-around; 
 }
 
-.left-side-nav{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-}
 
 .links{
     display: flex;
@@ -24,7 +17,7 @@
     padding: 5px;
 }
 
-.left-side-nav .logo a{
+.nav-container .logo a{
     color: var(--primary);
     font-size: 2.4rem;
     font-weight: 600;
@@ -54,6 +47,10 @@
     color: white;
   }
 
+.login:hover, .register:hover{
+  color: var(--primary);
+}
+
   
 
 @media (max-width:1168px){
@@ -63,7 +60,7 @@
 }
 
 @media (max-width:1024px){
-    .left-side-nav .logo a{
+    .nav-container .logo a{
         font-size: 1.9rem;
     }
 
@@ -103,8 +100,8 @@
 }
 
 @media (max-width:1024px){
-    .left-side-nav .logo a{
-        font-size: 1.3rem;
+    .nav-container .logo a{
+        font-size: 1.4rem;
     }
 
     .right-side-nav a {

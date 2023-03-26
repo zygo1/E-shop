@@ -4,14 +4,14 @@
     align-items: center;
     justify-content: space-around;
     flex-wrap: wrap;
-    margin: 70px 0px 0px 0px;
-    gap: 40px;
+    margin: 40px 20px 0px 0px;
+    gap: 60px;
     font-size: 1.4rem;
 }
 
 .recentOrders, .recentViews{
     text-align: flex-start;
-    background-color: rgb(201, 201, 201);
+    background-color: rgb(208, 208, 208);
     width: 650px;
     height: 450px;
     border: none;

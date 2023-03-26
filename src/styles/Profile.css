@@ -1,6 +1,6 @@
 /* Profile - Categories */
 .categoriesProfile{
-    width: 12%;
+    width: 180px;
     height: 180px;
     background-color: var(--itemColor);
     border-radius: 5px;
@@ -20,6 +20,14 @@
 }
 
   /* Profile */
+.profile-account-container{
+  display: grid;
+  grid-template-columns:repeat(2,auto) ;
+  grid-template-rows:repeat(1,auto) ;
+  justify-content: left;
+  gap: 50px;
+}
+
 .profileDiv{
   display: flex;
   flex-direction: column;

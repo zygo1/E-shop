@@ -19,6 +19,13 @@ function SignUp() {
         isTouched: false,
     });
     const [role, setRole] = useState("role");
+    const [year, setYear] = useState('');
+
+    const handleYearChange = (event) => {
+        setYear(event.target.value);
+    };
+    const currentYear = new Date().getFullYear();
+    const years = Array.from({ length: 124 }, (_, i) => currentYear - i);
 
     const getIsFormValid = () => {
         return (
@@ -46,6 +53,7 @@ function SignUp() {
     return (
         <section className="sign-up-container">
             <div className='logo-sign-up'>QUICKMART</div>
+            {/*  */}
             <div className="signup">
                 <form onSubmit={handleSubmit}>
                     <fieldset className="fieldset-signup">
@@ -83,6 +91,17 @@ function SignUp() {
                                 <option value="role">Role</option>
                                 <option value="individual">Individual</option>
                                 <option value="business">Business</option>
+                            </select>
+                        </div>
+                        <div className='Field'>
+                            <label className='label-signup'>Year of Birth</label>
+                            <select className='input-signup' value={year} onChange={handleYearChange}>
+                                <option value="">Select Year</option>
+                                {years.map((year) => (
+                                    <option key={year} value={year}>
+                                        {year}
+                                    </option>
+                                ))}
                             </select>
                         </div>
                         <Link to="/"><button className="button-signup" type="submit" disabled={!getIsFormValid()}>

@@ -18,9 +18,9 @@
     text-shadow: 0px 5px 45px black;
   }
   
-  .promotion > button{
+  .order-button{
     width: 150px;
-    height: 60px;
+    height: 50px;
     border: none;
     border-radius: 10px;
     background-color: var(--primary);
@@ -32,8 +32,8 @@
   }
   
   .order-button:hover, .infoButton:hover{
-    transform: scale(0.9);
-    transition: 0.25s ease-in-out;
+    background-color: var(--hover);
+    transition: 0.15s ease-in-out;
     cursor: pointer;
   }
 
@@ -50,7 +50,7 @@
       width: 200px;
     }
 
-    .promotion > button{
+    .order-button{
         font-size: 0.725rem;
         width: 100px;
         height: 35px;
