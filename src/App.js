@@ -10,7 +10,7 @@ import MyOrders from './components/MyOrders';
 import ProfileSettings from './components/ProfileSettings';
 import Navbar from './components/Navbar';
 import SignUp from './components/SignUp';
-import ProfileCategories from './components/ProfileCategories';
+import NavigationBar from './components/NavigationBar';
 
 function App() {
   const location = useLocation();
@@ -19,7 +19,7 @@ function App() {
 
   return (
     <div>
-      {!isSignupPage && <Navbar />}
+      {!isSignupPage && <NavigationBar />}
       <Routes>
         <Route path='/' element={<Homepage />} />
         <Route path='/Products.js' element={<Products />} />
