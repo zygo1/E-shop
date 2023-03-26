@@ -85,28 +85,6 @@
 .categoriesProfile li > img{
   width:25px;
 }
-
-.logout-container {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-}
-
-.logout {
-  padding: 8px;
-  margin: 0px 40px 0px 0px;
-  border: 2px solid rgb(255, 19, 19);
-  border-radius: 3px;
-  color: rgb(255, 19, 19);
-  font-weight: 700;
-}
-
-.logout:hover {
-  cursor: pointer;
-  color: white;
-  transition: 0.2s ease-in-out;
-  background-color: rgb(255, 19, 19);
-}
   
 @media (max-width:968px){
   .categoriesProfile{

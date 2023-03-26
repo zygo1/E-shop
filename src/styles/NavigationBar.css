@@ -12,7 +12,7 @@
     align-items: center;
     justify-content: space-between;
     font-size: 1.3rem;
-    gap: 60px;
+    gap: 80px;
     margin: 5px 0px 5px 15px;
     padding: 5px;
 }
@@ -49,6 +49,22 @@
 
 .login:hover, .register:hover{
   color: var(--primary);
+}
+
+.login-register{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 80px;
+}
+
+.login-register a img{
+  width: 30px;
+}
+
+.login-register a img:hover{
+  filter: invert(36%) sepia(72%) saturate(1904%) hue-rotate(197deg) brightness(100%) contrast(91%);
 }
 
   
@@ -96,6 +112,17 @@
 
       .responsive-nav{
         transform: none;
+      }
+
+      .login-register{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .login-register a img,.login-register a img:hover{
+        filter: invert(100%) sepia(0%) saturate(7454%) hue-rotate(50deg) brightness(112%) contrast(112%);
       }
 }
 

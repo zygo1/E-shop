@@ -7,7 +7,6 @@ import Cart from './components/Cart';
 import Profile from './components/Profile';
 import SignUp from './components/SignUp';
 import NavigationBar from './components/NavigationBar';
-import MyAccount from './components/MyAccount';
 
 function App() {
   const location = useLocation();
@@ -17,6 +16,7 @@ function App() {
   return (
     <div>
       {!isSignupPage && <NavigationBar />}
+      {/* <NavigationBar /> */}
       <Routes>
         <Route path='/' element={<Homepage />} />
         <Route path='/Products.js' element={<Products />} />

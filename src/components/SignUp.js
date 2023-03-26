@@ -32,7 +32,8 @@ function SignUp() {
             firstName &&
             validateEmail(email) &&
             password.value.length >= 8 &&
-            role !== "role"
+            role !== "role" &&
+            year !== ""
         );
     };
 

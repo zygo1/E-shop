@@ -7,7 +7,7 @@ function Promotion() {
         <section className="promotion">
             <img src={shopping} alt=""></img>
             <div>Transform any space into an oasis you can be proud of!</div>
-            <Link to='/Profile.js/MyAccount.js'><button className="order-button">Order online!</button></Link>
+            <button className="order-button">Order online!</button>
         </section >
     )
 };

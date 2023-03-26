@@ -15,7 +15,6 @@ function Profile() {
         <>
             <div className='logout-container'>
                 <p className='pageHeader'>Profile</p>
-                <Link to="/SignUp.js"><button className='logout'>Logout</button></Link>
             </div>
             <div className="profile-account-container">
                 <ProfileCategories />
