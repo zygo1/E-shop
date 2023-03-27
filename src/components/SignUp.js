@@ -1,6 +1,6 @@
 import ".././styles/SignUp.css";
 import { useState } from "react";
-import { validateEmail } from "./validemail";
+import { validateEmail } from "./ValidateEmail";
 import { Link } from "react-router-dom";
 
 

@@ -1,13 +1,13 @@
 import '.././styles/Settings.css';
 import { useState } from 'react';
-import { validateEmail } from './validemail';
+import { validateEmail } from './ValidateEmail';
 
 
 function ProfileSettings() {
     const [username, setUsername] = useState({ value: 'Jane5', isTouched: false });
-    const [password, setPassword] = useState({ value: 1234567890, isTouched: false });
+    const [password, setPassword] = useState({ value: 'nvhflkjhmshqisbs', isTouched: false });
     const [email, setEmail] = useState({ value: 'Jane5@gmail.com', isTouched: false });
-    const [phone, setPhone] = useState({ value: 6912345678, isTouched: false });
+    const [phone, setPhone] = useState({ value: '6912345678', isTouched: false });
     const [address, setAddress] = useState({ value: 'Thessaloniki 2', isTouched: false });
     const [gender, setGender] = useState({ value: 'Female', isTouched: false });
     const [year, setYear] = useState({ value: 1980, isTouched: false });
@@ -21,6 +21,18 @@ function ProfileSettings() {
         alert("Changes saved successfully!")
     }
 
+    const isFormValid = () => {
+        return (
+            username.value &&
+            password.value.length >= 8 &&
+            validateEmail(email.value) &&
+            phone.value.length >= 10 &&
+            address.value &&
+            gender.value &&
+            year.value !== ""
+        )
+    }
+
     const isFormTouched = () => {
         return (
             username.isTouched ||
@@ -32,6 +44,8 @@ function ProfileSettings() {
             year.isTouched
         )
     }
+    // console.log(` is form valid: ${isFormValid()}`)
+    // console.log(` is form touched: ${isFormTouched()}`)
 
     const resetInputs = () => {
         setUsername({ ...username, isTouched: false })
