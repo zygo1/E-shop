@@ -4,9 +4,9 @@ import { validateEmail } from "./ValidateEmail";
 import { Link } from "react-router-dom";
 
 
-const PasswordErrorMessage = () => {
+export const PasswordErrorMessage = () => {
     return (
-        <p className="FieldError">Password should have at least 8 characters</p>
+        <p className="FieldError">Password should have at least 8 characters.</p>
     );
 };
 

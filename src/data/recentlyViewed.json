@@ -37,13 +37,13 @@
             "img_path": "assets/xiaomi_poco_x5_pro.jpeg"
         },
         {
-            "id": "sonyx1",
+            "id": "sonyx2",
             "description": "Sony Xperia 1 IV 5G Dual SIM (12GB/256GB)",
             "price": "1159.99",
             "img_path": "assets/sony_xperia_1_iv.jpeg"
         },
         {
-            "id": "samg1",
+            "id": "samg2",
             "description": "Samsung Galaxy S23 Ultra 5G Dual SIM (8GB/256GB)",
             "price": "1189.99",
             "img_path": "assets/samsung_galaxy_s23.jpeg"

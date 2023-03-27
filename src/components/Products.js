@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import React, { useRef } from 'react';
 import Item from "./Item";
 import ProductCategories from "./ProductCategories";
@@ -7,10 +6,6 @@ import myData from '.././data/products.json';
 
 
 function Products() {
-    const [category, setCategory] = useState();
-
-    const ParentToChild = () => { };
-
     const productList = myData.products.technology.map(item => {
         return (
             <Item

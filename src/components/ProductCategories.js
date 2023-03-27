@@ -1,9 +1,8 @@
 import React, { useRef } from "react";
-import { useState } from "react";
 import { FaBox, FaTimes } from 'react-icons/fa';
 
 function ProductCategories() {
-    // Screen width < 968px
+    // Screen width < Xpx
     const categRef = useRef();
     const showPopup = () => {
         categRef.current.classList.toggle('responsive-categories');

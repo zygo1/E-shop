@@ -3,13 +3,13 @@
     flex-direction: row;
     align-items: flex-start ;
     justify-content: flex-start;
-    border: none;
+    border: 2px solid rgb(208, 208, 208);
     border-radius: 8px;
+    box-shadow: 0px 0px 5px rgb(208, 208, 208);;
     gap: 50px;
     margin: 50px 0px 0px 0px;
     padding: 20px;
-    background-color: rgb(208, 208, 208);
-    height: 210px;
+    height: auto;
     width: 65%;
 }
 
@@ -63,6 +63,7 @@
         font-size: 0.72rem;
         height: auto;
         min-width: 280px;
+        margin: 20px auto 0px auto;
     }
 
     .insideContent{

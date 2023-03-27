@@ -1,7 +1,19 @@
 import '.././styles/Settings.css';
 import { useState } from 'react';
 import { validateEmail } from './ValidateEmail';
+import { PasswordErrorMessage } from './SignUp';
 
+const UsernameErrorMessage = () => {
+    return (
+        <p className="FieldError">Username should have at least 2 characters.</p>
+    )
+}
+
+const EmailErrorMessage = () => {
+    return (
+        <p className="FieldError">Email is not valid.</p>
+    )
+}
 
 function ProfileSettings() {
     const [username, setUsername] = useState({ value: 'Jane5', isTouched: false });
@@ -44,8 +56,22 @@ function ProfileSettings() {
             year.isTouched
         )
     }
-    // console.log(` is form valid: ${isFormValid()}`)
-    // console.log(` is form touched: ${isFormTouched()}`)
+
+    function CheckForm() {
+        if (isFormTouched()) {
+            if (isFormValid()) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+        else {
+            return false;
+        }
+
+    }
+
 
     const resetInputs = () => {
         setUsername({ ...username, isTouched: false })
@@ -63,31 +89,39 @@ function ProfileSettings() {
             <form>
                 <fieldset className='settings-fieldset'>
                     <div className='settings-field'>
-                        <label className='label-settings'>Username</label>
+                        <label className='label-settings'>Username <sup>*</sup></label>
                         <input
                             className='input-settings'
                             value={username.value}
                             onChange={(e) => { setUsername({ ...username, value: e.target.value, isTouched: true }) }}
-                            // onBlur={() => { setUsername({ ...username, isTouched: true }) }}
                             placeholder='Username'></input>
+                        {username.value.length < 2 ? <UsernameErrorMessage /> : null}
                     </div>
                     <div className='settings-field'>
-                        <label className='label-settings'>Password</label>
+                        <label className='label-settings'>Password <sup>*</sup></label>
                         <input type='password'
                             className='input-settings'
                             value={password.value}
                             onChange={(e) => { setPassword({ ...password, value: e.target.value, isTouched: true }) }}
-                            // onBlur={() => { setPassword({ ...password, isTouched: true }) }}
                             placeholder='Password'></input>
+                        {password.value.length < 8 ? <PasswordErrorMessage /> : null}
                     </div>
                     <div className='settings-field'>
-                        <label className='label-settings'>E-mail</label>
+                        <label className='label-settings'>E-mail <sup>*</sup></label>
                         <input
                             className='input-settings'
                             value={email.value}
                             onChange={(e) => { setEmail({ ...email, value: e.target.value, isTouched: true }) }}
-                            // onBlur={() => { setEmail({ ...email, isTouched: true }) }}
                             placeholder='E-mail'></input>
+                        {!validateEmail(email.value) ? <EmailErrorMessage /> : null}
+                    </div>
+                    <div className='settings-field'>
+                        <label className='label-settings'>Address <sup>*</sup></label>
+                        <input
+                            className='input-settings'
+                            value={address.value}
+                            onChange={(e) => { setAddress({ ...address, value: e.target.value, isTouched: true }) }}
+                            placeholder='Address'></input>
                     </div>
                     <div className='settings-field'>
                         <label className='label-settings'>Phone Number</label>
@@ -95,17 +129,7 @@ function ProfileSettings() {
                             className='input-settings'
                             value={phone.value}
                             onChange={(e) => { setPhone({ ...phone, value: e.target.value, isTouched: true }) }}
-                            // onBlur={() => { setPhone({ ...phone, isTouched: true }) }}
                             placeholder='Phone Number'></input>
-                    </div>
-                    <div className='settings-field'>
-                        <label className='label-settings'>Address</label>
-                        <input
-                            className='input-settings'
-                            value={address.value}
-                            onChange={(e) => { setAddress({ ...address, value: e.target.value, isTouched: true }) }}
-                            // onBlur={() => { setAddress({ ...address, isTouched: true }) }}
-                            placeholder='Address'></input>
                     </div>
                     <div className='settings-field'>
                         <label className='label-settings'>Gender</label>
@@ -113,7 +137,6 @@ function ProfileSettings() {
                             className='input-settings'
                             value={gender.value}
                             onChange={(e) => { setGender({ ...gender, value: e.target.value, isTouched: true }) }}
-                        // onBlur={() => { setGender({ ...gender, isTouched: true }) }}
                         >
                             <option>Female</option>
                             <option>Male</option>
@@ -121,7 +144,7 @@ function ProfileSettings() {
                         </select>
                     </div>
                     <div className='settings-field'>
-                        <label className='label-settings'>Year of Birth</label>
+                        <label className='label-settings'>Year of Birth <sup>*</sup></label>
                         <select className='input-settings' value={year.value} onChange={(e) => { setYear({ ...year, value: e.target.value, isTouched: true }) }}>
                             <option value="">Select Year</option>
                             {years.map((year) => (
@@ -131,7 +154,7 @@ function ProfileSettings() {
                             ))}
                         </select>
                     </div>
-                    <button className='settings-button' type="submit" disabled={!isFormTouched()} onClick={handleSaveChanges}>Save Changes</button>
+                    <button className='settings-button' type="submit" disabled={!CheckForm()} onClick={handleSaveChanges}>Save Changes</button>
                 </fieldset>
             </form>
         </section>

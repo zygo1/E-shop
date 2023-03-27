@@ -1,13 +1,12 @@
 import ".././styles/Profile.css"
 import ProfileCategories from "./ProfileCategories";
-import { Routes, Route, Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import MyAccount from "./MyAccount";
 import MyOrders from "./MyOrders";
 import ProfileSettings from "./ProfileSettings";
 
 function Profile() {
     const location = useLocation();
-    const isProfilePage = location.pathname.includes('/Profile.js');
     const isAccountPage = location.pathname.includes('/MyAccount.js');
     const isOrdersPage = location.pathname.includes('/MyOrders.js');
     const isSettingsPage = location.pathname.includes('/ProfileSettings.js');
