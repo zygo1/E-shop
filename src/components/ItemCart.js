@@ -1,12 +1,12 @@
 import React, { useContext } from 'react';
-import ".././styles/Items.css";
 import { AddItemContext } from './useAuth';
+import '.././styles/ItemCart.css';
 
 function Item(props) {
     // const { addItem } = useContext(AddItemContext);
 
     return (
-        <div className="item">
+        <div className="itemCart">
             {/* <img id='phone' src={props.source} alt="" /> */}
             <p>{props.name}</p>
             <p>Price: {props.price} €</p>
