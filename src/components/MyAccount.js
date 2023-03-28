@@ -1,6 +1,6 @@
 import Item from "./Item";
 import '.././styles/MyAccount.css';
-import recentlyViewedData from '.././data/recentlyViewed.json'
+import recentlyViewedData from '../data/recentlyViewed.json'
 
 
 function MyAccount() {
@@ -8,6 +8,7 @@ function MyAccount() {
         return (
             <Item
                 key={item.id}
+                id={item.id}
                 name={item.description}
                 price={item.price}
                 source={require(`.././${item.img_path}`)}

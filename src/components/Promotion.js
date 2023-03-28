@@ -1,6 +1,5 @@
 import shopping from '.././assets/web_shopping.svg';
 import ".././styles/Promotion.css";
-import { Link } from 'react-router-dom';
 
 function Promotion() {
     return (

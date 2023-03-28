@@ -1,5 +1,4 @@
 import './App.css';
-import { Routes, Route, useLocation } from 'react-router-dom';
 import Homepage from './components/Homepage';
 import Products from './components/Products';
 import Contact from './components/Contact';
@@ -7,16 +6,17 @@ import Cart from './components/Cart';
 import Profile from './components/Profile';
 import SignUp from './components/SignUp';
 import NavigationBar from './components/NavigationBar';
+import { Routes, Route, useLocation } from 'react-router-dom';
 
 function App() {
   const location = useLocation();
-
   const isSignupPage = location.pathname.includes('/SignUp.js');
+
+
 
   return (
     <div>
       {!isSignupPage && <NavigationBar />}
-      {/* <NavigationBar /> */}
       <Routes>
         <Route path='/' element={<Homepage />} />
         <Route path='/Products.js' element={<Products />} />
@@ -25,8 +25,9 @@ function App() {
         <Route path='/Profile.js/*' element={<Profile />} />
         <Route path='/SignUp.js' element={<SignUp />} />
       </Routes>
-    </div>
+    </div >
+
   );
-}
+};
 
 export default App;

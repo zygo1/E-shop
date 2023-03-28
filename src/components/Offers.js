@@ -8,6 +8,7 @@ function Offers() {
             <section className="info">
                 <div className='offer'>
                     <h4>Offer 1</h4>
+
                     <img src={placeholder} alt="" />
                     <p>Description of the product. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent libero turpis, fringilla quis elit
                         sit amet.</p>

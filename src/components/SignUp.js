@@ -54,7 +54,6 @@ function SignUp() {
     return (
         <section className="sign-up-container">
             <div className='logo-sign-up'>QUICKMART</div>
-            {/*  */}
             <div className="signup">
                 <form onSubmit={handleSubmit}>
                     <fieldset className="fieldset-signup">

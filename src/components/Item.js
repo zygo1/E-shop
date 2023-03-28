@@ -1,15 +1,22 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import ".././styles/Items.css";
+import { AddItemContext } from './useAuth';
 
 function Item(props) {
+    const { addItem, handleClick } = useContext(AddItemContext);
+
     return (
         <div className="item">
-            <img id='phone' src={props.source} alt="" />
+            <img src={props.source} alt="" />
             <p>{props.name}</p>
             <p>Price: {props.price} €</p>
-            <button>Add to Cart</button>
+            <button onClick={() => {
+                addItem(props.id);
+                handleClick(props.id, props.name, props.price, props.source);
+            }}>
+                Add to Cart</button>
         </div>
-    )
-};
+    );
+}
 
 export default Item;

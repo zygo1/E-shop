@@ -3,6 +3,11 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-around; 
+    position: sticky;
+    margin-left: 150px;
+    top: 0;
+    z-index: 999;
+    background-color: var(--secondary);
 }
 
 
@@ -15,6 +20,7 @@
     gap: 80px;
     margin: 5px 0px 5px 15px;
     padding: 5px;
+    position: relative;
 }
 
 .nav-container .logo a{
@@ -67,72 +73,152 @@
   filter: invert(36%) sepia(72%) saturate(1904%) hue-rotate(197deg) brightness(100%) contrast(91%);
 }
 
-  
+/* Cart Index */
+.cart-index{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: red;
+  border-radius: 100%;
+  width: 20px;
+  height: 20px;
+  z-index: 1;
+  position: relative;
+  left: -40px;
+  top: -14px;
+  font-size: 0.8rem;
+}
+
+/* Search */
+.search {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.search > input{
+  border: 2px solid white;
+  border-radius: 15px;
+  padding: 7px;
+  background-color: white;
+  width: 180px;
+  height: 25px;
+  font-size: 0.95rem;
+}
+
+.search > button {
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  margin: 0px 0px 0px 10px;
+  background-color: white;
+}
+
+.search > button:hover{
+  cursor: pointer;
+  background-color: var(--primary);
+  color:white;
+}
+
+.search > button > img{
+  width: 25px;
+  padding: 7px;
+}
+
+.search > button:hover img{
+  filter: invert(100%) sepia(0%) saturate(7454%) hue-rotate(50deg) brightness(112%) contrast(112%);
+}
+
 
 @media (max-width:1168px){
+  .nav-container{
+    margin-left: 80px;
+  }
     .links{
         gap: 20px;
     }
+    .cart-index{
+      position: relative;
+      left: -40px;
+      top: -14px;
+    }
 }
 
 @media (max-width:1024px){
-    .nav-container .logo a{
-        font-size: 1.9rem;
+  .nav-btn {
+      visibility: visible;
+      opacity: 1;
+      font-size: 1.3rem;
     }
 
-    .nav-btn {
-        visibility: visible;
-        opacity: 1;
-        font-size: 1.3rem;
-      }
+  .links {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      background-color: var(--primary);
+      transform: translateX(100vh);
+      position: fixed;
+      top: 0;
+      right: 0;
+      margin: 0px auto 0px auto;
+      height: 100%;
+      width: 35vw;
+      z-index: 2;
+      font-size: 0.575rem;
+      gap: 30px;
+    }
 
-    .links {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        background-color: var(--primary);
-        transform: translateX(100vh);
-        position: fixed;
-        top: 0;
-        right: 0;
-        margin: 0px auto 0px auto;
-        height: 100%;
-        width: 35vw;
-        z-index: 2;
-        font-size: 0.575rem;
-        gap: 30px;
-      }
+    .links a{
+      color: white;
+      font-size: 1rem;
+      margin: 20px auto 0px auto;
+    }
 
-      .links a{
-        color: white;
-        font-size: 1rem;
-        margin: 20px auto 0px auto;
-      }
+    .responsive-nav{
+      transform: none;
+    }
 
-      .responsive-nav{
-        transform: none;
-      }
+    .login-register{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-      .login-register{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-      }
+    .login-register a img,.login-register a img:hover{
+      filter: invert(100%) sepia(0%) saturate(7454%) hue-rotate(50deg) brightness(112%) contrast(112%);
+    }
 
-      .login-register a img,.login-register a img:hover{
-        filter: invert(100%) sepia(0%) saturate(7454%) hue-rotate(50deg) brightness(112%) contrast(112%);
-      }
-}
+    .search > input{
+      width: 70px;
+      height: 10px;
+    }
 
-@media (max-width:1024px){
+    .search > button{
+      width: 27px;
+      height: 27px;
+      padding: 0px;
+    }
+
+    .search > button > img{
+      width: 20px;
+      padding: 5px;
+    }
+
+    .nav-container{
+      margin-left: 30px;
+    }
+
     .nav-container .logo a{
-        font-size: 1.4rem;
+      font-size: 1.8rem;
     }
 
     .right-side-nav a {
-       font-size: 0.8rem;
+      font-size: 1rem;
     }
 
     .right-side-nav{
@@ -140,8 +226,14 @@
         min-width: 55px;
         word-break:break-all;
     }
-}
 
+    .cart-index{
+      position: relative;
+      left: 15px;
+      top: -40px;
+    }
+
+}
 
 a:link{
     text-decoration: none;

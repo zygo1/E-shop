@@ -1,5 +1,3 @@
-
-
 function Order(props) {
     return (
         <div className="mainDiv">

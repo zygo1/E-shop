@@ -67,7 +67,7 @@
     opacity: 0;
   }
 
-  @media (max-width:968px) {
+  @media (max-width:1068px) {
     .categ-btn{
       visibility: visible;
       opacity: 1;

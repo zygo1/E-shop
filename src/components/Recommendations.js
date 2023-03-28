@@ -1,6 +1,6 @@
 import Item from './Item';
 import ".././styles/RecomOffers.css";
-import myData from '.././data/recommendations.json';
+import myData from '../data/recommendations.json';
 
 function Recommendations() {
     const recomList = myData.recommendations.map(item => {
