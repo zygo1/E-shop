@@ -11,8 +11,21 @@
     font-size: 1.3rem;
 }
 
+.emptyCart img{
+    margin: 50px 0px 0px 0px;
+    width: 350px;
+}
+
 @media (max-width:768px){
+    .emptyCart{
+        margin: 50px 0px 0px 0px;
+    }
     .emptyCart p:nth-child(1){
         font-size: 0.9rem;
+    }
+
+    .emptyCart img{
+        margin: 50px 0px 0px 0px;
+        width: 250px;
     }
 }

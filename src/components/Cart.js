@@ -1,4 +1,5 @@
 import ItemCart from "./ItemCart.js"
+import emptyCart from '.././assets/empty_cart.svg';
 import '.././styles/Cart.css';
 import { useContext } from "react";
 import { AddItemContext } from "./useAuth";
@@ -7,6 +8,7 @@ const EmptyCartMessage = () => {
     return (
         <div className="emptyCart">
             <p>Looks like your cart is feeling a bit empty!</p>
+            <img src={emptyCart} />
         </div>
     )
 };
