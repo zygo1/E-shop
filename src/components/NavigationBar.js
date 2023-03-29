@@ -13,11 +13,11 @@ function NavigationBar() {
 
     const showNavbar = () => {
         navRef.current.classList.toggle('responsive-nav');
-    }
+    };
 
     const hideNavbar = () => {
         navRef.current.classList.remove('responsive-nav');
-    }
+    };
 
     return (
         <div className="nav-container">
