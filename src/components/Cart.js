@@ -49,7 +49,6 @@ function Cart() {
                     quantity={item.quantity}
                 />
             </div>
-
         )
     });
 

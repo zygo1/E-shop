@@ -30,7 +30,6 @@ function NavigationBar() {
                 <Link onClick={hideNavbar} to='/Products.js'>Products</Link>
                 <Link onClick={hideNavbar} to='/Contact.js'>Contact</Link>
                 <Link onClick={hideNavbar} to='/Profile.js/MyAccount.js'>Profile</Link>
-
                 <div className="right-side-nav login-register">
                     <Link onClick={hideNavbar} to='/Cart.js'><img src={cart} /></Link>
                     {counter.count > 0 ? <span className="cart-index">{counter.count}</span> : null}
@@ -40,7 +39,6 @@ function NavigationBar() {
                     <FaTimes />
                 </button>
             </div>
-
             <button className='nav-btn' onClick={showNavbar}>
                 <FaBars />
             </button>

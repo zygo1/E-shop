@@ -2,22 +2,23 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around; 
+    justify-content: center; 
     position: sticky;
-    margin-left: 150px;
     top: 0;
     z-index: 999;
     background-color: var(--secondary);
 }
 
+.logo a{
+  margin-right: 60px;
+}
 
 .links{
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
     font-size: 1.3rem;
-    gap: 80px;
+    gap: 120px;
     margin: 5px 0px 5px 15px;
     padding: 5px;
     position: relative;
@@ -114,6 +115,7 @@
   width: 45px;
   height: 45px;
   margin: 0px 0px 0px 10px;
+  padding: 2px;
   background-color: white;
 }
 
@@ -125,7 +127,6 @@
 
 .search > button > img{
   width: 25px;
-  padding: 7px;
 }
 
 .search > button:hover img{
@@ -133,12 +134,9 @@
 }
 
 
-@media (max-width:1168px){
-  .nav-container{
-    margin-left: 80px;
-  }
+@media (max-width:1478px){
     .links{
-        gap: 20px;
+        gap: 60px;
     }
     .cart-index{
       position: relative;
@@ -147,92 +145,120 @@
     }
 }
 
-@media (max-width:1024px){
+@media (max-width:1200px){
+  .links{
+    gap: 10px;
+  }
+  .cart-index{
+    position: relative;
+    left: -40px;
+    top: -14px;
+  }
+}
+
+@media (max-width:996px){
+  .links{
+    gap: 10px;
+    font-size: 1rem;
+  }
+
+  .nav-container .logo a{
+    font-size: 1.8rem;
+  }
+
+  .search input{
+    width: 110px;
+    height: 20px;
+  }
+
+  .search button{
+    width: 40px;
+    height: 40px;
+    padding: 2px;
+  }
+}
+
+@media (max-width:768px){
   .nav-btn {
-      visibility: visible;
-      opacity: 1;
-      font-size: 1.3rem;
-    }
+    visibility: visible;
+    opacity: 1;
+    font-size: 1.3rem;
+  }
 
-  .links {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      background-color: var(--primary);
-      transform: translateX(100vh);
-      position: fixed;
-      top: 0;
-      right: 0;
-      margin: 0px auto 0px auto;
-      height: 100%;
-      width: 35vw;
-      z-index: 2;
-      font-size: 0.575rem;
-      gap: 30px;
-    }
+.links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: var(--primary);
+    transform: translateX(100vh);
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 0px auto 0px auto;
+    height: 100%;
+    width: 35vw;
+    z-index: 2;
+    font-size: 0.575rem;
+    gap: 30px;
+  }
 
-    .links a{
-      color: white;
-      font-size: 1rem;
-      margin: 20px auto 0px auto;
-    }
+  .links a{
+    color: white;
+    font-size: 1rem;
+    margin: 20px auto 0px auto;
+  }
 
-    .responsive-nav{
-      transform: none;
-    }
+  .responsive-nav{
+    transform: none;
+  }
 
-    .login-register{
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-between;
-    }
+  .login-register{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
 
-    .login-register a img,.login-register a img:hover{
-      filter: invert(100%) sepia(0%) saturate(7454%) hue-rotate(50deg) brightness(112%) contrast(112%);
-    }
+  .login-register a img,.login-register a img:hover{
+    filter: invert(100%) sepia(0%) saturate(7454%) hue-rotate(50deg) brightness(112%) contrast(112%);
+  }
 
-    .search > input{
-      width: 70px;
-      height: 10px;
-    }
+  .search > input{
+    width: 70px;
+    height: 10px;
+  }
 
-    .search > button{
-      width: 27px;
-      height: 27px;
-      padding: 0px;
-    }
+  .search > button{
+    width: 30px;
+    height: 30px;
+    padding: 0px;
+  }
 
-    .search > button > img{
-      width: 20px;
-      padding: 5px;
-    }
+  .search > button > img{
+    width: 20px;
+    padding: 5px;
+  }
 
-    .nav-container{
-      margin-left: 30px;
-    }
+  .nav-container .logo a{
+    font-size: 1.8rem;
+  }
 
-    .nav-container .logo a{
-      font-size: 1.8rem;
-    }
+  .right-side-nav a {
+    font-size: 1rem;
+  }
 
-    .right-side-nav a {
-      font-size: 1rem;
-    }
+  .right-side-nav{
+      inline-size: 55px;
+      min-width: 55px;
+      word-break:break-all;
+  }
 
-    .right-side-nav{
-        inline-size: 55px;
-        min-width: 55px;
-        word-break:break-all;
-    }
-
-    .cart-index{
-      position: relative;
-      left: 15px;
-      top: -40px;
-    }
-
+  .cart-index{
+    position: relative;
+    left: 15px;
+    top: -40px;
+  }
 }
 
 a:link{
