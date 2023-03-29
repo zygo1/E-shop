@@ -20,10 +20,10 @@ const AddItemProvider = ({ children }) => {
 
     // HandleClick and Add to Cart
     // TODO: na to checkarw ksana afto
-    const handleClick = (id, name, price, source, quantity = 1) => {
+    const handleClick = (id, name, price, source, quantity, altsource) => {
         const itemExists = cart.some(item => item.name === name);
         if (!itemExists) {
-            setCart([...cart, { id, name, price, source, quantity }]);
+            setCart([...cart, { id, name, price, source, quantity, altsource }]);
         } else {
             const updatedCart = cart.map(item => {
                 if (item.name === name) {
@@ -36,7 +36,7 @@ const AddItemProvider = ({ children }) => {
         }
     };
 
-    console.log(cart);
+    // console.log(cart);
     // end
 
     const providerValue = { addItem, removeItem, counter, handleClick, cart }; // Oi times entos tou object tha einai diathesimes se oli tin efarmogi

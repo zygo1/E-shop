@@ -13,27 +13,47 @@ const EmptyCartMessage = () => {
     )
 };
 
+const OrderSummary = () => {
+    return (
+        <div className="summary">
+            <p>Order Summary</p>
+            <div className="sum-info">
+                <p>City: <span className="city">Thessaloniki</span></p>
+                <p>Total: <span className="totalCost">?</span> €</p>
+                <button>Continue to payment</button>
+            </div>
+        </div>
+    )
+}
+
 function Cart() {
     const { cart } = useContext(AddItemContext);
-    console.log(cart);
+
     const cartList = cart.map(item => {
         return (
-            <ItemCart
-                key={item.id}
-                id={item.id}
-                name={item.name}
-                price={item.price}
-                quantity={item.quantity}
-            // source={require(`.././${item.source}`)}
-            />
+            <div className="item-cart-container">
+                <ItemCart
+                    key={item.id}
+                    id={item.id}
+                    name={item.name}
+                    price={item.price}
+                    altsource={item.altsource}
+                    quantity={item.quantity}
+                />
+            </div>
+
         )
     });
 
     return (
         <>
             <p className='pageHeader'>Cart</p>
-            <section>
-                {cartList.length > 0 ? cartList : <EmptyCartMessage />}
+            <section className="cart-container">
+                <div className="itemList">
+                    <p>Your cart</p>
+                    {cartList.length > 0 ? cartList : <EmptyCartMessage />}
+                </div>
+                {cartList.length > 0 ? <OrderSummary /> : null}
             </section>
         </>
     )

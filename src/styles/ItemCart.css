@@ -7,10 +7,18 @@
     gap: 10px;
     margin: 30px 0px 0px 30px;
     padding: 16px;
-    /* width: 45vw; */
-    border: 2px solid var(--primary);
+    box-shadow: 0px 0px 6px var(--black);
     border-radius: 4px;
   }
+
+  .cart-image{
+    margin: auto;
+    width: 150px;
+}
+
+.itemCart p:nth-child(3){
+  font-weight: 800;
+}
   
   .quantity{
     display: flex;
@@ -34,9 +42,11 @@
     color: white;
     font-size: 1.4rem;
     padding: 0px;
+    box-shadow: 0px 0px 5px var(--black);
   }
 
   .quantity button:hover{
     background-color: var(--hover);
     cursor: pointer;
+
   }

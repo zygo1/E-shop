@@ -8,13 +8,14 @@ import myData from '../data/products.json';
 function Products() {
 
     const productList = myData.products.technology.map(item => {
+
         return (
             <Item
                 key={item.id}
                 id={item.id}
                 name={item.name}
                 price={item.price}
-                // altsource={item.img_path}
+                altsource={item.img_path}
                 source={require(`.././${item.img_path}`)}
             />
         )

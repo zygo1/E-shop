@@ -9,6 +9,7 @@ function Recommendations() {
                 key={item.id}
                 name={item.name}
                 price={item.price}
+                altsource={item.img_path}
                 source={require(`.././${item.img_path}`)}
             />
         )

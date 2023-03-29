@@ -11,6 +11,7 @@ function MyAccount() {
                 id={item.id}
                 name={item.description}
                 price={item.price}
+                altsource={item.img_path}
                 source={require(`.././${item.img_path}`)}
             />
         )

@@ -12,7 +12,7 @@ function Offers() {
                     <img src={placeholder} alt="" />
                     <p>Description of the product. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent libero turpis, fringilla quis elit
                         sit amet.</p>
-                    <button className="infoButton">Add to Cart</button>
+                    <button className="infoButton">Show details</button>
                 </div>
                 <div>
                     Text for offer 1
@@ -25,14 +25,14 @@ function Offers() {
                     <img src={placeholder} alt="" />
                     <p>Description of the product. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent libero turpis, fringilla quis elit
                         sit amet.</p>
-                    <button className="infoButton">Add to Cart</button>
+                    <button className="infoButton">Show details</button>
                 </div>
                 <div className='offer'>
                     <h4>Offer 3</h4>
                     <img src={placeholder} alt="" />
                     <p>Description of the product. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent libero turpis, fringilla quis elit
                         sit amet.</p>
-                    <button className="infoButton">Add to Cart</button>
+                    <button className="infoButton">Show details</button>
                 </div>
                 <div>
                     Text for offer 3
