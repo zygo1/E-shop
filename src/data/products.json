@@ -2,21 +2,33 @@
     "products": {
         "technology": [
             {
-                "id": "samg1",
-                "name": "Samsung Galaxy S23 Ultra 5G Dual SIM (8GB/256GB)",
-                "price": "1189.99",
-                "img_path": "assets/samsung_galaxy_s23.jpeg"
+                "id": "xiaomip1",
+                "name": "Xiaomi Poco X5 Pro 5G Dual SIM (8GB/256GB)",
+                "price": "374.99",
+                "img_path": "assets/xiaomi_poco_x5_pro.jpeg"
+            },
+            {
+                "id": "iphone12_5g",
+                "name": "Apple iPhone 12 5G (4GB/128GB)",
+                "price": "799.99",
+                "img_path": "assets/iphone_12.jpeg"
+            },
+            {
+                "id": "iphone14pro",
+                "name": "Apple iPhone 14 Pro 5G (6GB/128GB)",
+                "price": "1249.99",
+                "img_path": "assets/iphone_14_pro.jpeg"
             },
             {
                 "id": "oneplus10",
                 "name": "OnePlus 10 Pro 5G Dual SIM (12GB/256GB)",
-                "price": "779.90",
+                "price": "779.99",
                 "img_path": "assets/oneplus_10_pro_5g_12gb_256gb.jpeg"
             },
             {
                 "id": "tcl1",
                 "name": "TCL 306 Dual SIM (3GB/32GB)",
-                "price": "177.90",
+                "price": "177.99",
                 "img_path": "assets/tcl_306_dual_sim_3gb_32gb.jpeg"
             },
             {
@@ -32,16 +44,16 @@
                 "img_path": "assets/sony_xperia_10_iv.jpeg"
             },
             {
-                "id": "xiaomip1",
-                "name": "Xiaomi Poco X5 Pro 5G Dual SIM (8GB/256GB)",
-                "price": "374.99",
-                "img_path": "assets/xiaomi_poco_x5_pro.jpeg"
-            },
-            {
                 "id": "xiamired1",
                 "name": "Xiaomi Redmi Note 11S NFC Dual SIM (6GB/64GB)",
-                "price": "199.40",
+                "price": "199.99",
                 "img_path": "assets/xiaomi_redmi_note11s.jpeg"
+            },
+            {
+                "id": "samg1",
+                "name": "Samsung Galaxy S23 Ultra 5G Dual SIM (8GB/256GB)",
+                "price": "1189.99",
+                "img_path": "assets/samsung_galaxy_s23.jpeg"
             }
         ],
         "home_and_garden": [

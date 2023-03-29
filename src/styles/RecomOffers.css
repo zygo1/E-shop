@@ -122,10 +122,10 @@
   }
 
   .infoButton{
-      width: 70px;
-      height: 20px;
+      width: 80px;
+      height: 30px;
       font-size: 0.675rem;
       text-align: center;
-      padding: 0px;
+      padding: 4px;
   }
   }

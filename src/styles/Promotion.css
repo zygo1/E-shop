@@ -31,7 +31,7 @@
     margin: 5px;
   }
   
-  .order-button:hover, .infoButton:hover{
+  .order-button:hover, .infoButton:hover,.infoButton:active{
     background-color: var(--hover);
     transition: 0.15s ease-in-out;
     cursor: pointer;

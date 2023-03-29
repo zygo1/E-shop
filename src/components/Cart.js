@@ -16,16 +16,18 @@ const EmptyCartMessage = () => {
 const OrderSummary = () => {
     const { cart } = useContext(AddItemContext);
 
-    const totalSum = cart.map(item => {
+    const totalSumArr = cart.map(item => {
         let sum = item.price * item.quantity;
+        return sum
     });
+    const totalSum = totalSumArr.reduce((prev, curr) => prev + curr, 0).toFixed(2);
 
     return (
         <div className="summary">
             <p>Order Summary</p>
             <div className="sum-info">
                 <p>Location: <span className="city">Thessaloniki</span></p>
-                <p>Total: <span className="totalCost">?</span> €</p>
+                <p>Total: <span className="totalCost">{totalSum}</span> €</p>
                 <button>Continue to payment</button>
             </div>
         </div>
@@ -56,7 +58,7 @@ function Cart() {
             <p className='pageHeader'>Cart</p>
             <section className="cart-container">
                 <div className="itemList">
-                    <p>Your cart</p>
+                    <p className="yourCart">Your cart</p>
                     {cartList.length > 0 ? cartList : <EmptyCartMessage />}
                 </div>
                 {cartList.length > 0 ? <OrderSummary /> : null}
