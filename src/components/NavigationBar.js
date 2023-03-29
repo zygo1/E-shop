@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useRef, useContext } from 'react';
-import { AddItemContext } from './useAuth';
+import { AddItemContext } from './useCart';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import cart from '.././assets/shoppingcart.svg';
 import search from '.././assets/search.svg';

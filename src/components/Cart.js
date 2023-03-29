@@ -2,7 +2,7 @@ import ItemCart from "./ItemCart.js"
 import emptyCart from '.././assets/empty_cart.svg';
 import '.././styles/Cart.css';
 import { useContext } from "react";
-import { AddItemContext } from "./useAuth";
+import { AddItemContext } from "./useCart";
 
 const EmptyCartMessage = () => {
     return (
@@ -14,11 +14,17 @@ const EmptyCartMessage = () => {
 };
 
 const OrderSummary = () => {
+    const { cart } = useContext(AddItemContext);
+
+    const totalSum = cart.map(item => {
+        let sum = item.price * item.quantity;
+    });
+
     return (
         <div className="summary">
             <p>Order Summary</p>
             <div className="sum-info">
-                <p>City: <span className="city">Thessaloniki</span></p>
+                <p>Location: <span className="city">Thessaloniki</span></p>
                 <p>Total: <span className="totalCost">?</span> €</p>
                 <button>Continue to payment</button>
             </div>

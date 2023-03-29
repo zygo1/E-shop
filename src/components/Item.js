@@ -1,9 +1,9 @@
 import React, { useContext, useState } from 'react';
 import ".././styles/Items.css";
-import { AddItemContext } from './useAuth';
+import { AddItemContext } from './useCart';
 
 function Item(props) {
-    const { addItem, handleClick } = useContext(AddItemContext);
+    const { addItem, handleAddClick } = useContext(AddItemContext);
 
     return (
         <div className="item">
@@ -12,7 +12,7 @@ function Item(props) {
             <p>Price: {props.price} €</p>
             <button onClick={() => {
                 addItem(props.id);
-                handleClick(props.id, props.name, props.price, props.source, 1, props.altsource);
+                handleAddClick(props.id, props.name, props.price, props.source, 1, props.altsource);
             }}>
                 Add to Cart</button>
         </div>

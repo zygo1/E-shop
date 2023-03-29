@@ -18,15 +18,23 @@ const AddItemProvider = ({ children }) => {
         counter.count > 0 ? setCounter({ ...counter, count: counter.count - 1 }) : setCounter(0);
     };
 
-    // HandleClick and Add to Cart
-    // TODO: na to checkarw ksana afto
-    const handleClick = (id, name, price, source, quantity, altsource) => {
-        const itemExists = cart.some(item => item.name === name);
+    const handleRemoveClick = (id, name, price, source, quantity, altsource) => {
+        const updatedCart = cart.map(item => {
+            if (item.id === id && item.quantity > 0) {
+                item.quantity--;
+            }
+            return item;
+        }).filter(item => item.quantity > 0);
+        setCart(updatedCart);
+    }
+
+    const handleAddClick = (id, name, price, source, quantity, altsource) => {
+        const itemExists = cart.some(item => item.id === id);
         if (!itemExists) {
             setCart([...cart, { id, name, price, source, quantity, altsource }]);
         } else {
             const updatedCart = cart.map(item => {
-                if (item.name === name) {
+                if (item.id === id) {
                     return { ...item, quantity: item.quantity + 1 };
                 } else {
                     return item;
@@ -36,10 +44,7 @@ const AddItemProvider = ({ children }) => {
         }
     };
 
-    // console.log(cart);
-    // end
-
-    const providerValue = { addItem, removeItem, counter, handleClick, cart }; // Oi times entos tou object tha einai diathesimes se oli tin efarmogi
+    const providerValue = { addItem, removeItem, counter, handleRemoveClick, handleAddClick, cart }; // Oi times entos tou object tha einai diathesimes se oli tin efarmogi
 
     return (                                                 // afou to authcontext.provider kanei wrap to App
         <AddItemContext.Provider value={providerValue}>

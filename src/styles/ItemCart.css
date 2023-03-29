@@ -50,3 +50,18 @@
     cursor: pointer;
 
   }
+
+  @media (max-width:768px) {
+    .itemCart{
+      width: auto;
+    }
+
+    .cart-image{
+      width: 80px;
+    }
+
+    .itemCart p {
+      font-size: 0.85rem;
+    }
+
+  }

@@ -5,7 +5,7 @@
 }
 
 .itemList{
-    max-width: 500px;
+    max-width: 600px;
 }
 
 /*! lathos */
@@ -14,10 +14,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    box-shadow: 0px 0px 5px var(--black);
-    border-radius: 4px;
+    border-left: 1px solid var(--black);
+    border-radius: 0px;
     padding: 16px;
-    margin: 55px 0px 0px 0px;
+    margin: 55px 0px 0px 20px;
+    position: sticky;
+    top: 60px;
 }   
 
 .summary > p{
@@ -40,6 +42,7 @@
     padding: 10px;
     background-color: var(--primary);
     box-shadow: 0px 0px 5px var(--black);
+    color: white;
 }
 
 .sum-info > button:hover{
@@ -94,4 +97,19 @@
         margin: 50px 0px 0px 0px;
         width: 250px;
     }
+
+    .summary, .city{
+        font-size: 0.8rem;
+    }
+
+    .totalCost,.sum-info > p:nth-child(2){
+        font-size: 0.95rem;
+        margin: 15px 0px 0px 0px;
+    }
+
+    .sum-info button {
+        padding: 4px;
+    }
+
+
 }
