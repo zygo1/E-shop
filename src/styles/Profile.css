@@ -1,132 +1,131 @@
 /* Profile - Categories */
 .categoriesProfile{
-    width: 180px;
-    height: 180px;
-    background-color: var(--itemColor);
-    border-radius: 5px;
-    border: none;
-    box-shadow: 0px 0px 4px  rgb(104, 104, 104);
-    padding: 5px 10px 10px 10px;
-    margin: 25px;
-    min-width: 100px;
-  }
+  width: 180px;
+  height: 180px;
+  background-color: var(--itemColor);
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0px 0px 4px  rgb(104, 104, 104);
+  padding: 5px 10px 10px 10px;
+  margin: 25px;
+  min-width: 100px;
+}
 
 .profile-categ-items a{
-  color: black;
+color: black;
 }
 
 .profile-categ-items:hover a {
-  color: white;
+color: white;
 }
 
-  /* Profile */
+/* Profile */
 .profile-account-container{
-  display: grid;
-  grid-template-columns:repeat(2,auto) ;
-  grid-template-rows:repeat(1,auto) ;
-  justify-content: left;
-  gap: 50px;
+display: grid;
+grid-template-columns:repeat(2,auto) ;
+grid-template-rows:repeat(1,auto) ;
+justify-content: left;
+gap: 50px;
 }
 
 .profileDiv{
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  margin: 40px 0px 0px 50px;
-  padding: 5px;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+justify-content: center;
+margin: 40px 0px 0px 50px;
+padding: 5px;
 }
 
 .profileStats{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 5px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+margin: 5px;
 }
 
 .profileCircle{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 10px solid rgb(226, 226, 226);
-  border-radius: 50%;
-  width: 100px;
-  height: 100px;
-  margin: 0px 0px 10px 0px;
-  background-color: rgb(113, 158, 255);
+display: flex;
+align-items: center;
+justify-content: center;
+border: 10px solid rgb(226, 226, 226);
+border-radius: 50%;
+width: 100px;
+height: 100px;
+margin: 0px 0px 10px 0px;
+background-color: rgb(113, 158, 255);
 }
 
 .profileCircle > img{
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  position: relative;
+width: 100px;
+height: 100px;
+border-radius: 50%;
+position: relative;
 }
 
 .nameLetter{
-  font-family: 'Montserrat', sans-serif;
-  color: var(--itemColor);
-  font-size: 2.5rem;
-  font-weight: 700;
+font-family: 'Montserrat', sans-serif;
+color: var(--itemColor);
+font-size: 2.5rem;
+font-weight: 700;
 }
 
 .profileStats > p {
-  font-size: 1.1rem;
+font-size: 1.1rem;
 }
 
 .categoriesProfile li {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 5px;
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: flex-start;
+gap: 5px;
 }
 .categoriesProfile li > img{
-  width:25px;
+width:25px;
 }
-  
+
 @media (max-width:968px){
 .profile-account-container{
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 0px;
+}
+.categoriesProfile{
+  padding: 0px 15px 0px 0px;
+  width: 120px;
+}
+
+.categoriesProfile{
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
+  background-color: var(--primary);
+  transform: translateY(100vh);
+  position: fixed;
+  bottom: -100px;
+  right: -10px;
+  margin: 0px;
+  height: 100vh;
+  width: 100%;
+  z-index: 2;
   gap: 0px;
 }
-  .categoriesProfile{
-    padding: 0px 15px 0px 0px;
-    width: 120px;
-  }
 
-  .categoriesProfile{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    background-color: var(--primary);
-    transform: translateY(100vh);
-    position: fixed;
-    bottom: -100px;
-    right: -10px;
-    margin: 0px;
-    height: 100vh;
-    width: 100%;
-    z-index: 2;
-    gap: 0px;
-    
-  }
+.categoriesProfile a {
+  color: white;
+  margin-top: 30px;
+}
 
-  .categoriesProfile a {
-    color: white;
-    margin-top: 30px;
-  }
+.categoriesProfile img {
+  margin-top: 30px;
+  filter: invert(100%) sepia(0%) saturate(7454%) hue-rotate(50deg) brightness(112%) contrast(112%);
+}
 
-  .categoriesProfile img {
-    margin-top: 30px;
-    filter: invert(100%) sepia(0%) saturate(7454%) hue-rotate(50deg) brightness(112%) contrast(112%);
-  }
-
-  .responsive-categories{
-    transform: none;
-  }
+.responsive-categories{
+  transform: none;
+}
 }

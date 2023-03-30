@@ -5,14 +5,17 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import AddItemProvider from './components/useCart';
+import ThemeProvider from './components/useTheme';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <AddItemProvider>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </AddItemProvider>
+  <ThemeProvider>
+    <AddItemProvider>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </AddItemProvider>
+  </ThemeProvider>
 );
 
 reportWebVitals();

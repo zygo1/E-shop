@@ -1,115 +1,115 @@
-  .items{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    width: 85%;
-    margin: 10px auto 0px auto;
-    padding-top: 15px;
-    padding-left: 10px;
-    background-color: var(--secondary);
-  } 
+.items{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 85%;
+  margin: 10px auto 0px auto;
+  padding-top: 15px;
+  padding-left: 10px;
+  background-color: var(--secondary);
+} 
+
+.items h2 {
+  width: 100%;
+  color:var(--black);
+  margin-bottom: 7px;
+  font-family: 'Montserrat', sans-serif;
+} 
+
+.item{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-basis: calc(33.33% - 100px);
+  min-width: 160px;
+  min-height: 290px;
+  margin: 15px;
+  padding: 15px;
+  background-color: var(--itemColor);
+  box-shadow: 0px 0px 3px rgb(104, 104, 104);
+  border-radius: 5px;
+  font-family: 'Arial';
+} 
+
+.item:hover{
+  cursor: pointer;
+}
+
+.item > p:nth-child(2){
+  margin-top: 15px;
+  font-size: 0.9rem;
+}
+
+.item > p:nth-child(3){
+  margin-top: 15px;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.item img{
+  width: 100px;
+  margin: auto;
+}
+
+.item button{
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 40px;
+  border: none;
+  border-radius: 7px;
+  background-color: var(--primary);
+  color: var(--white);
+  margin: 15px auto 0px auto;
+  padding: 0px 15px 0px 15px;
+  font-size: 0.95rem;
+
+}
+
+.item button:hover{
+  cursor: pointer;
+  background-color: var(--hover);
+  transition: 0.1s ease-in-out;
+}
   
+@media (max-width:968px){
   .items h2 {
-    width: 100%;
-    color:var(--black);
-    margin-bottom: 7px;
-    font-family: 'Montserrat', sans-serif;
-  } 
-  
-  .item{
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: center;
-    flex-wrap: wrap;
-    flex-basis: calc(33.33% - 100px);
-    min-width: 160px;
-    min-height: 290px;
-    margin: 15px;
-    padding: 15px;
-    background-color: var(--itemColor);
-    box-shadow: 0px 0px 3px rgb(104, 104, 104);
-    border-radius: 5px;
-    font-family: 'Arial';
-  } 
-  
-  .item:hover{
-    cursor: pointer;
+      font-size: 0.95rem;
   }
-  
+
+  .item{
+      margin: 10px 10px 10px 0px;
+      padding: 8px;
+      min-width: 25vh;
+      font-size: 0.675rem;
+      min-width: 130px;
+      min-height: 250px;
+  }
+
   .item > p:nth-child(2){
-    margin-top: 15px;
-    font-size: 0.9rem;
+    margin-top: 10px;
+    font-size: 0.8rem;
+    flex-wrap: wrap;
   }
 
   .item > p:nth-child(3){
-    margin-top: 15px;
-    font-size: 1rem;
+    margin-top: 10px;
+    font-size: 0.8rem;
     font-weight: 700;
   }
-  
-  .item img{
-    width: 100px;
-    margin: auto;
-  }
-  
+
   .item button{
-    display: flex;
-    flex-direction: row;
-    flex-shrink: 1;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    height: 40px;
-    border: none;
-    border-radius: 7px;
-    background-color: var(--primary);
-    color: var(--white);
-    margin: 15px auto 0px auto;
-    padding: 0px 15px 0px 15px;
-    font-size: 0.95rem;
-  
+      font-size: 0.675rem;
+      height: 30px;
   }
-  
-  .item button:hover{
-    cursor: pointer;
-    background-color: var(--hover);
-    transition: 0.1s ease-in-out;
+
+  .item img{
+      width: 70px;
   }
-    
-  @media (max-width:968px){
-    .items h2 {
-        font-size: 0.95rem;
-    }
-  
-    .item{
-        margin: 10px 10px 10px 0px;
-        padding: 8px;
-        min-width: 25vh;
-        font-size: 0.675rem;
-        min-width: 130px;
-        min-height: 250px;
-    }
-
-    .item > p:nth-child(2){
-      margin-top: 10px;
-      font-size: 0.8rem;
-      flex-wrap: wrap;
-    }
-
-    .item > p:nth-child(3){
-      margin-top: 10px;
-      font-size: 0.8rem;
-      font-weight: 700;
-    }
-  
-    .item button{
-        font-size: 0.675rem;
-        height: 30px;
-    }
-  
-    .item img{
-        width: 70px;
-    }
-  } 
+} 

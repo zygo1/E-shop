@@ -1,153 +1,142 @@
 .nav-container{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center; 
-    position: sticky;
-    top: 0;
-    z-index: 999;
-    background-color: var(--secondary);
-}
-
-.logo a{
-  margin-right: 60px;
-}
-
-.links{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    font-size: 1.3rem;
-    gap: 120px;
-    margin: 5px 0px 5px 15px;
-    padding: 5px;
-    position: relative;
-}
-
-.nav-container .logo a{
-    color: var(--primary);
-    font-size: 2.4rem;
-    font-weight: 600;
-}
-
-.right-side-nav a {
-    color: var(--black);
-}
-
-.links a{
-    color: var(--primary);
-    font-weight: 500;
-}
-
-.nav-btn {
-    padding: 5px;
-    cursor: pointer;
-    background-color: transparent;
-    border: none;
-    outline: none;
-    visibility: hidden;
-    opacity: 0;
-    font-size: 1.5rem;
-  }
-
-  .nav-close-btn{
-    color: white;
-  }
-
-.login:hover, .register:hover{
-  color: var(--primary);
-}
-
-.login-register{
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-  width: 80px;
+  justify-content: center; 
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: var(--secondary);
+}
+
+.logo a{
+margin-right: 60px;
+}
+
+.links{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 1.3rem;
+  gap: 120px;
+  margin: 5px 0px 5px 15px;
+  padding: 5px;
+  position: relative;
+}
+
+.nav-container .logo a{
+  color: var(--primary);
+  font-size: 2.4rem;
+  font-weight: 600;
+}
+
+.right-side-nav a {
+  color: var(--black);
+}
+
+.links a{
+  color: var(--primary);
+  font-weight: 500;
+}
+
+.nav-btn {
+  padding: 5px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  visibility: hidden;
+  opacity: 0;
+  font-size: 1.5rem;
+}
+
+.nav-close-btn{
+  color: white;
+}
+
+.login:hover, .register:hover{
+color: var(--primary);
+}
+
+.login-register{
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: space-between;
+width: 80px;
 }
 
 .login-register a img{
-  width: 30px;
+width: 30px;
 }
 
 .login-register a img:hover{
-  filter: invert(36%) sepia(72%) saturate(1904%) hue-rotate(197deg) brightness(100%) contrast(91%);
+filter: invert(36%) sepia(72%) saturate(1904%) hue-rotate(197deg) brightness(100%) contrast(91%)!important;
 }
 
 /* Cart Index */
 .cart-index{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  background-color: red;
-  border-radius: 100%;
-  width: 20px;
-  height: 20px;
-  z-index: 1;
-  position: relative;
-  left: -40px;
-  top: -14px;
-  font-size: 0.8rem;
+display: flex;
+align-items: center;
+justify-content: center;
+color: white;
+background-color: red;
+border-radius: 100%;
+width: 20px;
+height: 20px;
+z-index: 1;
+position: relative;
+left: -40px;
+top: -14px;
+font-size: 0.8rem;
 }
 
 /* Search */
 .search {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
 }
 
 .search > input{
-  border: 2px solid white;
-  border-radius: 15px;
-  padding: 7px;
-  background-color: white;
-  width: 180px;
-  height: 25px;
-  font-size: 0.95rem;
+border: 2px solid white;
+border-radius: 15px;
+padding: 7px;
+background-color: white;
+width: 180px;
+height: 25px;
+font-size: 0.95rem;
 }
 
 .search > button {
-  border: none;
-  border-radius: 50%;
-  width: 45px;
-  height: 45px;
-  margin: 0px 0px 0px 10px;
-  padding: 2px;
-  background-color: white;
+border: none;
+border-radius: 50%;
+width: 45px;
+height: 45px;
+margin: 0px 0px 0px 10px;
+padding: 2px;
+background-color: white;
 }
 
 .search > button:hover{
-  cursor: pointer;
-  background-color: var(--primary);
-  color:white;
+cursor: pointer;
+background-color: var(--primary)!important;
+color:white;
 }
 
 .search > button > img{
-  width: 25px;
+width: 25px;
 }
 
 .search > button:hover img{
-  filter: invert(100%) sepia(0%) saturate(7454%) hue-rotate(50deg) brightness(112%) contrast(112%);
+filter: invert(100%) sepia(0%) saturate(7454%) hue-rotate(50deg) brightness(112%) contrast(112%);
 }
 
 
 @media (max-width:1478px){
-    .links{
-        gap: 60px;
-    }
-    .cart-index{
-      position: relative;
-      left: -40px;
-      top: -14px;
-    }
-}
-
-@media (max-width:1200px){
   .links{
-    gap: 10px;
+      gap: 60px;
   }
   .cart-index{
     position: relative;
@@ -156,125 +145,136 @@
   }
 }
 
+@media (max-width:1200px){
+.links{
+  gap: 10px;
+}
+.cart-index{
+  position: relative;
+  left: -40px;
+  top: -14px;
+}
+}
+
 @media (max-width:996px){
-  .links{
-    gap: 10px;
-    font-size: 1rem;
-  }
+.links{
+  gap: 10px;
+  font-size: 1rem;
+}
 
-  .nav-container .logo a{
-    font-size: 1.8rem;
-  }
+.nav-container .logo a{
+  font-size: 1.8rem;
+}
 
-  .search input{
-    width: 110px;
-    height: 20px;
-  }
+.search input{
+  width: 110px;
+  height: 20px;
+}
 
-  .search button{
-    width: 40px;
-    height: 40px;
-    padding: 2px;
-  }
+.search button{
+  width: 40px;
+  height: 40px;
+  padding: 2px;
+}
 }
 
 @media (max-width:768px){
-  .nav-btn {
-    visibility: visible;
-    opacity: 1;
-    font-size: 1.3rem;
-  }
+.nav-btn {
+  visibility: visible;
+  opacity: 1;
+  font-size: 1.3rem;
+}
 
 .links {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    background-color: var(--primary);
-    transform: translateX(100vh);
-    position: fixed;
-    top: 0;
-    right: 0;
-    margin: 0px auto 0px auto;
-    height: 100%;
-    width: 35vw;
-    z-index: 2;
-    font-size: 0.575rem;
-    gap: 30px;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: var(--darkGray);
+  transform: translateX(100vh);
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: 0px auto 0px auto;
+  height: 100%;
+  width: 35vw;
+  z-index: 2;
+  font-size: 0.575rem;
+  gap: 30px;
+}
 
-  .links a{
-    color: white;
-    font-size: 1rem;
-    margin: 20px auto 0px auto;
-  }
+.links a{
+  color: white;
+  font-size: 1rem;
+  margin: 20px auto 0px auto;
+}
 
-  .responsive-nav{
-    transform: none;
-  }
+.responsive-nav{
+  transform: none;
+}
 
-  .login-register{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-  }
+.login-register{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
 
-  .login-register a img,.login-register a img:hover{
-    filter: invert(100%) sepia(0%) saturate(7454%) hue-rotate(50deg) brightness(112%) contrast(112%);
-  }
+.login-register a img,.login-register a img:hover{
+  filter: invert(100%) sepia(0%) saturate(7454%) hue-rotate(50deg) brightness(112%) contrast(112%);
+}
 
-  .search > input{
-    width: 70px;
-    height: 10px;
-  }
+.search > input{
+  width: 70px;
+  height: 10px;
+}
 
-  .search > button{
-    width: 30px;
-    height: 30px;
-    padding: 0px;
-  }
+.search > button{
+  width: 30px;
+  height: 30px;
+  padding: 0px;
+}
 
-  .search > button > img{
-    width: 20px;
-    padding: 5px;
-  }
+.search > button > img{
+  width: 20px;
+  padding: 5px;
+}
 
-  .nav-container .logo a{
-    font-size: 1.8rem;
-  }
+.nav-container .logo a{
+  font-size: 1.8rem;
+}
 
-  .right-side-nav a {
-    font-size: 1rem;
-  }
+.right-side-nav a {
+  font-size: 1rem;
+}
 
-  .right-side-nav{
-      inline-size: 55px;
-      min-width: 55px;
-      word-break:break-all;
-  }
+.right-side-nav{
+    inline-size: 55px;
+    min-width: 55px;
+    word-break:break-all;
+}
 
-  .cart-index{
-    position: relative;
-    left: 15px;
-    top: -40px;
-  }
+.cart-index{
+  position: relative;
+  left: 15px;
+  top: -40px;
+}
 }
 
 a:link{
-    text-decoration: none;
-  }
-  
-  a:visited{
-    text-decoration: none;
-  }
-  a:hover{
-    text-decoration: none;
-  }
-  a:active{
-    text-decoration: none;
-  }
-  
-  a{
-    color:var(--white);
-  }
+  text-decoration: none;
+}
+
+a:visited{
+  text-decoration: none;
+}
+a:hover{
+  text-decoration: none;
+}
+a:active{
+  text-decoration: none;
+}
+
+a{
+  color:var(--white);
+}

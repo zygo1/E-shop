@@ -1,12 +1,15 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import ".././styles/Items.css";
 import { AddItemContext } from './useCart';
+import { ThemeContext } from './useTheme';
 
 function Item(props) {
     const { addItem, handleAddClick } = useContext(AddItemContext);
 
+    const { theme } = useContext(ThemeContext);
+
     return (
-        <div className="item">
+        <div className="item" style={{ backgroundColor: theme === 'light' ? null : 'var(--darkGray)' }}>
             <img src={props.source} alt="" />
             <p>{props.name}</p>
             <p>Price: {props.price} €</p>

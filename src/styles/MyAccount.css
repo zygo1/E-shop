@@ -11,7 +11,6 @@
 
 .recentOrders, .recentViews{
     text-align: flex-start;
-    /* background-color: rgb(208, 208, 208); */
     width: 650px;
     height: 450px;
     border: 2px solid rgb(208, 208, 208);

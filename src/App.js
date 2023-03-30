@@ -6,16 +6,21 @@ import Cart from './components/Cart';
 import Profile from './components/Profile';
 import SignUp from './components/SignUp';
 import NavigationBar from './components/NavigationBar';
+import { ThemeContext } from './components/useTheme';
+import { useContext } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 
 function App() {
   const location = useLocation();
   const isSignupPage = location.pathname.includes('/SignUp.js');
 
-
+  const { theme } = useContext(ThemeContext);
 
   return (
-    <div>
+    <div style={{
+      backgroundColor: theme === 'light' ? 'var(--secondary)' : 'var(--veryDarkGray)',
+      color: theme === 'dark' ? 'white' : undefined
+    }}>
       {!isSignupPage && <NavigationBar />}
       <Routes>
         <Route path='/' element={<Homepage />} />
