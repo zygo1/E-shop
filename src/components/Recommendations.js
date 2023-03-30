@@ -7,6 +7,7 @@ function Recommendations() {
         return (
             <Item
                 key={item.id}
+                id={item.id}
                 name={item.name}
                 price={item.price}
                 altsource={item.img_path}

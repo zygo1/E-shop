@@ -57,7 +57,7 @@ function Cart() {
             <p className='pageHeader'>Cart</p>
             <section className="cart-container">
                 <div className="itemList">
-                    <p className="yourCart">Your cart</p>
+                    {cartList.length > 0 ? <p className="yourCart">Your cart</p> : null}
                     {cartList.length > 0 ? cartList : <EmptyCartMessage />}
                 </div>
                 {cartList.length > 0 ? <OrderSummary /> : null}
