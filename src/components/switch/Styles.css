@@ -22,8 +22,8 @@
     right: 0;
     bottom: 0;
     background-color: #ccc;
-    -webkit-transition: .4s;
-    transition: .5s;
+    -webkit-transition: .6s;
+    transition: .6s;
 }
 
 .slider:before {
@@ -34,8 +34,26 @@
     left: 4px;
     bottom: 4px;
     background-color: white;
-    -webkit-transition: .4s;
-    transition: .5s;
+    -webkit-transition: .6s;
+    transition: .6s;
+}
+
+.moon{
+    position: absolute;
+    top: 5px;
+    left:5px;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+}
+
+.sun{
+    position: absolute;
+    top: 5px;
+    left:30px;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
 }
 
 input:checked + .slider {
@@ -60,6 +78,13 @@ input:checked + .slider:before {
     border-radius: 50%;
 }
 
+@media (max-width:996px) {
+    .moon-sun{
+        font-size: 1.3rem;
+    }
+}
+
+
 @media (max-width:768px){
     .switch{
         position: relative;
@@ -73,4 +98,11 @@ input:checked + .slider:before {
         height: 18px;
         width: 18px;
     }
+
+    .moon-sun{
+        font-size: 1.1rem;
+        top:3px;
+        left:4px;
+    }
+
 }

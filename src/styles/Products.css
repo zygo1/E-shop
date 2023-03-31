@@ -13,7 +13,6 @@
 .products-header-container h2 {
   font-size: 1.5rem;
   font-weight: 500;
-  color: rgb(88, 88, 88);
   margin: 50px 0px 0px 120px;
 }
 
@@ -39,14 +38,17 @@
   padding: 0px;
 }
 
-.categories li, .categoriesProfile li{
+.categories-list li, .categoriesProfile li{
   border: none;
   border-radius: 5px;
   padding: 7px;
+}
+
+.categories-list{
   color: var(--black);
 }
 
-.categories li:hover, .categoriesProfile li:hover{
+.categories-list li:hover, .categoriesProfile li:hover{
   color: var(--secondary);
   background-color: var(--primary);
   cursor: pointer;

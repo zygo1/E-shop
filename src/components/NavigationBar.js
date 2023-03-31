@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useRef, useContext } from 'react';
 import { AddItemContext } from './useCart';
 import { ThemeContext } from './useTheme';
-import { FaBars, FaTimes } from 'react-icons/fa';
+import { FaBars, FaTimes, FaMoon, FaSun } from 'react-icons/fa';
 import cart from '.././assets/shoppingcart.svg';
 import search from '.././assets/search.svg';
 import '.././styles/NavigationBar.css';
@@ -31,7 +31,7 @@ function NavigationBar() {
                     borderColor: theme === 'light' ? 'var(--secondary)' : 'var(--darkGray)',
                     color: theme === 'light' ? 'var(--black)' : 'var(--secondary)'
                 }}></input>
-                <button style={{ backgroundColor: theme === 'light' ? 'transparent' : 'transparent' }}>
+                <button className="search-button" style={{ backgroundColor: theme === 'light' ? 'transparent' : 'transparent' }}>
                     <img src={search} style={{ filter: theme === 'light' ? null : 'var(--imgFilter)' }} />
                 </button>
             </div>

@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { FaBox, FaTimes } from 'react-icons/fa';
 
-function ProductCategories() {
+function ProductCategories(props) {
     // Screen width < Xpx
     const categRef = useRef();
     const showPopup = () => {
@@ -24,9 +24,11 @@ function ProductCategories() {
             <button onClick={showPopup} className="open-categories categ-btn">
                 <FaBox />Categories
             </button>
-            <nav className="categories" ref={categRef}>
-                <h3>Categories</h3>
-                <ul className="categories-list" onClick={handleListClick}>
+            <nav className="categories" ref={categRef} style={{
+                backgroundColor: props.theme === 'light' ? 'var(--itemColor)' : 'var(--darkGray)'
+            }}>
+                <h3 style={{ color: props.theme === 'light' ? 'var(--black)' : 'var(--itemColor)' }}>Categories</h3>
+                <ul className="categories-list" onClick={handleListClick} style={{ color: props.theme === 'light' ? 'var(--black)' : 'var(--itemColor)' }} >
                     <li className="listElements">Technology</li>
                     <li className="listElements">Home & Garden</li>
                     <li className="listElements">Books</li>
@@ -38,9 +40,11 @@ function ProductCategories() {
                 </ul>
                 <button onClick={showPopup} className="close-categories categ-btn"><FaTimes /></button>
             </nav>
-        </div>
+        </div >
 
     )
+
+    // style={{ color: props.theme === 'light' ? 'var(--black)' : 'var(--itemColor)' }}
 };
 
 export default ProductCategories;

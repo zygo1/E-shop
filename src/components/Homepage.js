@@ -10,7 +10,7 @@ function Homepage() {
     return (
         <>
             <p className='pageHeader' style={{
-                color: theme === 'light' ? '--black' : 'var(--white)'
+                color: theme === 'light' ? 'var(--black)' : 'var(--white)'
             }}>Home</p>
             <Promotion />
             <Recommendations />
