@@ -11,8 +11,8 @@
   min-width: 100px;
 }
 
-.profile-categ-items a{
-color: black;
+.categoriesProfile ul li a{
+  color: black;
 }
 
 .profile-categ-items:hover a {
@@ -20,6 +20,10 @@ color: white;
 }
 
 /* Profile */
+.profile-container{
+  height: 100vh;
+}
+
 .profile-account-container{
 display: grid;
 grid-template-columns:repeat(2,auto) ;

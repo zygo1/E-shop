@@ -11,7 +11,8 @@ function Offers() {
             <h2 className='offerHeader'>New offers, new opportunities!</h2>
             <div className="info" >
                 <div className='offer' style={{
-                    backgroundColor: theme === 'light' ? 'var(--secondary)' : 'var(--darkGray)'
+                    backgroundColor: theme === 'light' ? 'var(--secondary)' : 'var(--darkGray)',
+                    boxShadow: theme === 'light' ? null : 'none'
                 }}>
                     <h4>Offer 1</h4>
 

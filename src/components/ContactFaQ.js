@@ -1,8 +1,11 @@
 import faq from '.././assets/faq.svg';
 
-function ContactFaQ() {
+function ContactFaQ(props) {
     return (
-        <section className='contactItem'>
+        <section className='contactItem' style={{
+            backgroundColor: props.theme === 'light' ? 'var(--itemColor)' : 'var(--darkGray)',
+            boxShadow: props.theme === 'light' ? '0px 0px 3px rgb(104, 104, 104)' : 'none'
+        }}>
             <div className="faqHeader">
                 <img src={faq} alt="" />
                 <h4>Find answers in the Frequently Asked Questions!</h4>

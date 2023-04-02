@@ -42,14 +42,18 @@ function NavigationBar() {
                 <div className="right-side-nav login-register">
                     <Link onClick={hideNavbar} to='/Cart.js'><img src={cart} style={{ filter: theme === 'light' ? null : 'var(--imgFilter)' }} /></Link>
                     {counter.count > 0 ? <span className="cart-index">{counter.count}</span> : null}
-                    {/* <Link className="login">Login</Link> / <Link to='/SignUp.js' className="register">Register</Link> */}
+                    {/* <div>
+                        <Link className="login">Login</Link>
+                        /
+                        <Link to='/SignUp.js' className="register">Register</Link>
+                    </div> */}
                     <Switch />
                 </div>
                 <button className='nav-btn nav-close-btn' onClick={showNavbar}>
                     <FaTimes />
                 </button>
             </div>
-            <button className='nav-btn' onClick={showNavbar}>
+            <button className='nav-btn' onClick={showNavbar} style={{ color: theme === 'light' ? 'var(--darkGray)' : 'white' }}>
                 <FaBars />
             </button>
         </div>

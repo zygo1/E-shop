@@ -1,12 +1,17 @@
 import React, { useContext } from 'react';
 import { AddItemContext } from './useCart';
 import '.././styles/ItemCart.css';
+import { ThemeContext } from './useTheme';
 
 function Item(props) {
     const { handleAddClick, handleRemoveClick, addItem, removeItem } = useContext(AddItemContext);
+    const { theme } = useContext(ThemeContext);
 
     return (
-        <div className='item-container'>
+        <div className='item-container' style={{
+            backgroundColor: theme === 'light' ? 'var(--itemColor)' : 'var(--darkGray)',
+            boxShadow: theme === 'light' ? '0px 0px 3px rgb(104, 104, 104)' : 'none'
+        }}>
             <img className='cart-image' src={require(`.././${props.altsource}`)} alt="" />
             <div className='cart-description'>
                 <p>{props.name}</p>

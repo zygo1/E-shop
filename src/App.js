@@ -16,6 +16,10 @@ function App() {
 
   const { theme } = useContext(ThemeContext);
 
+  // Main Background Color
+  const html = document.documentElement;
+  html.style.backgroundColor = theme === 'light' ? 'var(--secondary)' : 'var(--veryDarkGray)';
+
   return (
     <div style={{
       backgroundColor: theme === 'light' ? 'var(--secondary)' : 'var(--veryDarkGray)',

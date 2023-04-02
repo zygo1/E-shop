@@ -11,7 +11,7 @@ function Profile() {
     const isOrdersPage = location.pathname.includes('/MyOrders.js');
     const isSettingsPage = location.pathname.includes('/ProfileSettings.js');
     return (
-        <>
+        <section className="profile-container">
             <div className='logout-container'>
                 <p className='pageHeader'>Profile</p>
             </div>
@@ -22,7 +22,7 @@ function Profile() {
                 {isSettingsPage && <ProfileSettings />}
             </div>
 
-        </>
+        </section>
 
     )
 }

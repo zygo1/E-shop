@@ -1,9 +1,13 @@
 import Item from "./Item";
 import '.././styles/MyAccount.css';
 import recentlyViewedData from '../data/recentlyViewed.json'
+import { useContext } from "react";
+import { ThemeContext } from "./useTheme";
 
 
 function MyAccount() {
+    const { theme } = useContext(ThemeContext);
+
     const recentlyViewed = recentlyViewedData.views.map(item => {
         return (
             <Item
@@ -20,13 +24,19 @@ function MyAccount() {
     return (
         <section>
             <div className="accountContainer">
-                <div className="recentViews">
+                <div className="recentViews" style={{
+                    border: theme === 'light' ? null : 'var(--veryDarkGray)',
+                    boxShadow: theme === 'light' ? null : '0px 0px 5px var(--darkGray)'
+                }}>
                     <p>Recently Viewed</p>
                     <div className="recentItems">
                         {recentlyViewed}
                     </div>
                 </div>
-                <div className="recentOrders">
+                <div className="recentOrders" style={{
+                    border: theme === 'light' ? null : 'var(--veryDarkGray)',
+                    boxShadow: theme === 'light' ? null : '0px 0px 5px var(--darkGray)'
+                }}>
                     <p>Recent Orders</p>
                     <p>There aren't any orders yet.</p>
                 </div>

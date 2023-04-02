@@ -10,7 +10,7 @@
 }
 
 .logo a{
-margin-right: 60px;
+margin-right: 20px;
 }
 
 .links{
@@ -54,6 +54,14 @@ margin-right: 60px;
   color: white;
 }
 
+.login-register,.login-register a{
+  font-size: 1rem;
+}
+
+/* .login-register a{
+  color:red;
+} */
+
 .login:hover, .register:hover{
 color: var(--primary);
 }
@@ -62,8 +70,6 @@ color: var(--primary);
 display: flex;
 flex-direction: row;
 align-items: center;
-justify-content: space-between;
-width: 80px;
 }
 
 .login-register a img:nth-child(1){
@@ -86,7 +92,7 @@ width: 20px;
 height: 20px;
 z-index: 1;
 position: relative;
-left: -40px;
+left: -10px;
 top: -14px;
 font-size: 0.8rem;
 }
@@ -138,27 +144,28 @@ filter: invert(100%) sepia(0%) saturate(7454%) hue-rotate(50deg) brightness(112%
   .links{
       gap: 60px;
   }
+
   .cart-index{
     position: relative;
-    left: -40px;
+    left: -10px;
     top: -14px;
   }
 }
 
 @media (max-width:1200px){
 .links{
-  gap: 10px;
+  gap: 20px;
 }
 .cart-index{
   position: relative;
-  left: -40px;
+  left: -10px;
   top: -14px;
 }
 }
 
 @media (max-width:996px){
   .links{
-    gap: 10px;
+    gap: 20px;
     font-size: 1rem;
   }
 
@@ -178,11 +185,14 @@ filter: invert(100%) sepia(0%) saturate(7454%) hue-rotate(50deg) brightness(112%
   }
 }
 /* ! */
-@media (max-width:768px){
+@media (max-width:868px){
 .nav-btn {
   visibility: visible;
   opacity: 1;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
+  position: relative;
+  top: 2px;
+  margin-left: 4%;
 }
 
 .links {
@@ -225,8 +235,9 @@ filter: invert(100%) sepia(0%) saturate(7454%) hue-rotate(50deg) brightness(112%
 }
 
 .search > input{
-  width: 70px;
-  height: 10px;
+  width: 80px;
+  height: 16px;
+  border-radius: 12px;
 }
 
 .search > button{
@@ -241,7 +252,7 @@ filter: invert(100%) sepia(0%) saturate(7454%) hue-rotate(50deg) brightness(112%
 }
 
 .nav-container .logo a{
-  font-size: 1.8rem;
+  font-size: 1.9rem;
 }
 
 .right-side-nav a {

@@ -9,7 +9,10 @@ function Item(props) {
     const { theme } = useContext(ThemeContext);
 
     return (
-        <div className="item" style={{ backgroundColor: theme === 'light' ? null : 'var(--darkGray)' }}>
+        <div className="item" style={{
+            backgroundColor: theme === 'light' ? 'var(--itemColor)' : 'var(--darkGray)',
+            boxShadow: theme === 'light' ? '0px 0px 3px rgb(104, 104, 104)' : 'none'
+        }}>
             <img src={props.source} alt="" />
             <p>{props.name}</p>
             <p>Price: {props.price} €</p>

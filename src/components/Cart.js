@@ -3,6 +3,7 @@ import emptyCart from '.././assets/empty_cart.svg';
 import '.././styles/Cart.css';
 import { useContext } from "react";
 import { AddItemContext } from "./useCart";
+import { ThemeContext } from './useTheme'
 
 const EmptyCartMessage = () => {
     return (
@@ -13,7 +14,7 @@ const EmptyCartMessage = () => {
     )
 };
 
-const OrderSummary = () => {
+const OrderSummary = (props) => {
     const { cart } = useContext(AddItemContext);
 
     const totalSumArr = cart.map(item => {
@@ -23,12 +24,12 @@ const OrderSummary = () => {
     const totalSum = totalSumArr.reduce((prev, curr) => prev + curr, 0).toFixed(2);
 
     return (
-        <div className="summary">
-            <p>Order Summary</p>
+        <div className="summary" >
+            <p style={{ color: props.theme === 'light' ? null : 'var(--white)' }}>Order Summary</p>
             <div className="sum-info">
                 <p>Location: <span className="city">Thessaloniki</span></p>
                 <p>Total: <span className="totalCost">{totalSum}</span> €</p>
-                <button>Continue to payment</button>
+                <button style={{ boxShadow: props.theme === 'light' ? null : 'none' }}>Continue to payment</button>
             </div>
         </div>
     )
@@ -36,6 +37,7 @@ const OrderSummary = () => {
 
 function Cart() {
     const { cart } = useContext(AddItemContext);
+    const { theme } = useContext(ThemeContext);
 
     const cartList = cart.map(item => {
         return (
@@ -53,16 +55,16 @@ function Cart() {
     });
 
     return (
-        <>
+        <section className="cart-main-container">
             <p className='pageHeader'>Cart</p>
-            <section className="cart-container">
-                <div className="itemList">
-                    {cartList.length > 0 ? <p className="yourCart">Your cart</p> : null}
+            <div className="cart-items-container" >
+                <div className="itemList" >
+                    {cartList.length > 0 ? <p style={{ color: theme === 'light' ? null : 'var(--white)' }} className="yourCart">Your cart</p> : null}
                     {cartList.length > 0 ? cartList : <EmptyCartMessage />}
                 </div>
-                {cartList.length > 0 ? <OrderSummary /> : null}
-            </section>
-        </>
+                {cartList.length > 0 ? <OrderSummary theme={theme} /> : null}
+            </div>
+        </section>
     )
 };
 

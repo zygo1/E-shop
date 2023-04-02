@@ -1,7 +1,7 @@
 .switch {
     position: absolute;
     display: inline-block;
-    right: 32px;
+    right: 0px;
     width: 56px;
     height: 30px;
 }
@@ -22,8 +22,8 @@
     right: 0;
     bottom: 0;
     background-color: #ccc;
-    -webkit-transition: .6s;
-    transition: .6s;
+    -webkit-transition: .5s;
+    transition: .5s;
 }
 
 .slider:before {
@@ -34,8 +34,8 @@
     left: 4px;
     bottom: 4px;
     background-color: white;
-    -webkit-transition: .6s;
-    transition: .6s;
+    -webkit-transition: .5s;
+    transition: .5s;
 }
 
 .moon{
@@ -45,6 +45,7 @@
     right: 0;
     bottom: 0;
     cursor: pointer;
+    font-size: 1.3rem;
 }
 
 .sun{
@@ -54,6 +55,7 @@
     right: 0;
     bottom: 0;
     cursor: pointer;
+    font-size: 1.3rem;
 }
 
 input:checked + .slider {
@@ -79,13 +81,13 @@ input:checked + .slider:before {
 }
 
 @media (max-width:996px) {
-    .moon-sun{
+    .moon,.sun{
         font-size: 1.3rem;
     }
 }
 
 
-@media (max-width:768px){
+@media (max-width:868px){
     .switch{
         position: relative;
         right: 0px;
@@ -99,10 +101,15 @@ input:checked + .slider:before {
         width: 18px;
     }
 
-    .moon-sun{
-        font-size: 1.1rem;
+    .moon,.sun{
+        font-size: 1.05rem;
         top:3px;
         left:4px;
     }
 
+    .sun{
+        font-size: 1.05rem;
+        top: 4px;
+        left:30px;
+    }
 }

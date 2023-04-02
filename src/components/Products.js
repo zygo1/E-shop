@@ -23,14 +23,16 @@ function Products() {
     });
     return (
         <>
-            <div className='products-header-container' style={{ color: theme === 'light' ? 'var(--black)' : 'var(--itemColor)' }} >
+            <div className='products-header-container' style={{
+                color: theme === 'light' ? 'var(--black)' : 'var(--itemColor)'
+            }} >
                 <p className='pageHeader'>Products</p>
                 <h2 >Selected Category</h2>
             </div>
             <section className="productsContainer">
                 <ProductCategories theme={theme} />
                 <div className="items" style={{
-                    backgroundColor: theme === 'light' ? 'var(--itemColor)' : 'var(--veryDarkGray)'
+                    backgroundColor: theme === 'light' ? null : 'var(--veryDarkGray)'
                 }}>
                     {productList}
                 </div>
