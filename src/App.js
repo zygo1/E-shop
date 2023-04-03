@@ -7,18 +7,21 @@ import Profile from './components/Profile';
 import SignUp from './components/SignUp';
 import NavigationBar from './components/NavigationBar';
 import { ThemeContext } from './components/useTheme';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 
 function App() {
   const location = useLocation();
   const isSignupPage = location.pathname.includes('/SignUp.js');
-
   const { theme } = useContext(ThemeContext);
 
   // Main Background Color
   const html = document.documentElement;
   html.style.backgroundColor = theme === 'light' ? 'var(--secondary)' : 'var(--veryDarkGray)';
+
+  useEffect(() => {
+    document.title = 'Quickmart'
+  }, [])
 
   return (
     <div style={{

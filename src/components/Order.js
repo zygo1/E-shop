@@ -1,7 +1,15 @@
+import { useContext } from "react";
+import { ThemeContext } from "./useTheme";
+
 function Order(props) {
+    const { theme } = useContext(ThemeContext);
+
     return (
         <div className="mainDiv">
-            <div className="containerOrders">
+            <div className="containerOrders" style={{
+                boxShadow: theme === 'light' ? null : 'var(--darkGray)',
+                border: theme === 'light' ? null : '2px solid var(--darkGray)'
+            }}>
                 <img src={props.img} />
                 <div className="stats">
                     <p className="status">Delivered</p>
