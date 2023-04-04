@@ -1,11 +1,10 @@
 {
     "recommendations": [
         {
-            "id": "samg1",
-            "name": "Samsung Galaxy S23 Ultra 5G Dual SIM (8GB/256GB)",
-            "price": "1189.99",
-            "img_path": "assets/samsung_galaxy_s23.jpeg",
-            "description": "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet."
+            "id": "health2",
+            "name": "Apivita Cleansing Creamy Cleansing Foam 300ml",
+            "price": "9.49",
+            "img_path": "assets/apivita_cleansing_foam.jpeg"
         },
         {
             "id": "sonyx1",
@@ -15,18 +14,16 @@
             "description": "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet."
         },
         {
-            "id": "sonyx10",
-            "name": "Sony Xperia 10 IV 5G Dual SIM (6GB/128GB)",
-            "price": "369.99",
-            "img_path": "assets/sony_xperia_10_iv.jpeg",
-            "description": "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet."
+            "id": "health1",
+            "name": "La Roche Posay Effaclar Anti-Acne Gel for Oily Skin 400ml",
+            "price": "12.99",
+            "img_path": "assets/la_roche_posay.jpeg"
         },
         {
-            "id": "xiaomip1",
-            "name": "Xiaomi Poco X5 Pro 5G Dual SIM (8GB/256GB)",
-            "price": "374.99",
-            "img_path": "assets/xiaomi_poco_x5_pro.jpeg",
-            "description": "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet."
+            "id": "xyl2",
+            "name": "Wooden Shredder",
+            "price": "84.00",
+            "img_path": "assets/xylini_syrtariera_2.jpeg"
         },
         {
             "id": "xiamired1",

@@ -2,9 +2,12 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
-    /* flex-wrap: wrap; */  /* Wrap, if there are more than 5. */
+    /* flex-wrap: wrap;   Wrap, if there are more than 5. */
     margin: 0px 0px 100px 0px;
+    width: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-inline: contain;
   }
   
   .recomHeader{
@@ -119,13 +122,13 @@
     .info div h4{
       font-size: 0.825rem;
       padding-top: 2px;
-  }
+    }
 
-  .infoButton{
-      width: 80px;
-      height: 30px;
-      font-size: 0.675rem;
-      text-align: center;
-      padding: 4px;
-  }
+    .infoButton{
+        width: 80px;
+        height: 30px;
+        font-size: 0.675rem;
+        text-align: center;
+        padding: 4px;
+    }
   }

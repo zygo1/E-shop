@@ -21,7 +21,9 @@ function Profile() {
                 }} >Profile</p>
             </div>
             <div className="profile-account-container">
-                <ProfileCategories />
+                <div className="profile-categories-wrapper">
+                    <ProfileCategories />
+                </div>
                 {isAccountPage && <MyAccount />}
                 {isOrdersPage && <MyOrders />}
                 {isSettingsPage && <ProfileSettings />}

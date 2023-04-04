@@ -20,9 +20,11 @@ color: white;
 }
 
 /* Profile */
-.profile-container{
-  height: 100vh;
+.profile-categories-container{
+  position: sticky;
+  top: 40px;
 }
+
 
 .profile-account-container{
 display: grid;

@@ -87,6 +87,11 @@
   opacity: 0;
 }
 
+.categories-wrapper{
+  position: sticky;
+  top: 40px;
+}
+
 @media (max-width:1068px) {
   .categ-btn{
     visibility: visible;
@@ -167,7 +172,12 @@
     color: var(--primary);
   }
 
-  .products-header-container{
+}
+
+
+@media (max-width:648px){
+  /*TODO: gia poli mikres othones */
+    .products-header-container{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -179,11 +189,6 @@
   }
 
   .categoryname-filters-wrapper{
-    margin: -40px 0px 0px 0px;
+    margin: -40px 0px 0px -50px;
   }
-}
-
-
-@media (max-width:368px){
-  /*TODO: gia poli mikres othones */
 }

@@ -1,8 +1,4 @@
 .cart-items-container{
-    height: 100vh;
-}
-
-.cart-items-container{
     display: flex;
     align-items: flex-start;
     justify-content: space-around;

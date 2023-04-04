@@ -12,7 +12,7 @@
 .recentOrders, .recentViews{
     text-align: flex-start;
     width: 650px;
-    height: 450px;
+    height: auto;
     border: 2px solid rgb(208, 208, 208);
     box-shadow: 0px 0px 5px rgb(208, 208, 208);
     border-radius: 10px;
@@ -21,7 +21,7 @@
 
 .recentOrders p:nth-child(2){
     text-align: center;
-    margin: 175px 0px 0px 0px;
+    margin: 100px 0px 100px 0px;
     font-size: 1rem;
 }
 

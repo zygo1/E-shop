@@ -17,6 +17,11 @@
     margin: -35px 0px 0px 0px !important; 
 }
 
+.mainDiv img {
+    max-width: 250px;
+    max-height: 200px;
+}
+
 .stats{
     display: flex;
     flex-direction: row;

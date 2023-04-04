@@ -12,7 +12,7 @@ function Products() {
 
     const [filter, setFilter] = useState('Popularity');
 
-    const { category } = useContext(CategoryContext);
+    const { category, changeCategory } = useContext(CategoryContext);
     let productList;
     // Rendering the items
     if (category === 'Technology') {
@@ -113,6 +113,21 @@ function Products() {
             )
         });
     }
+    else {
+        changeCategory('Technology')
+        productList = myData.products.technology.map(item => {
+            return (
+                <Item
+                    key={item.id}
+                    id={item.id}
+                    name={item.name}
+                    price={item.price}
+                    altsource={item.img_path}
+                    source={require(`.././${item.img_path}`)}
+                />
+            )
+        });
+    }
 
     // Sorting the items
     if (filter === 'Price ascending') {
@@ -149,7 +164,9 @@ function Products() {
                 </div>
             </div>
             <section className="productsContainer">
-                <ProductCategories theme={theme} />
+                <div className='categories-wrapper'>
+                    <ProductCategories theme={theme} />
+                </div>
                 <div className="items" style={{
                     backgroundColor: theme === 'light' ? null : 'var(--veryDarkGray)'
                 }}>

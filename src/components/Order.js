@@ -10,7 +10,7 @@ function Order(props) {
                 boxShadow: theme === 'light' ? null : 'var(--darkGray)',
                 border: theme === 'light' ? null : '2px solid var(--darkGray)'
             }}>
-                <img src={props.img} />
+                <img src={props.source} />
                 <div className="stats">
                     <p className="status">Delivered</p>
                     <p>{props.name}</p>

@@ -2,15 +2,27 @@
     "myOrders": [
         {
             "id": "xiamired1",
-            "description": "Xiaomi Redmi Note 11S NFC Dual SIM (6GB/64GB)",
+            "name": "Xiaomi Redmi Note 11S NFC Dual SIM (6GB/64GB)",
             "price": "199.40",
-            "img_path": "assets/xiaomi_redmi_note11s.jpeg"
+            "img_path": "assets/xiaomi_redmi_note11s.jpeg",
+            "orderNumber": "17321639391283712",
+            "address": "Thessaloniki, Greece"
         },
         {
-            "id": "sonyx1",
-            "description": "Sony Xperia 1 IV 5G Dual SIM (12GB/256GB)",
-            "price": "1159.99",
-            "img_path": "assets/sony_xperia_1_iv.jpeg"
+            "id": "table1",
+            "name": "Solid Wood Coffee Table 80x30x20",
+            "price": "112.00",
+            "img_path": "assets/trapezaki_saloniou.jpeg",
+            "orderNumber": "12975248859179571",
+            "address": "Thessaloniki, Greece"
+        },
+        {
+            "id": "health3",
+            "name": "Frezyderm Sun Screen Color Velvet Waterproof Sunscreen Cream Face SPF50 Tinted 50ml",
+            "price": "16.49",
+            "img_path": "assets/frezyderm_sun_screen.jpeg",
+            "orderNumber": "18424242519172920",
+            "address": "Thessaloniki, Greece"
         }
     ]
 }

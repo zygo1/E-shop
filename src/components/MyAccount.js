@@ -13,7 +13,7 @@ function MyAccount() {
             <Item
                 key={item.id}
                 id={item.id}
-                name={item.description}
+                name={item.name}
                 price={item.price}
                 altsource={item.img_path}
                 source={require(`.././${item.img_path}`)}
@@ -38,7 +38,7 @@ function MyAccount() {
                     boxShadow: theme === 'light' ? null : '0px 0px 5px var(--darkGray)'
                 }}>
                     <p>Recent Orders</p>
-                    <p>There aren't any orders yet.</p>
+                    <p>na antikatastisw to recent orders me kati allo</p>
                 </div>
             </div>
         </section>
