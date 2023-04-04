@@ -10,6 +10,15 @@ function ProductCategories(props) {
         categRef.current.classList.toggle('responsive-categories');
     };
 
+    const hideCategories = () => {
+        categRef.current.classList.remove('responsive-categories');
+    };
+
+    // test
+    const hide = (e) => {
+        console.log(e.target)
+    }
+
     // Category list clicks
     const handleClick = (e) => {
         const content = e.target.textContent;
@@ -23,33 +32,13 @@ function ProductCategories(props) {
     // Context
     const { category, changeCategory } = useContext(CategoryContext);
 
-    // const checkCategory = () => {
-    //     if (category === 'Technology') {
-    //         console.log('tech')
-    //     }
-    //     else if (category === "Home & Garden") {
-    //         console.log('home')
-    //     }
-    //     else if (category === "Books") {
 
-    //     }
-    //     else if (category === "Kids") {
-
-    //     }
-    //     else if (category === "Fashion") {
-
-    //     }
-    //     else if (category === "Sports") {
-
-    //     }
-    //     else if (category === "Health & Beauty") {
-
-    //     }
-    // };
 
     return (
         <div>
-            <button onClick={showPopup} className="open-categories categ-btn">
+            <button onClick={showPopup} className="open-categories categ-btn" style={{
+                color: props.theme === 'light' ? 'var(--black)' : 'var(--white)'
+            }}>
                 <FaBox />Categories
             </button>
             <nav className="categories" ref={categRef} style={{
@@ -60,13 +49,13 @@ function ProductCategories(props) {
                 <ul className="categories-list" onClick={handleListClick} style={{
                     color: props.theme === 'light' ? 'var(--black)' : 'var(--itemColor)'
                 }} >
-                    <li className="listElements">Technology</li>
-                    <li className="listElements">Home & Garden</li>
-                    <li className="listElements">Books</li>
-                    <li className="listElements">Kids</li>
-                    <li className="listElements">Fashion</li>
-                    <li className="listElements">Sports</li>
-                    <li className="listElements">Health & Beauty</li>
+                    <li onClick={hideCategories} className="listElements">Technology</li>
+                    <li onClick={hideCategories} className="listElements">Home & Garden</li>
+                    <li onClick={hideCategories} className="listElements">Books</li>
+                    <li onClick={hideCategories} className="listElements">Kids</li>
+                    <li onClick={hideCategories} className="listElements">Fashion</li>
+                    <li onClick={hideCategories} className="listElements">Sports</li>
+                    <li onClick={hideCategories} className="listElements">Health & Beauty</li>
                 </ul>
                 <button onClick={showPopup} className="close-categories categ-btn"><FaTimes /></button>
             </nav>

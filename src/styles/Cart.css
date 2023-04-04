@@ -109,18 +109,15 @@
         width: 250px;
     }
 
-    .summary, .city{
-        font-size: 0.8rem;
+    .summary{
+        margin: 55px 0px 0px 10px;
     }
 
-    .totalCost,.sum-info > p:nth-child(2){
-        font-size: 0.95rem;
-        margin: 15px 0px 0px 0px;
+    .summary p:nth-child(1){
+        font-size: 1rem;
     }
 
     .sum-info button {
         padding: 4px;
     }
-
-
 }

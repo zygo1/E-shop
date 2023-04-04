@@ -14,7 +14,9 @@ function Contact() {
             <section className="contect-container" style={{
                 backgroundColor: theme === 'light' ? 'var(--secondary)' : 'var(--veryDarkGray)'
             }}>
-                <p className='pageHeader'>Contact</p>
+                <p className='pageHeader' style={{
+                    color: theme === 'light' ? 'var(--black)' : 'var(--white)'
+                }}>Contact</p>
                 <div className="waysContact">
                     <h2> Ways to Contact us!</h2>
                 </div>

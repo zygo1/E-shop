@@ -56,10 +56,10 @@ function Cart() {
 
     return (
         <section className="cart-main-container">
-            <p className='pageHeader'>Cart</p>
+            <p className='pageHeader' style={{ color: theme === 'light' ? 'var(--black)' : 'var(--white)' }}>Cart</p>
             <div className="cart-items-container" >
                 <div className="itemList" >
-                    {cartList.length > 0 ? <p style={{ color: theme === 'light' ? null : 'var(--white)' }} className="yourCart">Your cart</p> : null}
+                    {/* {cartList.length > 0 ? <p style={{ color: theme === 'light' ? null : 'var(--white)' }} className="yourCart">Your cart</p> : null} */}
                     {cartList.length > 0 ? cartList : <EmptyCartMessage />}
                 </div>
                 {cartList.length > 0 ? <OrderSummary theme={theme} /> : null}

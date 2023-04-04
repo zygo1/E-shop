@@ -23,7 +23,9 @@ function ProfileCategories() {
 
     return (
         <div className='profile-categories-container' >
-            <button onClick={toggleProfileCategories} className="open-categories profile-categ categ-btn">
+            <button onClick={toggleProfileCategories} className="open-categories profile-categ categ-btn" style={{
+                color: theme === 'light' ? 'var(--black)' : 'var(--white)'
+            }}>
                 Options
             </button>
             <nav className="categoriesProfile" ref={profileRef} style={{ backgroundColor: theme === 'light' ? 'var(--secondary)' : 'var(--darkGray)', boxShadow: theme === 'light' ? null : 'none' }}>

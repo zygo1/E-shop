@@ -103,7 +103,7 @@ function ProfileSettings() {
 
     return (
         <section className='settings-main-container'>
-            <p className='pageHeader settings-pageHeader'>Settings</p>
+            <p className='pageHeader settings-pageHeader' style={{ color: theme === 'light' ? 'var(--black)' : 'var(--white)' }}>Settings</p>
             <form>
                 <fieldset className='settings-fieldset' style={{ border: theme === 'light' ? null : '2px solid var(--darkGray)' }}>
                     <div className='settings-field'>

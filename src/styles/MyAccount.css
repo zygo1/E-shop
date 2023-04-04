@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: space-around;
     flex-wrap: wrap;
-    margin: 40px 20px 0px 0px;
+    margin: 40px 0px 0px 0px;
     gap: 60px;
     font-size: 1.4rem;
 }
@@ -28,7 +28,7 @@
 .recentItems{
     display: grid;
     grid-auto-flow: column;
-    margin: 35px 15px 0px 15px;
+    margin: 35px 0px 0px 15px;
     width: 100px;
     height: auto;
     gap: 5px;
@@ -55,14 +55,14 @@
     }   
 
     .recentViews{
-        margin: 0px 10px 0px 10px;
-        width: 350px;
+        margin: 0px 0px 0px 10px;
+        width: 270px;
         height: 330px;
     }
 
     .recentOrders{
-        margin: 0px 10px 0px 10px;
-        width: 350px;
+        margin: 0px 0px 0px 10px;
+        width: 270px;
         height: 250px;
     }
 }

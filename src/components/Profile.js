@@ -4,16 +4,21 @@ import { useLocation } from 'react-router-dom';
 import MyAccount from "./MyAccount";
 import MyOrders from "./MyOrders";
 import ProfileSettings from "./ProfileSettings";
+import { useContext } from "react";
+import { ThemeContext } from "./useTheme";
 
 function Profile() {
     const location = useLocation();
     const isAccountPage = location.pathname.includes('/MyAccount.js');
     const isOrdersPage = location.pathname.includes('/MyOrders.js');
     const isSettingsPage = location.pathname.includes('/ProfileSettings.js');
+    const { theme } = useContext(ThemeContext);
     return (
         <section className="profile-container">
             <div className='logout-container'>
-                <p className='pageHeader'>Profile</p>
+                <p className='pageHeader' style={{
+                    color: theme === 'light' ? 'var(--black)' : 'var(--white)'
+                }} >Profile</p>
             </div>
             <div className="profile-account-container">
                 <ProfileCategories />

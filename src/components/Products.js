@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import Item from "./Item";
 import ProductCategories from "./ProductCategories";
 import '.././styles/Products.css';
@@ -10,11 +10,11 @@ import { CategoryContext } from './useCategory';
 function Products() {
     const { theme } = useContext(ThemeContext);
 
-    const { category } = useContext(CategoryContext);
-    // * pernaw apla tis times sto category
-    //TODO: Na kanw ena function pou na kanei render to katalilo array kathe fora 
-    let productList;
+    const [filter, setFilter] = useState('Popularity');
 
+    const { category } = useContext(CategoryContext);
+    let productList;
+    // Rendering the items
     if (category === 'Technology') {
         productList = myData.products.technology.map(item => {
             return (
@@ -114,15 +114,39 @@ function Products() {
         });
     }
 
+    // Sorting the items
+    if (filter === 'Price ascending') {
+        productList.sort((a, b) => a.props.price - b.props.price);
+    }
+    else if (filter === 'Price descending') {
+        productList.sort((a, b) => b.props.price - a.props.price);
+    }
+    else {
 
+    }
 
     return (
         <>
-            <div className='products-header-container' style={{
-                color: theme === 'light' ? 'var(--black)' : 'var(--itemColor)'
-            }} >
-                <p className='pageHeader'>Products</p>
-                <h2 >{category}</h2>
+            <div className='products-header-container'  >
+                <p className='pageHeader' style={{
+                    color: theme === 'light' ? 'var(--black)' : 'var(--white)'
+                }}>Products</p>
+                <div className='categoryname-filters-wrapper'>
+                    <h2 style={{
+                        color: theme === 'light' ? 'var(--black)' : 'var(--white)'
+                    }} >{category}</h2>
+                    <div className='filters'>
+                        <select value={filter} onChange={(e) => { setFilter(e.target.value) }} style={{
+                            backgroundColor: theme === 'light' ? null : 'var(--darkGray)',
+                            color: theme === 'light' ? 'var(--black)' : 'var(--white)',
+                            boxShadow: theme === 'light' ? null : 'none'
+                        }}>
+                            <option>Popularity</option>
+                            <option>Price ascending</option>
+                            <option>Price descending</option>
+                        </select>
+                    </div>
+                </div>
             </div>
             <section className="productsContainer">
                 <ProductCategories theme={theme} />

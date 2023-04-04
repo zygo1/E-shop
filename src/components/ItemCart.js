@@ -28,7 +28,6 @@ function Item(props) {
                     }}>+</button>
                 </div>
             </div>
-
         </div>
     );
 }
