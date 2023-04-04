@@ -1,5 +1,7 @@
-import React, { useRef } from "react";
+import React, { useContext, useRef } from "react";
 import { FaBox, FaTimes } from 'react-icons/fa';
+import { CategoryContext } from "./useCategory";
+
 
 function ProductCategories(props) {
     // Screen width < Xpx
@@ -11,13 +13,39 @@ function ProductCategories(props) {
     // Category list clicks
     const handleClick = (e) => {
         const content = e.target.textContent;
-        console.log(content);
-        return content;
+        changeCategory(content);
     }
 
     const handleListClick = (e) => {
         const content = handleClick(e);
     }
+
+    // Context
+    const { category, changeCategory } = useContext(CategoryContext);
+
+    // const checkCategory = () => {
+    //     if (category === 'Technology') {
+    //         console.log('tech')
+    //     }
+    //     else if (category === "Home & Garden") {
+    //         console.log('home')
+    //     }
+    //     else if (category === "Books") {
+
+    //     }
+    //     else if (category === "Kids") {
+
+    //     }
+    //     else if (category === "Fashion") {
+
+    //     }
+    //     else if (category === "Sports") {
+
+    //     }
+    //     else if (category === "Health & Beauty") {
+
+    //     }
+    // };
 
     return (
         <div>
@@ -38,7 +66,6 @@ function ProductCategories(props) {
                     <li className="listElements">Kids</li>
                     <li className="listElements">Fashion</li>
                     <li className="listElements">Sports</li>
-                    <li className="listElements">Games</li>
                     <li className="listElements">Health & Beauty</li>
                 </ul>
                 <button onClick={showPopup} className="close-categories categ-btn"><FaTimes /></button>
