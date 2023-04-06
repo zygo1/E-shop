@@ -5,7 +5,8 @@ import Contact from './components/Contact';
 import Cart from './components/Cart';
 import Profile from './components/Profile';
 import SignUp from './components/SignUp';
-import NavigationBar from './components/NavigationBar';
+// import NavigationBar from './components/NavigationBar';
+import Navbar from './components/Navbar';
 import { ThemeContext } from './components/useTheme';
 import { useContext, useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
@@ -28,7 +29,7 @@ function App() {
       backgroundColor: theme === 'light' ? 'var(--secondary)' : 'var(--veryDarkGray)',
       color: theme === 'dark' ? 'white' : undefined
     }}>
-      {!isSignupPage && <NavigationBar />}
+      {!isSignupPage && <Navbar />}
       <Routes>
         <Route path='/' element={<Homepage />} />
         <Route path='/Products.js' element={<Products />} />

@@ -1,43 +1,55 @@
-import React from 'react';
-import { useRef } from 'react';
-import { FaBars, FaTimes } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
-import ".././styles/Navbar.css";
 import cart from '.././assets/shoppingcart.svg';
 import user from '.././assets/user.svg';
+import language from '.././assets/language.svg';
 import search from '.././assets/search.svg';
+import Switch from "./switch";
+import '.././styles/Navbar.css';
+import { useContext } from 'react';
+import { ThemeContext } from './useTheme';
+import { Link } from 'react-router-dom';
+
 
 function Navbar() {
-    const navRef = useRef();
-
-    const showNavbar = () => {
-        navRef.current.classList.toggle('responsive-nav'); // Everytime that showNavbar is called the 'responsive-nav' class toggles, (removed and added to <nav ref={navRef}>)
-    }
-
-    const hideNavbar = () => {
-        navRef.current.classList.remove('responsive-nav');
-    }
+    const { theme } = useContext(ThemeContext);
 
     return (
-        <header className='navigation-bar-class'>
-            <div className='quickmart'><Link to="/"><h2>QuickMart</h2></Link></div>
-            <div className='search'><input placeholder='Search...' type={"text"} name="search"></input><button><img src={search} /></button></div>
-            <nav className="nav" ref={navRef}>
-                <Link onClick={hideNavbar} to="/Products.js">Products</Link>
-                <Link onClick={hideNavbar} to="/Contact.js">Contact</Link>
-                <Link onClick={hideNavbar} to="/Cart.js"><img src={cart} alt="Cart" /></Link>
-                <Link onClick={hideNavbar} to="/Profile.js"><img src={user} alt="Profile" /></Link>
-                <button className='nav-btn nav-close-btn' onClick={showNavbar}>
-                    <FaTimes />
+        <nav class="navbar" style={{ backgroundColor: theme === 'light' ? 'var(--secondary)' : 'var(--darkGray)' }}>
+            {/* Brand Name */}
+            <div class="brand-title">Quickmart</div>
+            {/* Search */}
+            <div className='search' style={{
+                backgroundColor: theme === 'light' ? 'var(--secondary)' : 'var(--veryDarkGray)',
+                borderColor: theme === 'light' ? 'var(--secondary)' : 'var(--darkGray)',
+                color: theme === 'light' ? 'var(--black)' : 'var(--secondary)'
+            }}>
+                <input placeholder='Search...' type={"text"} name="search" style={{
+                    backgroundColor: 'transparent',
+                    color: theme === 'light' ? 'var(--black)' : 'var(--secondary)'
+                }}></input>
+                <button className="search-button" style={{ backgroundColor: theme === 'light' ? 'transparent' : 'transparent' }}>
+                    <img src={search} style={{ filter: theme === 'light' ? 'var(--blackFilter)' : 'var(--whiteFilter)' }} />
                 </button>
-            </nav>
-            <button className='nav-btn' onClick={showNavbar}>
-                <FaBars />
-            </button>
-        </header>
-
+            </div>
+            {/* Bars - Responsive */}
+            <Link to="#" class="toggle-button">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </Link>
+            {/* Links */}
+            <div class="navbar-links">
+                <ul>
+                    <li><Link>Shop</Link></li>
+                    <li><Link>Contact</Link></li>
+                    <li><Link><img src={cart} style={{ filter: theme === 'light' ? 'var(--blackFilter)' : 'var(--whiteFilter)' }} /></Link></li>
+                    <li><Link><img src={user} style={{ filter: theme === 'light' ? 'var(--blackFilter)' : 'var(--whiteFilter)' }} /></Link></li>
+                    <li><button style={{ color: theme === 'light' ? 'var(--black)' : 'var(--white)' }}><img style={{ filter: theme === 'light' ? 'var(--blackFilter)' : 'var(--whiteFilter)' }} src={language} /></button></li>
+                    <li><button style={{ color: theme === 'light' ? 'var(--black)' : 'var(--white)' }}><Switch /></button></li>
+                </ul>
+            </div>
+        </nav>
     )
 };
 
-export default Navbar;
 
+export default Navbar;
