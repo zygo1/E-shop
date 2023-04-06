@@ -87,10 +87,14 @@
   .item{
       margin: 10px 10px 10px 0px;
       padding: 8px;
-      min-width: 25vh;
       font-size: 0.675rem;
       min-width: 130px;
-      min-height: 250px;
+      min-height: 300px;
+  }
+
+  .item img{
+    min-width: 100px;
+    /* min-height: 200px; */
   }
 
   .item > p:nth-child(2){
@@ -108,9 +112,5 @@
   .item button{
       font-size: 0.675rem;
       height: 30px;
-  }
-
-  .item img{
-      width: 70px;
   }
 } 

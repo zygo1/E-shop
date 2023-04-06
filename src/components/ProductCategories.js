@@ -37,7 +37,8 @@ function ProductCategories(props) {
     return (
         <div>
             <button onClick={showPopup} className="open-categories categ-btn" style={{
-                color: props.theme === 'light' ? 'var(--black)' : 'var(--white)'
+                color: props.theme === 'light' ? 'var(--black)' : 'var(--white)',
+                backgroundColor: props.theme === 'light' ? 'var(--secondary)' : 'var(--darkGray)'
             }}>
                 <FaBox />Categories
             </button>
@@ -49,13 +50,13 @@ function ProductCategories(props) {
                 <ul className="categories-list" onClick={handleListClick} style={{
                     color: props.theme === 'light' ? 'var(--black)' : 'var(--itemColor)'
                 }} >
-                    <li onClick={hideCategories} className="listElements">Technology</li>
-                    <li onClick={hideCategories} className="listElements">Home & Garden</li>
-                    <li onClick={hideCategories} className="listElements">Books</li>
-                    <li onClick={hideCategories} className="listElements">Kids</li>
-                    <li onClick={hideCategories} className="listElements">Fashion</li>
-                    <li onClick={hideCategories} className="listElements">Sports</li>
-                    <li onClick={hideCategories} className="listElements">Health & Beauty</li>
+                    <li onClick={hideCategories} className="listElements active">Technology</li>
+                    <li onClick={hideCategories} className="listElements active">Home & Garden</li>
+                    <li onClick={hideCategories} className="listElements active">Books</li>
+                    <li onClick={hideCategories} className="listElements active">Kids</li>
+                    <li onClick={hideCategories} className="listElements active">Fashion</li>
+                    <li onClick={hideCategories} className="listElements active">Sports</li>
+                    <li onClick={hideCategories} className="listElements active">Health & Beauty</li>
                 </ul>
                 <button onClick={showPopup} className="close-categories categ-btn"><FaTimes /></button>
             </nav>

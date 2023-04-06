@@ -8,7 +8,6 @@ import search from '.././assets/search.svg';
 import '.././styles/NavigationBar.css';
 import Switch from "./switch";
 
-
 function NavigationBar() {
     const { counter } = useContext(AddItemContext);
     const { theme } = useContext(ThemeContext);
@@ -32,15 +31,15 @@ function NavigationBar() {
                     color: theme === 'light' ? 'var(--black)' : 'var(--secondary)'
                 }}></input>
                 <button className="search-button" style={{ backgroundColor: theme === 'light' ? 'transparent' : 'transparent' }}>
-                    <img src={search} style={{ filter: theme === 'light' ? null : 'var(--imgFilter)' }} />
+                    <img src={search} style={{ filter: theme === 'light' ? 'var(--blackFilter)' : 'var(--whiteFilter)' }} />
                 </button>
             </div>
-            <div className="links" ref={navRef}>
+            <nav className="links" ref={navRef}>
                 <Link onClick={hideNavbar} to='/Products.js'>Products</Link>
                 <Link onClick={hideNavbar} to='/Contact.js'>Contact</Link>
                 <Link onClick={hideNavbar} to='/Profile.js/MyAccount.js'>Profile</Link>
                 <div className="right-side-nav login-register">
-                    <Link onClick={hideNavbar} to='/Cart.js'><img src={cart} style={{ filter: theme === 'light' ? null : 'var(--imgFilter)' }} /></Link>
+                    <Link onClick={hideNavbar} to='/Cart.js'><img src={cart} style={{ filter: theme === 'light' ? 'var(--blackFilter)' : 'var(--whiteFilter)' }} /></Link>
                     {counter.count > 0 ? <span className="cart-index">{counter.count}</span> : null}
                     {/* <div>
                         <Link className="login">Login</Link>
@@ -52,7 +51,7 @@ function NavigationBar() {
                 <button className='nav-btn nav-close-btn' onClick={showNavbar}>
                     <FaTimes />
                 </button>
-            </div>
+            </nav>
             <button className='nav-btn' onClick={showNavbar} style={{ color: theme === 'light' ? 'var(--darkGray)' : 'white' }}>
                 <FaBars />
             </button>

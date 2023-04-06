@@ -60,7 +60,7 @@ function SignUp() {
                         <h2>Sign Up</h2>
                         <div className="Field">
                             <label className="label-signup">
-                                First name <sup>*</sup>
+                                First name <sup className="sup-signup">*</sup>
                             </label>
                             <input className="input-signup" placeholder="First name" value={firstName} onChange={(e) => { setFirstName(e.target.value) }} />
                         </div>
@@ -70,13 +70,13 @@ function SignUp() {
                         </div>
                         <div className="Field">
                             <label className="label-signup">
-                                Email address <sup>*</sup>
+                                Email address <sup className="sup-signup">*</sup>
                             </label>
                             <input className="input-signup" placeholder="Email address" value={email} onChange={(e) => { setEmail(e.target.value) }} />
                         </div>
                         <div className="Field">
                             <label className="label-signup">
-                                Password <sup>*</sup>
+                                Password <sup className="sup-signup">*</sup>
                             </label>
                             <input className="input-signup" placeholder="Password" type="password" value={password.value}
                                 onChange={(e) => { setPassword({ ...password, value: e.target.value }); }}
@@ -85,7 +85,7 @@ function SignUp() {
                         </div>
                         <div className="Field">
                             <label className="label-signup">
-                                Role <sup>*</sup>
+                                Role <sup className="sup-signup">*</sup>
                             </label>
                             <select className="input-signup" value={role} onChange={(e) => setRole(e.target.value)}>
                                 <option value="role">Role</option>

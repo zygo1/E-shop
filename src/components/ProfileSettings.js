@@ -107,7 +107,7 @@ function ProfileSettings() {
             <form>
                 <fieldset className='settings-fieldset' style={{ border: theme === 'light' ? null : '2px solid var(--darkGray)' }}>
                     <div className='settings-field'>
-                        <label className='label-settings'>Username <sup>*</sup></label>
+                        <label className='label-settings'>Username <sup className="sup-settings">*</sup></label>
                         <input
                             className='input-settings'
                             value={username.value}
@@ -117,7 +117,7 @@ function ProfileSettings() {
                         {username.value.length < 2 ? <UsernameErrorMessage /> : null}
                     </div>
                     <div className='settings-field'>
-                        <label className='label-settings'>Password <sup>*</sup></label>
+                        <label className='label-settings'>Password <sup className="sup-settings">*</sup></label>
                         <input type='password'
                             className='input-settings'
                             value={password.value}
@@ -127,7 +127,7 @@ function ProfileSettings() {
                         {password.value.length < 8 ? <PasswordErrorMessage /> : null}
                     </div>
                     <div className='settings-field'>
-                        <label className='label-settings'>E-mail <sup>*</sup></label>
+                        <label className='label-settings'>E-mail <sup className="sup-settings">*</sup></label>
                         <input
                             className='input-settings'
                             value={email.value}
@@ -137,7 +137,7 @@ function ProfileSettings() {
                         {!validateEmail(email.value) ? <EmailErrorMessage /> : null}
                     </div>
                     <div className='settings-field'>
-                        <label className='label-settings'>Address <sup>*</sup></label>
+                        <label className='label-settings'>Address <sup className="sup-settings">*</sup></label>
                         <input
                             className='input-settings'
                             value={address.value}
@@ -168,7 +168,7 @@ function ProfileSettings() {
                         </select>
                     </div>
                     <div className='settings-field'>
-                        <label className='label-settings'>Year of Birth <sup>*</sup></label>
+                        <label className='label-settings'>Year of Birth <sup className="sup-settings">*</sup></label>
                         <select className='input-settings' style={getThemeStyle()} value={year.value} onChange={(e) => { setYear({ ...year, value: e.target.value, isTouched: true }) }}>
                             <option value="">Select Year</option>
                             {years.map((year) => (

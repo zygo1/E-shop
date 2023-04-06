@@ -3,7 +3,7 @@
 }
 
 .settings-main-container{
-    margin: -50px 0px 0px 0px;
+    margin: -50px 0px 10px 0px;
 }
 
 .settings-fieldset{
@@ -18,8 +18,17 @@
 .settings-field {
     display: flex;
     flex-direction: column;
-    position: relative;
+    /* position: relative; */
     padding-bottom: 24px;
+}
+
+.sup-settings{
+    color: red;
+    top: -2px;
+    font-size: 95%;
+    line-height: 0;
+    /* position: relative; */
+    vertical-align: baseline;
 }
 
 .label-settings{

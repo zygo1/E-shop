@@ -24,22 +24,27 @@ function MyAccount() {
     return (
         <section>
             <div className="accountContainer">
-                <div className="recentViews" style={{
-                    border: theme === 'light' ? null : 'var(--veryDarkGray)',
-                    boxShadow: theme === 'light' ? null : '0px 0px 5px var(--darkGray)'
-                }}>
+                <div className="views">
                     <p>Recently Viewed</p>
-                    <div className="recentItems">
-                        {recentlyViewed}
+                    <div className="recentViews" style={{
+                        border: theme === 'light' ? null : 'var(--veryDarkGray)',
+                        boxShadow: theme === 'light' ? null : '0px 0px 5px var(--darkGray)'
+                    }}>
+                        <div className="recentItems">
+                            {recentlyViewed}
+                        </div>
                     </div>
                 </div>
-                <div className="recentOrders" style={{
-                    border: theme === 'light' ? null : 'var(--veryDarkGray)',
-                    boxShadow: theme === 'light' ? null : '0px 0px 5px var(--darkGray)'
-                }}>
+                <div className="orders">
                     <p>Recent Orders</p>
-                    <p>na antikatastisw to recent orders me kati allo</p>
+                    <div className="recentOrders" style={{
+                        border: theme === 'light' ? null : 'var(--veryDarkGray)',
+                        boxShadow: theme === 'light' ? null : '0px 0px 5px var(--darkGray)'
+                    }}>
+                        <p>na antikatastisw to recent orders me kati allo</p>
+                    </div>
                 </div>
+
             </div>
         </section>
     )

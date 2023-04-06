@@ -35,31 +35,33 @@ function ProfileCategories() {
                         hideProfileCategories();
                     }}
                         className='profile-categ-items'>
-                        <img style={{ filter: theme === 'light' ? null : 'var(--imgHover)' }} src={profileimg} /><Link style={{ color: theme === 'light' ? null : 'var(--white)' }} to="/Profile.js/MyAccount.js">My account</Link>
+                        <img style={{ filter: theme === 'light' ? 'var(--blackFilter)' : 'var(--whiteFilter)' }} src={profileimg} /><Link style={{ color: theme === 'light' ? 'var(--black)' : 'var(--white)' }} to="/Profile.js/MyAccount.js">My account</Link>
                     </li>
                     <li onClick={() => {
                         navigate("/Profile.js/MyOrders.js")
                         hideProfileCategories();
                     }}
                         className='profile-categ-items'>
-                        <img style={{ filter: theme === 'light' ? null : 'var(--imgHover)' }} src={order} /><Link style={{ color: theme === 'light' ? null : 'var(--white)' }} to="/Profile.js/MyOrders.js">Orders</Link>
+                        <img style={{ filter: theme === 'light' ? 'var(--blackFilter)' : 'var(--whiteFilter)' }} src={order} /><Link style={{ color: theme === 'light' ? 'var(--black)' : 'var(--white)' }} to="/Profile.js/MyOrders.js">Orders</Link>
                     </li>
                     <li onClick={() => {
                         navigate("/Profile.js/ProfileSettings.js")
                         hideProfileCategories();
                     }}
                         className='profile-categ-items'>
-                        <img style={{ filter: theme === 'light' ? null : 'var(--imgHover)' }} src={settings} /><Link style={{ color: theme === 'light' ? null : 'var(--white)' }} to="/Profile.js/ProfileSettings.js">Settings</Link>
+                        <img style={{ filter: theme === 'light' ? 'var(--blackFilter)' : 'var(--whiteFilter)' }} src={settings} /><Link style={{ color: theme === 'light' ? 'var(--black)' : 'var(--white)' }} to="/Profile.js/ProfileSettings.js">Settings</Link>
                     </li>
                     <li onClick={() => {
                         navigate("/Contact.js")
                         hideProfileCategories();
                     }}
                         className='profile-categ-items'>
-                        <img style={{ filter: theme === 'light' ? null : 'var(--imgHover)' }} src={help} /><Link style={{ color: theme === 'light' ? null : 'var(--white)' }} to="/Contact.js">Help / Contact</Link>
+                        <img style={{ filter: theme === 'light' ? 'var(--blackFilter)' : 'var(--whiteFilter)' }} src={help} /><Link style={{ color: theme === 'light' ? 'var(--black)' : 'var(--white)' }} to="/Contact.js">Help / Contact</Link>
                     </li>
                 </ul>
-                <button onClick={toggleProfileCategories} className="close-categories categ-btn"><FaTimes /></button>
+                <button onClick={toggleProfileCategories} className="close-categories categ-btn" style={{
+                    color: theme === 'light' ? 'var(--black)' : 'var(--white)'
+                }} ><FaTimes /></button>
             </nav>
         </div>
 

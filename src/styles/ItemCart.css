@@ -61,7 +61,8 @@
     }
 
     .cart-image{
-      width: 80px;
+      max-width: 100px;
+      max-height: 250px;
     }
 
     .cart-description{

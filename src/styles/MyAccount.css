@@ -40,8 +40,16 @@
     overscroll-behavior-inline: contain;
 }
 
-.recentViews > p{
-    position: absolute;
+.accountContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.accountContainer > div > p {
+    margin: 0px 0px 10px 0px;
 }
 
 @media (max-width:968px){
@@ -57,12 +65,12 @@
     .recentViews{
         margin: 0px 0px 0px 10px;
         width: 270px;
-        height: 330px;
+        height: auto;
     }
 
     .recentOrders{
         margin: 0px 0px 0px 10px;
         width: 270px;
-        height: 250px;
+        height: auto;
     }
 }
