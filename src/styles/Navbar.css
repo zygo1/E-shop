@@ -100,6 +100,14 @@
   background-color: var(--primary);
 }
 
+.navbar-links li:hover a{
+  color: white !important ;
+}
+
+.navbar-links li:hover > button > img,.navbar-links li:hover > a > img{
+  filter: var(--whiteFilter) !important ;
+}
+
 #slider-button:hover{
   background-color: transparent;
 }

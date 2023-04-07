@@ -23,6 +23,13 @@ function Navbar() {
         setIsActive(false);
     }
 
+    /*
+    This creates a function called handleWindowClick which is called when a click
+    event occurs on the window object. The function takes an event object e as its
+    argument. If the navRef is defined (i.e., not null or undefined) and the e.target
+    (i.e., the DOM element that was clicked) is not contained within navRef, then it
+    sets the isActive state variable to false.
+    */
     const handleWindowClick = (e) => {
         if (navRef.current && !navRef.current.contains(e.target)) {
             setIsActive(false);
@@ -38,7 +45,7 @@ function Navbar() {
     }, []);
 
     return (
-        <nav className="navbar" ref={navRef} style={{ backgroundColor: theme === 'light' ? 'var(--navWhite' : 'var(--darkGray)' }}>
+        <nav className="navbar" ref={navRef} style={{ backgroundColor: theme === 'light' ? 'var(--navWhite)' : 'var(--darkGray)' }}>
             {/* Brand Name */}
             <div onClick={() => { navigate('/'); handleRemove() }} className="brand-title"><Link>Quickmart</Link></div>
             {/* Search */}
@@ -57,9 +64,9 @@ function Navbar() {
             </div> */}
             {/* Bars - Responsive */}
             <Link to="#" className="toggle-button" onClick={handleToggle}>
-                <span className="bar"></span>
-                <span className="bar"></span>
-                <span className="bar"></span>
+                <span className="bar" style={{ backgroundColor: theme === 'light' ? 'var(--black)' : 'var(--white)' }}></span>
+                <span className="bar" style={{ backgroundColor: theme === 'light' ? 'var(--black)' : 'var(--white)' }}></span>
+                <span className="bar" style={{ backgroundColor: theme === 'light' ? 'var(--black)' : 'var(--white)' }}></span>
             </Link>
             {/* Links */}
             <div className={`navbar-links ${isActive ? 'active' : ''}`}>
@@ -68,8 +75,8 @@ function Navbar() {
                     <li onClick={() => { navigate('/Contact.js'); handleRemove() }} ><Link style={{ color: theme === 'light' ? 'var(--black)' : 'var(--white)' }}>Contact</Link></li>
                     <li onClick={() => { navigate('/Cart.js'); handleRemove() }}><Link><img src={cart} style={{ filter: theme === 'light' ? 'var(--blackFilter)' : 'var(--whiteFilter)' }} /></Link></li>
                     <li onClick={() => { navigate('/Profile.js/MyAccount.js'); handleRemove() }}><Link><img src={user} style={{ filter: theme === 'light' ? 'var(--blackFilter)' : 'var(--whiteFilter)' }} /></Link></li>
-                    <li><button style={{ color: theme === 'light' ? 'var(--black)' : 'var(--white)' }}><img style={{ filter: theme === 'light' ? 'var(--blackFilter)' : 'var(--whiteFilter)' }} src={language} /></button></li>
-                    <li id='slider-button'><button style={{ color: theme === 'light' ? 'var(--black)' : 'var(--white)' }}><Switch /></button></li>
+                    <li><button ><img style={{ filter: theme === 'light' ? 'var(--blackFilter)' : 'var(--whiteFilter)' }} src={language} /></button></li>
+                    <li id='slider-button'><button><Switch /></button></li>
                 </ul>
             </div>
         </nav>
