@@ -1,19 +1,19 @@
 .switch {
-    position: absolute;
+    position: relative;
     display: inline-block;
     right: 0px;
     width: 50px;
     height: 24px;
+    
 }
 
-/* to hide default html checkbox */
 .switch input {
     opacity: 0;
     width: 0;
     height: 0;
+
 }
 
-/* the slider */
 .slider {
     position: absolute;
     cursor: pointer;
@@ -78,38 +78,4 @@ input:checked + .slider:before {
 
 .slider.round:before {
     border-radius: 50%;
-}
-
-@media (max-width:996px) {
-    .moon,.sun{
-        font-size: 1.3rem;
-    }
-}
-
-
-@media (max-width:868px){
-    .switch{
-        position: relative;
-        right: 0px;
-        margin: 30px 0px 0px 0px;
-        width: 50px;
-        height: 24px;
-    }
-
-    .slider:before{
-        height: 18px;
-        width: 18px;
-    }
-
-    .moon,.sun{
-        font-size: 1.05rem;
-        top:3px;
-        left:4px;
-    }
-
-    .sun{
-        font-size: 1.05rem;
-        top: 4px;
-        left:30px;
-    }
 }

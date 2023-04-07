@@ -12,9 +12,14 @@
 }
 
 .brand-title{
-  font-size: 1.8rem;
+  font-size: 1.9rem;
   margin: 8px;
   cursor: pointer;
+  font-weight: 700;
+}
+
+.brand-title a{
+  color: var(--primary)
 }
 
 
@@ -68,6 +73,7 @@
 
 .navbar-links li{
   list-style: none;
+  cursor: pointer;
 }
 
 .navbar-links li a{
@@ -94,10 +100,14 @@
   background-color: var(--primary);
 }
 
+#slider-button:hover{
+  background-color: transparent;
+}
+
 .toggle-button{
-  position: absolute;
-  top:.75rem;
-  right: 1rem;
+  position: absolute; /*! here*/
+  top: 10px; /*! here*/
+  right: 16px;
   display: none;
   flex-direction: column;
   justify-content: space-between;
@@ -119,7 +129,7 @@
 
   .search{
     height: 30px;
-    margin-right: 80px;
+    margin-right: 20px;
   }
 
   .search-button{
@@ -139,10 +149,10 @@
       display: none;
       width: 100%;
   }
-
-  .navbar-links{
-      flex-direction: column;
-      align-items: flex-start;
+/*! prob */
+  .navbar{
+    flex-direction: column;
+    align-items: flex-start;
   }
 /* ? */
   .navbar-links ul{
@@ -151,15 +161,18 @@
   }
 
   .navbar-links li{
-      text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
   }
 
   .navbar-links li a{
-      padding: .5rem 1rem;
+      padding: 8px 16px;
   }
 
   .navbar-links li button{
-    padding: .5rem 1rem;
+    padding: 8px 16px;
   }
 
   .navbar-links.active{

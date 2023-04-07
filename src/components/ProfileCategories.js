@@ -15,11 +15,12 @@ function ProfileCategories() {
     const profileRef = useRef();
     const toggleProfileCategories = () => {
         profileRef.current.classList.toggle('responsive-categories');
-    }
+    };
 
     const hideProfileCategories = () => {
         profileRef.current.classList.remove('responsive-categories');
-    }
+    };
+
 
     return (
         <div className='profile-categories-container' >

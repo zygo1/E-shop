@@ -1,7 +1,7 @@
 /* Profile - Categories */
 .categoriesProfile{
   width: 180px;
-  height: 180px;
+  height: 200px;
   background-color: var(--itemColor);
   border-radius: 5px;
   border: none;
@@ -9,6 +9,7 @@
   padding: 5px 10px 10px 10px;
   margin: 25px;
   min-width: 100px;
+ 
 }
 
 .categoriesProfile ul li a{
@@ -49,9 +50,10 @@ flex-direction: column;
 align-items: center;
 justify-content: center;
 margin: 5px;
+
 }
 
-.profileCircle{
+/* .profileCircle{
 display: flex;
 align-items: center;
 justify-content: center;
@@ -68,7 +70,7 @@ width: 100px;
 height: 100px;
 border-radius: 50%;
 position: relative;
-}
+} */
 
 .nameLetter{
 font-family: 'Montserrat', sans-serif;
@@ -82,12 +84,13 @@ font-size: 1.1rem;
 }
 
 .categoriesProfile li {
-display: flex;
-flex-direction: row;
-align-items: center;
-justify-content: flex-start;
-gap: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 5px;
 }
+
 .categoriesProfile li > img{
 width:25px;
 }

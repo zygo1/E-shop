@@ -4,20 +4,45 @@ import language from '.././assets/language.svg';
 import search from '.././assets/search.svg';
 import Switch from "./switch";
 import '.././styles/Navbar.css';
-import { useContext } from 'react';
+import { useState, useRef, useEffect, useContext } from 'react';
 import { ThemeContext } from './useTheme';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 function Navbar() {
     const { theme } = useContext(ThemeContext);
+    const [isActive, setIsActive] = useState(false);
+    const navRef = useRef(null);
+    const navigate = useNavigate();
+
+    const handleToggle = () => {
+        setIsActive(!isActive);
+    };
+
+    const handleRemove = () => {
+        setIsActive(false);
+    }
+
+    const handleWindowClick = (e) => {
+        if (navRef.current && !navRef.current.contains(e.target)) {
+            setIsActive(false);
+        }
+    };
+
+    useEffect(() => {
+        window.addEventListener('click', handleWindowClick)
+
+        return () => {
+            window.removeEventListener('click', handleWindowClick);
+        };
+    }, []);
 
     return (
-        <nav class="navbar" style={{ backgroundColor: theme === 'light' ? 'var(--secondary)' : 'var(--darkGray)' }}>
+        <nav className="navbar" ref={navRef} style={{ backgroundColor: theme === 'light' ? 'var(--navWhite' : 'var(--darkGray)' }}>
             {/* Brand Name */}
-            <div class="brand-title">Quickmart</div>
+            <div onClick={() => { navigate('/'); handleRemove() }} className="brand-title"><Link>Quickmart</Link></div>
             {/* Search */}
-            <div className='search' style={{
+            {/* <div className='search' style={{
                 backgroundColor: theme === 'light' ? 'var(--secondary)' : 'var(--veryDarkGray)',
                 borderColor: theme === 'light' ? 'var(--secondary)' : 'var(--darkGray)',
                 color: theme === 'light' ? 'var(--black)' : 'var(--secondary)'
@@ -29,22 +54,22 @@ function Navbar() {
                 <button className="search-button" style={{ backgroundColor: theme === 'light' ? 'transparent' : 'transparent' }}>
                     <img src={search} style={{ filter: theme === 'light' ? 'var(--blackFilter)' : 'var(--whiteFilter)' }} />
                 </button>
-            </div>
+            </div> */}
             {/* Bars - Responsive */}
-            <Link to="#" class="toggle-button">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+            <Link to="#" className="toggle-button" onClick={handleToggle}>
+                <span className="bar"></span>
+                <span className="bar"></span>
+                <span className="bar"></span>
             </Link>
             {/* Links */}
-            <div class="navbar-links">
+            <div className={`navbar-links ${isActive ? 'active' : ''}`}>
                 <ul>
-                    <li><Link>Shop</Link></li>
-                    <li><Link>Contact</Link></li>
-                    <li><Link><img src={cart} style={{ filter: theme === 'light' ? 'var(--blackFilter)' : 'var(--whiteFilter)' }} /></Link></li>
-                    <li><Link><img src={user} style={{ filter: theme === 'light' ? 'var(--blackFilter)' : 'var(--whiteFilter)' }} /></Link></li>
+                    <li onClick={() => { navigate('/Products.js'); handleRemove() }} ><Link style={{ color: theme === 'light' ? 'var(--black)' : 'var(--white)' }}>Shop</Link></li>
+                    <li onClick={() => { navigate('/Contact.js'); handleRemove() }} ><Link style={{ color: theme === 'light' ? 'var(--black)' : 'var(--white)' }}>Contact</Link></li>
+                    <li onClick={() => { navigate('/Cart.js'); handleRemove() }}><Link><img src={cart} style={{ filter: theme === 'light' ? 'var(--blackFilter)' : 'var(--whiteFilter)' }} /></Link></li>
+                    <li onClick={() => { navigate('/Profile.js/MyAccount.js'); handleRemove() }}><Link><img src={user} style={{ filter: theme === 'light' ? 'var(--blackFilter)' : 'var(--whiteFilter)' }} /></Link></li>
                     <li><button style={{ color: theme === 'light' ? 'var(--black)' : 'var(--white)' }}><img style={{ filter: theme === 'light' ? 'var(--blackFilter)' : 'var(--whiteFilter)' }} src={language} /></button></li>
-                    <li><button style={{ color: theme === 'light' ? 'var(--black)' : 'var(--white)' }}><Switch /></button></li>
+                    <li id='slider-button'><button style={{ color: theme === 'light' ? 'var(--black)' : 'var(--white)' }}><Switch /></button></li>
                 </ul>
             </div>
         </nav>
