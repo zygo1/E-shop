@@ -7,17 +7,16 @@
             "img_path": "assets/apivita_cleansing_foam.jpeg"
         },
         {
-            "id": "sonyx1",
-            "name": "Sony Xperia 1 IV 5G Dual SIM (12GB/256GB)",
-            "price": "1159.99",
-            "img_path": "assets/sony_xperia_1_iv.jpeg",
-            "description": "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet."
+            "id": "xyl1",
+            "name": "Wooden Shredder Beige",
+            "price": "71.00",
+            "img_path": "assets/xylini_syrtariera.jpeg"
         },
         {
-            "id": "health1",
-            "name": "La Roche Posay Effaclar Anti-Acne Gel for Oily Skin 400ml",
-            "price": "12.99",
-            "img_path": "assets/la_roche_posay.jpeg"
+            "id": "sonyx10",
+            "name": "Sony Xperia 10 IV 5G Dual SIM (6GB/128GB)",
+            "price": "369.99",
+            "img_path": "assets/sony_xperia_10_iv.jpeg"
         },
         {
             "id": "xyl2",

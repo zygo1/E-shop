@@ -13,12 +13,8 @@
     width: 65%;
 }
 
-.orders-container{
-    margin: 0px 0px 20px 0px;
-}
-
 .orders-pageHeader{
-    margin: -35px 0px 0px 0px !important; 
+    margin: 50px 0px 0px 0px; 
 }
 
 .mainDiv img {
@@ -75,9 +71,9 @@
         margin: 20px auto 0px auto;
     }
 
-    .orders-pageHeader{
+    /* .orders-pageHeader{
         margin-left: 40px !important;
-    }
+    } */
 
     .insideContent{
         font-size: 0.55rem;

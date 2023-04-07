@@ -24,8 +24,8 @@
   justify-content: center;
   flex-wrap: wrap;
   flex-basis: calc(33.33% - 100px);
-  min-width: 160px;
-  min-height: 290px;
+  min-width: 250px;
+  min-height: 150px;
   margin: 15px;
   padding: 15px;
   box-shadow: 0px 0px 3px rgb(104, 104, 104);
@@ -47,7 +47,7 @@
   font-size: 1rem;
   font-weight: 700;
 }
-
+/* ! */
 .item img{
   /* width: 100px; */
   max-width: 200px;
@@ -94,7 +94,6 @@
 
   .item img{
     min-width: 100px;
-    /* min-height: 200px; */
   }
 
   .item > p:nth-child(2){

@@ -17,7 +17,7 @@
 }
 
 .profile-categ-items:hover a {
-color: white;
+  color: white;
 }
 
 /* Profile */
@@ -25,7 +25,6 @@ color: white;
   position: sticky;
   top: 40px;
 }
-
 
 .profile-account-container{
 display: grid;
@@ -53,25 +52,6 @@ margin: 5px;
 
 }
 
-/* .profileCircle{
-display: flex;
-align-items: center;
-justify-content: center;
-border: 10px solid rgb(226, 226, 226);
-border-radius: 50%;
-width: 100px;
-height: 100px;
-margin: 0px 0px 10px 0px;
-background-color: rgb(113, 158, 255);
-}
-
-.profileCircle > img{
-width: 100px;
-height: 100px;
-border-radius: 50%;
-position: relative;
-} */
-
 .nameLetter{
 font-family: 'Montserrat', sans-serif;
 color: var(--itemColor);
@@ -83,12 +63,23 @@ font-weight: 700;
 font-size: 1.1rem;
 }
 
-.categoriesProfile li {
+.categoriesProfile ul li {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  gap: 5px;
+  gap: 10px;
+  width: auto;
+}
+
+.categoriesProfile li:hover{
+  color: var(--secondary);
+  background-color: var(--primary);
+  cursor: pointer;
+}
+
+.categoriesProfile li:hover > img {
+  filter: var( --whiteFilter) !important;
 }
 
 .categoriesProfile li > img{
@@ -107,6 +98,18 @@ width:25px;
     width: 120px;
   }
 
+  .categoriesProfile li:hover{
+    background-color: var(--white);
+    cursor: pointer;
+  }
+  .categoriesProfile li:hover a{
+    color: var(--black) !important;
+  }
+
+  .categoriesProfile ul li:hover img{
+    filter: var(--blackFilter) !important;
+  }
+
   .categoriesProfile{
     display: flex;
     flex-direction: column;
@@ -115,22 +118,24 @@ width:25px;
     background-color: var(--primary);
     transform: translateY(100vh);
     position: fixed;
-    bottom: -100px;
-    right: -10px;
+    bottom: -105px;
+    right: 0px;
     margin: 0px;
-    height: 100vh;
+    height: 70vh;
     width: 100%;
     z-index: 9999;
-    gap: 0px;
+  }
+
+  .categoriesProfile li{
+    display: flex;
+    align-items: center;
   }
 
   .categoriesProfile a {
     color: white;
-    margin-top: 30px;
   }
 
   .categoriesProfile img {
-    margin-top: 30px;
     filter: invert(100%) sepia(0%) saturate(7454%) hue-rotate(50deg) brightness(112%) contrast(112%);
   }
 

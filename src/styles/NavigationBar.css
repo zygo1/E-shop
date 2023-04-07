@@ -81,21 +81,7 @@ filter: invert(36%) sepia(72%) saturate(1904%) hue-rotate(197deg) brightness(100
 }
 
 /* Cart Index */
-.cart-index{
-display: flex;
-align-items: center;
-justify-content: center;
-color: white;
-background-color: red;
-border-radius: 100%;
-width: 20px;
-height: 20px;
-z-index: 1;
-position: relative;
-left: -10px;
-top: -14px;
-font-size: 0.8rem;
-}
+ 
 
 /* Search */
 /* .search {

@@ -25,11 +25,12 @@ function ProfileCategories() {
     return (
         <div className='profile-categories-container' >
             <button onClick={toggleProfileCategories} className="open-categories profile-categ categ-btn" style={{
-                color: theme === 'light' ? 'var(--black)' : 'var(--white)'
+                color: theme === 'light' ? 'var(--black)' : 'var(--white)',
+                backgroundColor: theme === 'light' ? 'var(--secondary)' : 'var(--darkGray)'
             }}>
                 Options
             </button>
-            <nav className="categoriesProfile" ref={profileRef} style={{ backgroundColor: theme === 'light' ? 'var(--secondary)' : 'var(--darkGray)', boxShadow: theme === 'light' ? null : 'none' }}>
+            <nav className="categoriesProfile" ref={profileRef} style={{ backgroundColor: theme === 'light' ? 'var(--white)' : 'var(--darkGray)', boxShadow: theme === 'light' ? null : 'none' }}>
                 <ul >
                     <li onClick={() => {
                         navigate("/Profile.js/MyAccount.js");
@@ -57,7 +58,7 @@ function ProfileCategories() {
                         hideProfileCategories();
                     }}
                         className='profile-categ-items'>
-                        <img style={{ filter: theme === 'light' ? 'var(--blackFilter)' : 'var(--whiteFilter)' }} src={help} /><Link style={{ color: theme === 'light' ? 'var(--black)' : 'var(--white)' }} to="/Contact.js">Help / Contact</Link>
+                        <img style={{ filter: theme === 'light' ? 'var(--blackFilter)' : 'var(--whiteFilter)' }} src={help} /><Link style={{ color: theme === 'light' ? 'var(--black)' : 'var(--white)' }} to="/Contact.js">Help</Link>
                     </li>
                 </ul>
                 <button onClick={toggleProfileCategories} className="close-categories categ-btn" style={{

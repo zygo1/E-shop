@@ -32,15 +32,12 @@ function ProductCategories(props) {
     // Context
     const { category, changeCategory } = useContext(CategoryContext);
 
-
-
     return (
         <div>
             <button onClick={showPopup} className="open-categories categ-btn" style={{
                 color: props.theme === 'light' ? 'var(--black)' : 'var(--white)',
                 backgroundColor: props.theme === 'light' ? 'var(--secondary)' : 'var(--darkGray)'
-            }}>
-                <FaBox />Categories
+            }}>Categories
             </button>
             <nav className="categories" ref={categRef} style={{
                 backgroundColor: props.theme === 'light' ? 'var(--itemColor)' : 'var(--darkGray)',

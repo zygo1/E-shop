@@ -15,10 +15,8 @@ function Profile() {
     const { theme } = useContext(ThemeContext);
     return (
         <section className="profile-container">
-            <div className='logout-container'>
-                <p className='pageHeader' style={{
-                    color: theme === 'light' ? 'var(--black)' : 'var(--white)'
-                }} >Profile</p>
+            <div className='username-container'>
+                <p className='pageHeader' style={{ color: theme === 'light' ? 'var(--black)' : 'var(--white)' }} >Hello username</p>
             </div>
             <div className="profile-account-container">
                 <div className="profile-categories-wrapper">
@@ -28,7 +26,6 @@ function Profile() {
                 {isOrdersPage && <MyOrders />}
                 {isSettingsPage && <ProfileSettings />}
             </div>
-
         </section>
 
     )

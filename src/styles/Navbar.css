@@ -130,12 +130,35 @@
   border-radius: 10px;
 }
 
+.cart-index{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: red;
+  border-radius: 100%;
+  width: 20px;
+  height: 20px;
+  z-index: 1;
+  position: relative;
+  left: -25px;
+  top: 5px;
+  font-size: 0.8rem;
+  }
+
 @media (max-width:768px){
   .toggle-button{
       display: flex;
   }
 
-  .search{
+  .cart-index{
+    position: absolute; /* position1 */
+    top: -45px;
+    left: 50%;
+  }
+
+
+  /* .search{
     height: 30px;
     margin-right: 20px;
   }
@@ -147,7 +170,7 @@
 
   .search-button img{
     width: 18px;
-  }
+  } */
 
   .brand-title{
     font-size: 1.4rem;
@@ -173,6 +196,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    position: relative; /* position1 */
   }
 
   .navbar-links li a{

@@ -7,9 +7,11 @@ import '.././styles/Navbar.css';
 import { useState, useRef, useEffect, useContext } from 'react';
 import { ThemeContext } from './useTheme';
 import { Link, useNavigate } from 'react-router-dom';
+import { AddItemContext } from './useCart';
 
 
 function Navbar() {
+    const { counter } = useContext(AddItemContext);
     const { theme } = useContext(ThemeContext);
     const [isActive, setIsActive] = useState(false);
     const navRef = useRef(null);
@@ -74,6 +76,7 @@ function Navbar() {
                     <li onClick={() => { navigate('/Products.js'); handleRemove() }} ><Link style={{ color: theme === 'light' ? 'var(--black)' : 'var(--white)' }}>Shop</Link></li>
                     <li onClick={() => { navigate('/Contact.js'); handleRemove() }} ><Link style={{ color: theme === 'light' ? 'var(--black)' : 'var(--white)' }}>Contact</Link></li>
                     <li onClick={() => { navigate('/Cart.js'); handleRemove() }}><Link><img src={cart} style={{ filter: theme === 'light' ? 'var(--blackFilter)' : 'var(--whiteFilter)' }} /></Link></li>
+                    <li onClick={() => { navigate('/Cart.js'); handleRemove() }}>{counter.count > 0 ? <span className="cart-index">{counter.count}</span> : null}</li>
                     <li onClick={() => { navigate('/Profile.js/MyAccount.js'); handleRemove() }}><Link><img src={user} style={{ filter: theme === 'light' ? 'var(--blackFilter)' : 'var(--whiteFilter)' }} /></Link></li>
                     <li><button ><img style={{ filter: theme === 'light' ? 'var(--blackFilter)' : 'var(--whiteFilter)' }} src={language} /></button></li>
                     <li id='slider-button'><button><Switch /></button></li>
