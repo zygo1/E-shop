@@ -4,7 +4,7 @@ import Products from './components/Products';
 import Contact from './components/Contact';
 import Cart from './components/Cart';
 import Profile from './components/Profile';
-import SignUp from './components/SignUp';
+import SignUp from './components/login-register/SignUp';
 // import NavigationBar from './components/NavigationBar';
 import Navbar from './components/Navbar';
 import { ThemeContext } from './components/useTheme';

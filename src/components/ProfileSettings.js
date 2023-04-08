@@ -2,7 +2,7 @@ import '.././styles/Settings.css';
 import { useContext, useState } from 'react';
 import { ThemeContext } from './useTheme'
 import { validateEmail } from './ValidateEmail';
-import { PasswordErrorMessage } from './SignUp';
+import { PasswordErrorMessage } from './login-register/SignUp';
 
 const UsernameErrorMessage = () => {
     return (
