@@ -44,8 +44,22 @@ export default function Modal(props) {
     const [email, setEmail] = useState({ value: '', isTouched: false })
     const [password, setPassword] = useState({ value: '', isTouched: false })
 
-    const handleSubmit = (e) => {
+    function handleSubmit(e) {
         e.preventDefault();
+        const storedUser = localStorage.getItem(email.value);
+
+        if (storedUser) {
+            const user = JSON.parse(storedUser);
+            if (user.email === email.value && user.password === password.value) {
+                console.log('Login successfully');
+            }
+            else {
+                console.log('Invalid username or password.');
+            }
+        }
+        else {
+            console.log('No user found with this email.');
+        }
     };
 
 
@@ -137,7 +151,7 @@ export default function Modal(props) {
                         <div className='forgot-password'>
                             Forgot password?
                         </div>
-                        <button onClick={() => { navigate('/Products.js'); props.onClose() }} disabled={!isFormValid()} type='submit' className='login-button'>Login</button>
+                        <button onClick={() => { navigate('/Products.js'); }} disabled={!isFormValid()} type='submit' className='login-button'>Login</button>
                         <div className='sign-up-option'>
                             Don't you have an account? <span onClick={() => { navigate('/SignUp.js') }}>Sign up</span>
                         </div>

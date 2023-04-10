@@ -57,9 +57,21 @@ function SignUp() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        alert("Account created!");
+        const newUser = {
+            firstName: firstName,
+            lastName: lastName,
+            email: email,
+            password: password.value,
+            role: role,
+            yearOfBirth: year
+        };
+
+        if (localStorage.getItem(email) === null) {
+            localStorage.setItem(email, JSON.stringify(newUser));
+        }
         clearForm();
     };
+
 
     return (
         <section className="sign-up-container">
@@ -114,9 +126,9 @@ function SignUp() {
                                 ))}
                             </select>
                         </div>
-                        <Link to="/"><button className="button-signup" type="submit" disabled={!getIsFormValid()}>
+                        <button className="button-signup" type="submit" disabled={!getIsFormValid()}>
                             Create account
-                        </button></Link>
+                        </button>
                         <div className="sign-in">
                             <p>Do you have already and account? <span onClick={() => { navigate('/'); }}>Login</span></p>
                         </div>
