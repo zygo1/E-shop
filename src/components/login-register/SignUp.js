@@ -1,7 +1,8 @@
 import "../.././styles/SignUp.css";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { validateEmail } from "../ValidateEmail";
 import { Link, useNavigate } from "react-router-dom";
+import { ThemeContext } from '.././useTheme';
 
 
 export const PasswordErrorMessage = () => {
@@ -22,6 +23,13 @@ function SignUp() {
     const [year, setYear] = useState('');
 
     const navigate = useNavigate();
+    const { theme } = useContext(ThemeContext);
+
+    const INPUT_STYLES = {
+        backgroundColor: theme === 'light' ? 'var(--white)' : 'var(--darkGray)',
+        border: theme === 'light' ? null : '1px solid var(--veryDarkGray)',
+        color: theme === 'light' ? 'var(--black)' : 'var(--white)'
+    };
 
     const handleYearChange = (event) => {
         setYear(event.target.value);
@@ -64,23 +72,23 @@ function SignUp() {
                             <label className="label-signup">
                                 First name <sup className="sup-signup">*</sup>
                             </label>
-                            <input className="input-signup" placeholder="First name" value={firstName} onChange={(e) => { setFirstName(e.target.value) }} />
+                            <input className="input-signup" placeholder="First name" style={INPUT_STYLES} value={firstName} onChange={(e) => { setFirstName(e.target.value) }} />
                         </div>
                         <div className="Field">
                             <label className="label-signup">Last name</label>
-                            <input className="input-signup" placeholder="Last name" value={lastName} onChange={(e) => { setLastName(e.target.value) }} />
+                            <input className="input-signup" placeholder="Last name" style={INPUT_STYLES} value={lastName} onChange={(e) => { setLastName(e.target.value) }} />
                         </div>
                         <div className="Field">
                             <label className="label-signup">
                                 Email address <sup className="sup-signup">*</sup>
                             </label>
-                            <input className="input-signup" placeholder="Email address" value={email} onChange={(e) => { setEmail(e.target.value) }} />
+                            <input className="input-signup" placeholder="Email address" style={INPUT_STYLES} value={email} onChange={(e) => { setEmail(e.target.value) }} />
                         </div>
                         <div className="Field">
                             <label className="label-signup">
                                 Password <sup className="sup-signup">*</sup>
                             </label>
-                            <input className="input-signup" placeholder="Password" type="password" value={password.value}
+                            <input className="input-signup" placeholder="Password" type="password" style={INPUT_STYLES} value={password.value}
                                 onChange={(e) => { setPassword({ ...password, value: e.target.value }); }}
                                 onBlur={() => { setPassword({ ...password, isTouched: true }); }} />
                             {password.isTouched && password.value.length < 8 ? (<PasswordErrorMessage />) : null}
@@ -89,7 +97,7 @@ function SignUp() {
                             <label className="label-signup">
                                 Role <sup className="sup-signup">*</sup>
                             </label>
-                            <select className="input-signup" value={role} onChange={(e) => setRole(e.target.value)}>
+                            <select className="input-signup" value={role} style={INPUT_STYLES} onChange={(e) => setRole(e.target.value)}>
                                 <option value="role">Role</option>
                                 <option value="individual">Individual</option>
                                 <option value="business">Business</option>
@@ -97,7 +105,7 @@ function SignUp() {
                         </div>
                         <div className='Field'>
                             <label className='label-signup'>Year of Birth</label>
-                            <select className='input-signup' value={year} onChange={handleYearChange}>
+                            <select className='input-signup' value={year} style={INPUT_STYLES} onChange={handleYearChange}>
                                 <option value="">Select Year</option>
                                 {years.map((year) => (
                                     <option key={year} value={year}>
