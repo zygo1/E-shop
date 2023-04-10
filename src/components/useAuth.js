@@ -14,7 +14,7 @@ const AuthProvider = ({ children }) => {
     };
 
 
-    const providerValue = { isAuthenticated, login, logout };
+    const providerValue = { isAuthenticated, setIsAuthenticated, login, logout };
 
     return (
         <AuthContext.Provider value={providerValue}>

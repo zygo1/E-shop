@@ -32,14 +32,8 @@ const InvalidEmailMessage = () => {
     )
 };
 
-const ValidEmail = () => {
-    return (
-        <div>Email is valid.</div>
-    )
-}
-
 export default function Modal(props) {
-    const { login, logout } = useContext(AuthContext);
+    const { login, logout, setIsAuthenticated } = useContext(AuthContext);
     const navigate = useNavigate();
     const [email, setEmail] = useState({ value: '', isTouched: false })
     const [password, setPassword] = useState({ value: '', isTouched: false })
@@ -47,11 +41,13 @@ export default function Modal(props) {
     function handleSubmit(e) {
         e.preventDefault();
         const storedUser = localStorage.getItem(email.value);
-
         if (storedUser) {
             const user = JSON.parse(storedUser);
             if (user.email === email.value && user.password === password.value) {
                 console.log('Login successfully');
+                setIsAuthenticated(true);
+                props.onClose();
+                navigate('/');
             }
             else {
                 console.log('Invalid username or password.');
@@ -61,49 +57,6 @@ export default function Modal(props) {
             console.log('No user found with this email.');
         }
     };
-
-
-    const [validationMessage, setValidationMessage] = useState('')
-
-    const validatePassword = () => {
-        const hasCapitalLetter = /[A-Z]/.test(password.value);
-        const hasNumber = /\d/.test(password.value);
-        const hasSpecialChar = /[!@#$%^&*]/.test(password.value);
-
-        if (hasCapitalLetter && hasNumber && hasSpecialChar && password.value.length >= 8) {
-            setValidationMessage('Password is valid.')
-        }
-        else {
-            let message = 'Password must contain:\n';
-            if (!hasCapitalLetter) {
-                message += '- at least one capital letter\n'
-            }
-            if (!hasNumber) {
-                message += '- at least one number\n'
-            }
-            if (!hasSpecialChar) {
-                message += '- at least one special character\n'
-            }
-            if (password.value.length < 8) {
-                message += '- password should have at least 8 characters.'
-            }
-            setValidationMessage(message);
-        }
-    };
-
-    const isPasswordValid = () => {
-        if (validationMessage.includes('valid')) {
-            return true;
-        }
-        return false;
-    };
-
-    const isFormValid = () => {
-        return (
-            validateEmail(email.value) &&
-            isPasswordValid
-        );
-    }
 
 
     if (!props.open) {
@@ -139,19 +92,15 @@ export default function Modal(props) {
                                 onChange={(e) => {
                                     setPassword({ ...password, value: e.target.value, isTouched: true });
                                 }}
-                                onKeyUp={() => { validatePassword(password.value); }}
                                 onBlur={() => {
                                     setPassword({ ...password, isTouched: true });
                                 }}
                             />
-                            <div className='validation-message' style={{ color: validationMessage.includes('valid') ? '#34A853' : '#FF5252' }}>
-                                {validationMessage}
-                            </div>
                         </div>
                         <div className='forgot-password'>
                             Forgot password?
                         </div>
-                        <button onClick={() => { navigate('/Products.js'); }} disabled={!isFormValid()} type='submit' className='login-button'>Login</button>
+                        <button type='submit' className='login-button'>Login</button>
                         <div className='sign-up-option'>
                             Don't you have an account? <span onClick={() => { navigate('/SignUp.js') }}>Sign up</span>
                         </div>
@@ -161,5 +110,3 @@ export default function Modal(props) {
         </>
     )
 }
-
-// src\components\login-register\SignUp.js

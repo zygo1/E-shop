@@ -11,10 +11,16 @@ export const PasswordErrorMessage = () => {
     );
 };
 
+const InvalidEmailMessage = () => {
+    return (
+        <div>Email is invalid.</div>
+    )
+};
+
 function SignUp() {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
-    const [email, setEmail] = useState("");
+    const [email, setEmail] = useState({ value: "", isTouched: false });
     const [password, setPassword] = useState({
         value: "",
         isTouched: false,
@@ -40,7 +46,7 @@ function SignUp() {
     const getIsFormValid = () => {
         return (
             firstName &&
-            validateEmail(email) &&
+            validateEmail(email.value) &&
             password.value.length >= 8 &&
             role !== "role" &&
             year !== ""
@@ -50,7 +56,7 @@ function SignUp() {
     const clearForm = () => {
         setFirstName("");
         setLastName("");
-        setEmail("");
+        setEmail({ value: "", isTouched: false });
         setPassword({ value: "", isTouched: false });
         setRole("role");
     };
@@ -60,18 +66,52 @@ function SignUp() {
         const newUser = {
             firstName: firstName,
             lastName: lastName,
-            email: email,
+            email: email.value,
             password: password.value,
             role: role,
             yearOfBirth: year
         };
 
-        if (localStorage.getItem(email) === null) {
-            localStorage.setItem(email, JSON.stringify(newUser));
+        if (localStorage.getItem(email.value) === null) {
+            localStorage.setItem(email.value, JSON.stringify(newUser));
         }
         clearForm();
     };
 
+    const [validationMessage, setValidationMessage] = useState('')
+
+    const validatePassword = () => {
+        const hasCapitalLetter = /[A-Z]/.test(password.value);
+        const hasNumber = /\d/.test(password.value);
+        const hasSpecialChar = /[!@#$%^&*]/.test(password.value);
+
+        if (hasCapitalLetter && hasNumber && hasSpecialChar && password.value.length >= 8) {
+            setValidationMessage('Password is valid.');
+        }
+        else {
+            let message = 'Password must contain:\n'
+            if (!hasCapitalLetter) {
+                message += '- at least one capital letter\n'
+            }
+            if (!hasNumber) {
+                message += '- at least one number\n'
+            }
+            if (!hasSpecialChar) {
+                message += '- at least one special character\n'
+            }
+            if (password.value.length < 8) {
+                message += '- should have at least 8 characters.'
+            }
+            setValidationMessage(message);
+        }
+    };
+
+    const isPasswordValid = () => {
+        if (validationMessage.includes('valid')) {
+            return true;
+        };
+        return false;
+    };
 
     return (
         <section className="sign-up-container">
@@ -94,7 +134,14 @@ function SignUp() {
                             <label className="label-signup">
                                 Email address <sup className="sup-signup">*</sup>
                             </label>
-                            <input className="input-signup" placeholder="Email address" style={INPUT_STYLES} value={email} onChange={(e) => { setEmail(e.target.value) }} />
+                            <input className='input-signup' placeholder='Email' style={INPUT_STYLES}
+                                value={email.value}
+                                onChange={(e) => { setEmail({ ...email, value: e.target.value, isTouched: true }) }}
+                                onBlur={() => { setEmail({ ...email, isTouched: true }); }}
+                            />
+                            <div className='email-validation-message'>
+                                {(email.isTouched && !validateEmail(email.value)) ? <InvalidEmailMessage /> : null}
+                            </div>
                         </div>
                         <div className="Field">
                             <label className="label-signup">
@@ -102,8 +149,11 @@ function SignUp() {
                             </label>
                             <input className="input-signup" placeholder="Password" type="password" style={INPUT_STYLES} value={password.value}
                                 onChange={(e) => { setPassword({ ...password, value: e.target.value }); }}
+                                onKeyUp={() => { validatePassword(password.value); }}
                                 onBlur={() => { setPassword({ ...password, isTouched: true }); }} />
-                            {password.isTouched && password.value.length < 8 ? (<PasswordErrorMessage />) : null}
+                            <div className='validation-message' style={{ color: validationMessage.includes('valid') ? '#34A853' : '#FF5252' }}>
+                                {validationMessage}
+                            </div>
                         </div>
                         <div className="Field">
                             <label className="label-signup">
