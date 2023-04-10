@@ -24,7 +24,6 @@ function Navbar() {
 
     const handleModal = () => {
         isAuthenticated ? setIsOpen(false) : setIsOpen(true);
-        console.log(isOpen);
     };
 
     const handleToggle = () => {
@@ -87,7 +86,7 @@ function Navbar() {
                         <li onClick={() => { navigate('/Contact.js'); handleRemove() }} ><Link style={{ color: theme === 'light' ? 'var(--black)' : 'var(--white)' }}>Contact</Link></li>
                         <li onClick={() => { navigate('/Cart.js'); handleRemove() }}><Link><img src={cart} style={{ filter: theme === 'light' ? 'var(--blackFilter)' : 'var(--whiteFilter)' }} /></Link></li>
                         <li onClick={() => { navigate('/Cart.js'); handleRemove() }}>{counter.count > 0 ? <span className="cart-index">{counter.count}</span> : null}</li>
-                        <li onClick={() => { navigate('/Profile.js/MyAccount.js'); handleRemove(); handleModal() }}><Link><img src={user} style={{ filter: theme === 'light' ? 'var(--blackFilter)' : 'var(--whiteFilter)' }} /></Link></li>
+                        <li onClick={() => { handleRemove(); { isAuthenticated ? navigate('/Profile.js/MyAccount.js') : handleModal() } }}><Link><img src={user} style={{ filter: theme === 'light' ? 'var(--blackFilter)' : 'var(--whiteFilter)' }} /></Link></li>
                         <li><button ><img style={{ filter: theme === 'light' ? 'var(--blackFilter)' : 'var(--whiteFilter)' }} src={language} /></button></li>
                         <li id='slider-button'><button><Switch /></button></li>
                     </ul>
@@ -95,7 +94,6 @@ function Navbar() {
             </nav>
             <Modal
                 open={isOpen}
-                // login={login}
                 onClose={() => { setIsOpen(false) }}>
                 Login Modal
             </Modal>

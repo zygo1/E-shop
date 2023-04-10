@@ -1,0 +1,80 @@
+.log-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--black);
+    position: relative;
+}
+
+.close-modal {
+    display: flex;
+    align-items: center;
+    border: none;
+    padding: 6px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    color: var(--black);
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.close-modal>img {
+    width: 25px;
+    height: 25px;
+    filter: invert(35%) sepia(7%) saturate(5%) hue-rotate(323deg) brightness(88%) contrast(84%);
+}
+
+.login-header {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.register>span {
+    color: var(--primary);
+}
+
+.forgot-password {
+    font-size: 0.8rem;
+    margin: 0px auto 10px auto;
+    color: var(--primary);
+    cursor: pointer;
+}
+
+.login-button {
+    background-color: var(--primary);
+    border: none;
+    border-radius: 4px;
+    color: white;
+    height: 40px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.login-button:hover {
+    background-color: var(--hover);
+}
+
+.sign-up-option {
+    font-size: 0.8rem;
+    margin: 10px auto 0px auto;
+}
+
+.sign-up-option>span {
+    color: var(--primary);
+    cursor: pointer;
+}
+
+.validation-message {
+    margin-top: 5px;
+    font-size: 0.8rem;
+    white-space: pre-line;
+}
+
+.email-validation-message {
+    margin-top: 5px;
+    font-size: 0.8rem;
+    color: #FF5252;
+}
