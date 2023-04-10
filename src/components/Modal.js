@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { AuthContext } from './useAuth';
 import '.././styles/Modal.css';
 import { validateEmail } from './ValidateEmail';
@@ -39,6 +40,7 @@ const ValidEmail = () => {
 
 export default function Modal(props) {
     const { login, logout } = useContext(AuthContext);
+    const navigate = useNavigate();
     const [email, setEmail] = useState({ value: '', isTouched: false })
     const [password, setPassword] = useState({ value: '', isTouched: false })
 
@@ -86,7 +88,7 @@ export default function Modal(props) {
         return (
             validateEmail(email.value) &&
             isPasswordValid
-        )
+        );
     }
 
 
@@ -135,17 +137,15 @@ export default function Modal(props) {
                         <div className='forgot-password'>
                             Forgot password?
                         </div>
-                        <button type='submit' className='login-button'>Login</button>
+                        <button onClick={() => { navigate('/Products.js'); props.onClose() }} disabled={!isFormValid()} type='submit' className='login-button'>Login</button>
                         <div className='sign-up-option'>
-                            Don't you have an account? <span>Sign up</span>
+                            Don't you have an account? <span onClick={() => { navigate('/SignUp.js') }}>Sign up</span>
                         </div>
                     </fieldset>
                 </form>
-                {/* <div className='register'>Don't you have an account?<span>Register</span></div> */}
-                {/* <button onClick={props.onClose}>Close Modal</button> */}
-                {/* {props.children} */}
             </div>
         </>
-
     )
 }
+
+// src\components\login-register\SignUp.js

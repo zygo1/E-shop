@@ -1,7 +1,7 @@
 import "../.././styles/SignUp.css";
 import { useState } from "react";
 import { validateEmail } from "../ValidateEmail";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 export const PasswordErrorMessage = () => {
@@ -20,6 +20,8 @@ function SignUp() {
     });
     const [role, setRole] = useState("role");
     const [year, setYear] = useState('');
+
+    const navigate = useNavigate();
 
     const handleYearChange = (event) => {
         setYear(event.target.value);
@@ -108,7 +110,7 @@ function SignUp() {
                             Create account
                         </button></Link>
                         <div className="sign-in">
-                            <p>Do you have already and account? <span>Sign in!</span></p>
+                            <p>Do you have already and account? <span onClick={() => { navigate('/'); }}>Login</span></p>
                         </div>
                     </fieldset>
                 </form>

@@ -57,6 +57,14 @@
     background-color: var(--hover);
 }
 
+.login-button:disabled,
+.login-button[disabled] {
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+    cursor: not-allowed;
+}
+
 .sign-up-option {
     font-size: 0.8rem;
     margin: 10px auto 0px auto;
