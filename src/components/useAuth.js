@@ -4,7 +4,7 @@ export const AuthContext = createContext(null);
 
 const AuthProvider = ({ children }) => {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
-    const [userData, setUserData] = useState({ name: '', email: '' });
+    const [userData, setUserData] = useState({ name: '', lastname: '', email: '', password: '', role: '', yob: '' });
 
     const login = () => {
         setIsAuthenticated(true);
@@ -13,6 +13,8 @@ const AuthProvider = ({ children }) => {
     const logout = () => {
         setIsAuthenticated(false);
     };
+
+    // console.log(userData);
 
     const providerValue = { isAuthenticated, login, logout, userData, setUserData };
 

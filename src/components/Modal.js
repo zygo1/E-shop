@@ -52,8 +52,11 @@ export default function Modal(props) {
                 navigate('/');
             }
             else {
-                setValidityMessage('Invalid username or password.')
+                setValidityMessage('Invalid username or password.');
             }
+        }
+        else {
+            setValidityMessage('Invalid username or password.');
         }
     };
 

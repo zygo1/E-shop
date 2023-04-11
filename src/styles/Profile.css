@@ -86,8 +86,6 @@
   width: 25px;
 }
 
-.logout-button {}
-
 @media (max-width:968px) {
   .profile-account-container {
     display: flex;

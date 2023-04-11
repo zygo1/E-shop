@@ -1,86 +1,21 @@
-.headerContact{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  font-size: 1.225rem;
-  font-weight: 600;
-}
-
-.formTitle{
-  font-size: 1.2rem;
-  margin: 0px 0px 0px 10px;
-}
-
-.emailContact{
-  margin: 50px 0px 0px 0px;
-  background-color: var(--itemColor);
-  border: none;
-  border-radius: 7px;
-}
-
-.contactForm {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin: 15px 0px 0px 15px;
-  padding: 5px;
-}
-
-.contactForm label {
-  display: block;
-  margin-bottom: 5px;
-}
-
-.contactForm .contactText {
-  display: block;
-  width: 250px;
-  padding: 5px;
-  margin-bottom: 10px;
-}
-
-.contactForm textarea {
-  max-width: 250px;
-  min-width: 50px;
-  min-height: 50px;
-  overflow: scroll;
-}
-
-.contactForm button{
-  border: none;
-  border-radius: 6px;
-  background-color: var(--primary);
-  color: var(--itemColor);
-  width: 90px;
-  margin: 7px 0px 0px 85px;
-  padding: 5px;
-}
-
-.contactForm button:hover{
-  cursor: pointer;
-  background-color: var(--hover);
-  transition: 0.1s ease-in-out;
-}
-
-/*? Contact */
-.waysContact{
+.waysContact {
   font-family: 'Montserrat', sans-serif;
-  margin: 50px;
+  margin: 20px;
   padding: 10px;
 }
 
-.contactImage{
+.contactImage {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 20px 0px 0px 50px;
+  margin: 0px 0px 0px 50px;
 }
 
 .contactImage img {
   width: 400px;
 }
 
-.chatHeader{
+.chatHeader {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -88,7 +23,7 @@
   gap: 15px;
 }
 
-.emailHeader{
+.emailHeader {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -96,7 +31,7 @@
   gap: 15px;
 }
 
-.faqHeader{
+.faqHeader {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -104,80 +39,81 @@
   gap: 15px;
 }
 
-.chatHeader > img{
+.chatHeader>img {
   height: 50px;
 }
 
-.emailHeader > img{
+.emailHeader>img {
   height: 50px;
 }
 
-.faqHeader > img{
+.faqHeader>img {
   height: 50px;
 }
 
-/* Contact */
-.contactItems{
-display: flex;
-flex-direction: row;
-align-items: center;
-justify-content: space-between;
-margin: 20px 150px 0px 150px;
-flex-wrap: wrap;
-gap: 100px;
+.contactItems {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 20px 0px 20px;
+  flex-wrap: wrap;
+  gap: 60px;
 }
 
-.contactItem{
-background-color: var(--itemColor);
-border: none;
-border-radius: 5px;
-margin: 7px;
-padding: 30px;
-cursor: pointer;
+.contactItem {
+  background-color: var(--itemColor);
+  border: none;
+  border-radius: 5px;
+  padding: 30px;
+  cursor: pointer;
+  max-width: 550px;
 }
 
-.contactItemChat{
-background-color: var(--itemColor);
-border: none;
-border-radius: 5px;
-margin: 7px;
-padding: 30px;
+.contactItemChat {
+  background-color: var(--itemColor);
+  border: none;
+  border-radius: 5px;
+  padding: 30px;
+  max-width: 400px;
 }
 
-.contactItemChat > button{
-border: none;
-border-radius: 8px;
-margin: 10px 0px 0px 0px;
-padding: 10px;
-background-color: var(--primary);
-color: var(--white);
+.contactItemChat>button {
+  border: none;
+  border-radius: 8px;
+  margin: 10px 0px 0px 0px;
+  padding: 10px;
+  background-color: var(--primary);
+  color: var(--white);
 }
 
-.contactItemChat > button:hover{
-cursor: pointer;
-background-color: var(--hover);
-transition: 0.2s ease-in-out;
+.contactItemChat>button:hover {
+  cursor: pointer;
+  background-color: var(--hover);
+  transition: 0.2s ease-in-out;
 }
 
-@media (max-width:768px){
-  .contactItems{
-    margin: 0px 0px 30px 0px;
+@media (max-width:768px) {
+  .contactItems {
+    margin: 0px 0px 10px 0px;
     padding: 0px;
+    gap: 20px;
   }
 
-  .categoriesProfile{
+  .categoriesProfile {
     margin: 10px 0px 0px 20px;
   }
 
   .categoriesProfile ul li {
-    margin: 0px;
     padding: 5px;
     width: 85px;
   }
-  .contactImage img{
+
+  .contactImage img {
     width: 300px;
   }
-  .contactImage{
-    margin: 150px 0px 0px 60px;
+
+  .contactImage {
+    margin: 50px 0px 0px 60px;
   }
 }

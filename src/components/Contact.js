@@ -11,14 +11,14 @@ function Contact() {
 
     return (
         <>
-            <section className="contect-container" style={{
+            <section className="contact-container" style={{
                 backgroundColor: theme === 'light' ? 'var(--secondary)' : 'var(--veryDarkGray)'
             }}>
                 <p className='pageHeader' style={{
                     color: theme === 'light' ? 'var(--black)' : 'var(--white)'
                 }}>Contact</p>
                 <div className="waysContact">
-                    <h2> Ways to Contact us!</h2>
+                    <h2> Ways to contact us!</h2>
                 </div>
                 <div className="contactItems">
                     <ContactEmail theme={theme} />

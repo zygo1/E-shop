@@ -2,7 +2,13 @@ import '.././styles/Settings.css';
 import { useContext, useState } from 'react';
 import { ThemeContext } from './useTheme'
 import { validateEmail } from './ValidateEmail';
-import { PasswordErrorMessage } from './login-register/SignUp';
+import { AuthContext } from './useAuth';
+
+export const PasswordErrorMessage = () => {
+    return (
+        <p className="FieldError">Password should have at least 8 characters.</p>
+    );
+};
 
 const UsernameErrorMessage = () => {
     return (
@@ -17,14 +23,16 @@ const EmailErrorMessage = () => {
 }
 
 function ProfileSettings() {
-    const [username, setUsername] = useState({ value: 'Jane5', isTouched: false });
-    const [password, setPassword] = useState({ value: 'nvhflkjhmshqisbs', isTouched: false });
-    const [email, setEmail] = useState({ value: 'Jane5@example.com', isTouched: false });
-    const [phone, setPhone] = useState({ value: '6912345678', isTouched: false });
-    const [address, setAddress] = useState({ value: 'Thessaloniki 2', isTouched: false });
-    const [gender, setGender] = useState({ value: 'Female', isTouched: false });
-    const [year, setYear] = useState({ value: 1980, isTouched: false });
-    const [role, setRole] = useState({ value: 'Individual', isTouched: false })
+    const { userData, setUserData } = useContext(AuthContext);
+
+    const [username, setUsername] = useState({ value: userData.name, isTouched: false });
+    const [password, setPassword] = useState({ value: userData.password, isTouched: false });
+    const [email, setEmail] = useState({ value: userData.email, isTouched: false });
+    const [phone, setPhone] = useState({ value: '', isTouched: false });
+    const [address, setAddress] = useState({ value: userData.address, isTouched: false });
+    const [gender, setGender] = useState({ value: 'Other', isTouched: false });
+    const [year, setYear] = useState({ value: userData.yob, isTouched: false });
+    const [role, setRole] = useState({ value: userData.role, isTouched: false })
 
     const currentYear = new Date().getFullYear();
     const years = Array.from({ length: 124 }, (_, i) => currentYear - i);
@@ -42,13 +50,13 @@ function ProfileSettings() {
             username.value &&
             password.value.length >= 8 &&
             validateEmail(email.value) &&
-            phone.value.length >= 10 &&
+            // phone.value &&
             address.value &&
             gender.value &&
             year.value !== "" &&
             role.value !== ""
         )
-    }
+    };
 
     const isFormTouched = () => {
         return (
@@ -61,7 +69,7 @@ function ProfileSettings() {
             year.isTouched ||
             role.isTouched
         )
-    }
+    };
 
     function CheckForm() {
         if (isFormTouched()) {
@@ -75,7 +83,7 @@ function ProfileSettings() {
         else {
             return false;
         }
-    }
+    };
 
     const resetInputs = () => {
         setUsername({ ...username, isTouched: false })
@@ -86,7 +94,35 @@ function ProfileSettings() {
         setGender({ ...gender, isTouched: false })
         setYear({ ...year, isTouched: false })
         setRole({ ...role, isTouched: false })
-    }
+    };
+
+    const [validationMessage, setValidationMessage] = useState('');
+
+    const validatePassword = () => {
+        const hasCapitalLetter = /[A-Z]/.test(password.value);
+        const hasNumber = /\d/.test(password.value);
+        const hasSpecialChar = /[!@#$%^&*]/.test(password.value);
+
+        if (hasCapitalLetter && hasNumber && hasSpecialChar && password.value.length >= 8) {
+            setValidationMessage('Password is valid.');
+        }
+        else {
+            let message = 'Password must contain:\n'
+            if (!hasCapitalLetter) {
+                message += '- at least one capital letter\n'
+            }
+            if (!hasNumber) {
+                message += '- at least one number\n'
+            }
+            if (!hasSpecialChar) {
+                message += '- at least one special character\n'
+            }
+            if (password.value.length < 8) {
+                message += '- should have at least 8 characters.'
+            }
+            setValidationMessage(message);
+        }
+    };
 
     const getThemeStyle = () => {
         if (theme === 'light') {
@@ -99,7 +135,7 @@ function ProfileSettings() {
                 color: theme === 'light' ? null : 'var(--white)'
             };
         }
-    }
+    };
 
     return (
         <section className='settings-main-container'>
@@ -121,10 +157,14 @@ function ProfileSettings() {
                         <input type='password'
                             className='input-settings'
                             value={password.value}
-                            onChange={(e) => { setPassword({ ...password, value: e.target.value, isTouched: true }) }}
+                            onChange={(e) => { setPassword({ ...password, value: e.target.value }); }}
+                            onKeyUp={() => { validatePassword(password.value); }}
                             placeholder='Password'
                             style={getThemeStyle()}></input>
-                        {password.value.length < 8 ? <PasswordErrorMessage /> : null}
+                        {/* {password.value.length < 8 ? <PasswordErrorMessage /> : null}*/}
+                        <div className='validation-message' style={{ color: validationMessage.includes('valid') ? '#34A853' : '#FF5252' }}>
+                            {validationMessage}
+                        </div>
                     </div>
                     <div className='settings-field'>
                         <label className='label-settings'>E-mail <sup className="sup-settings">*</sup></label>
@@ -179,7 +219,7 @@ function ProfileSettings() {
                         </select>
                     </div>
                     <div className='settings-field'>
-                        <label className='label-settings'>Role <sup>*</sup></label>
+                        <label className='label-settings'>Role <sup className="sup-settings">*</sup></label>
                         <select className='input-settings' style={getThemeStyle()} value={role.value} onChange={(e) => { setRole({ ...role, value: e.target.value, isTouched: true }) }}>
                             <option>Role</option>
                             <option>Individual</option>

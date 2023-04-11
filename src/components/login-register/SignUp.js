@@ -6,12 +6,6 @@ import { ThemeContext } from '.././useTheme';
 import { AuthContext } from "../useAuth";
 
 
-export const PasswordErrorMessage = () => {
-    return (
-        <p className="FieldError">Password should have at least 8 characters.</p>
-    );
-};
-
 const InvalidEmailMessage = () => {
     return (
         <div>Email is invalid.</div>
@@ -26,6 +20,7 @@ function SignUp() {
         value: "",
         isTouched: false,
     });
+    const [address, setAddress] = useState({ value: "", isTouched: false })
     const [role, setRole] = useState("role");
     const [year, setYear] = useState('');
 
@@ -51,6 +46,7 @@ function SignUp() {
             firstName &&
             validateEmail(email.value) &&
             password.value.length >= 8 &&
+            address.value !== '' &&
             role !== "role" &&
             year !== ""
         );
@@ -61,6 +57,7 @@ function SignUp() {
         setLastName("");
         setEmail({ value: "", isTouched: false });
         setPassword({ value: "", isTouched: false });
+        setAddress({ value: '', isTouched: false });
         setRole("role");
     };
 
@@ -71,13 +68,14 @@ function SignUp() {
             lastName: lastName,
             email: email.value,
             password: password.value,
+            address: address.value,
             role: role,
             yearOfBirth: year
         };
 
         if (localStorage.getItem(email.value) === null) {
             localStorage.setItem(email.value, JSON.stringify(newUser));
-            setUserData({ name: firstName, email: email.value })
+            setUserData({ name: firstName, lastname: lastName, email: email.value, password: password.value, address: address.value, role: role, yob: year });
         }
         clearForm();
     };
@@ -110,13 +108,6 @@ function SignUp() {
         }
     };
 
-    const isPasswordValid = () => {
-        if (validationMessage.includes('valid')) {
-            return true;
-        };
-        return false;
-    };
-
     return (
         <section className="sign-up-container">
             <div className='logo-sign-up'>QUICKMART</div>
@@ -136,7 +127,7 @@ function SignUp() {
                         </div>
                         <div className="Field">
                             <label className="label-signup">
-                                Email address <sup className="sup-signup">*</sup>
+                                Email <sup className="sup-signup">*</sup>
                             </label>
                             <input className='input-signup' placeholder='Email' style={INPUT_STYLES}
                                 value={email.value}
@@ -159,14 +150,24 @@ function SignUp() {
                                 {validationMessage}
                             </div>
                         </div>
+
+                        <div className="Field">
+                            <label className="label-signup">
+                                Address <sup className="sup-signup">*</sup>
+                            </label>
+                            <input className="input-signup" placeholder="Address" style={INPUT_STYLES} value={address.value}
+                                onChange={(e) => { setAddress({ ...address, value: e.target.value }); }}
+                                onBlur={() => { setAddress({ ...address, isTouched: true }); }} />
+                        </div>
+
                         <div className="Field">
                             <label className="label-signup">
                                 Role <sup className="sup-signup">*</sup>
                             </label>
                             <select className="input-signup" value={role} style={INPUT_STYLES} onChange={(e) => setRole(e.target.value)}>
-                                <option value="role">Role</option>
-                                <option value="individual">Individual</option>
-                                <option value="business">Business</option>
+                                <option>Role</option>
+                                <option>Individual</option>
+                                <option>Business</option>
                             </select>
                         </div>
                         <div className='Field'>

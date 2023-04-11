@@ -54,11 +54,12 @@
     flex-direction: column;
 }
 
+
 .FieldError {
-    position: absolute;
-    bottom: 2px;
-    color: red;
-    font-size: 0.725rem;
+    /* position: relative; */
+    /* bottom: -4px; */
+    color: #FF5252;
+    font-size: 12px;
 }
 
 .button-signup {
