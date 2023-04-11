@@ -5,16 +5,18 @@ import Contact from './components/Contact';
 import Cart from './components/Cart';
 import Profile from './components/Profile';
 import SignUp from './components/login-register/SignUp';
-// import NavigationBar from './components/NavigationBar';
+import Login from './components/login-register/Login';
 import Navbar from './components/Navbar';
 import { ThemeContext } from './components/useTheme';
 import { useContext, useEffect } from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
+import Modal from './components/Modal';
 
 function App() {
   const location = useLocation();
   const isSignupPage = location.pathname.includes('/SignUp.js');
   const { theme } = useContext(ThemeContext);
+  const navigate = useNavigate();
 
   // Main Background Color
   const html = document.documentElement;
@@ -23,6 +25,17 @@ function App() {
   useEffect(() => {
     document.title = 'Quickmart'
   }, [])
+
+  useEffect(() => {
+    const handleRefresh = () => {
+      navigate('/');
+    };
+
+    window.addEventListener('beforeunload', handleRefresh);
+    return () => {
+      window.removeEventListener('beforeunload', handleRefresh);
+    };
+  }, [navigate])
 
   return (
     <div style={{
@@ -37,6 +50,8 @@ function App() {
         <Route path='/Cart.js' element={<Cart />} />
         <Route path='/Profile.js/*' element={<Profile />} />
         <Route path='/SignUp.js' element={<SignUp />} />
+        <Route path='/Login.js' element={<Login />} />
+        <Route path='/Modal.js' element={<Modal />} />
       </Routes>
     </div >
 

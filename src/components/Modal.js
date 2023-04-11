@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useDebugValue, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from './useAuth';
 import '.././styles/Modal.css';
@@ -33,10 +33,11 @@ const InvalidEmailMessage = () => {
 };
 
 export default function Modal(props) {
-    const { login, logout, setIsAuthenticated } = useContext(AuthContext);
+    const { login, logout, userData, setUserData } = useContext(AuthContext);
     const navigate = useNavigate();
-    const [email, setEmail] = useState({ value: '', isTouched: false })
-    const [password, setPassword] = useState({ value: '', isTouched: false })
+    const [email, setEmail] = useState({ value: '', isTouched: false });
+    const [password, setPassword] = useState({ value: '', isTouched: false });
+    const [validityMessage, setValidityMessage] = useState('');
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -44,17 +45,15 @@ export default function Modal(props) {
         if (storedUser) {
             const user = JSON.parse(storedUser);
             if (user.email === email.value && user.password === password.value) {
-                console.log('Login successfully');
-                setIsAuthenticated(true);
+                // console.log('Login successfully');
+                setUserData({ ...userData, email: user.email });
+                login();
                 props.onClose();
                 navigate('/');
             }
             else {
-                console.log('Invalid username or password.');
+                setValidityMessage('Invalid username or password.')
             }
-        }
-        else {
-            console.log('No user found with this email.');
         }
     };
 
@@ -96,6 +95,9 @@ export default function Modal(props) {
                                     setPassword({ ...password, isTouched: true });
                                 }}
                             />
+                            <div className='password-email-validation'>
+                                {validityMessage}
+                            </div>
                         </div>
                         <div className='forgot-password'>
                             Forgot password?

@@ -1,9 +1,11 @@
 import ItemCart from "./ItemCart.js"
 import emptyCart from '.././assets/empty_cart.svg';
 import '.././styles/Cart.css';
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AddItemContext } from "./useCart";
-import { ThemeContext } from './useTheme'
+import { ThemeContext } from './useTheme';
+import Modal from './Modal.js';
+import { AuthContext } from "./useAuth.js";
 
 const EmptyCartMessage = () => {
     return (
@@ -16,6 +18,12 @@ const EmptyCartMessage = () => {
 
 const OrderSummary = (props) => {
     const { cart } = useContext(AddItemContext);
+    const [isOpen, setIsOpen] = useState(false);
+    const { isAuthenticated } = useContext(AuthContext);
+
+    const handleModal = () => {
+        isAuthenticated ? setIsOpen(false) : setIsOpen(true);
+    };
 
     const totalSumArr = cart.map(item => {
         let sum = item.price * item.quantity;
@@ -29,8 +37,18 @@ const OrderSummary = (props) => {
             <div className="sum-info">
                 <p>Location: <span className="city">Thessaloniki</span></p>
                 <p>Total: <span className="totalCost">{totalSum}</span> €</p>
-                <button style={{ boxShadow: props.theme === 'light' ? null : 'none' }}>Continue to payment</button>
+                <button style={{ boxShadow: props.theme === 'light' ? null : 'none' }}
+                    onClick={() => {
+                        if (!isAuthenticated) {
+                            handleModal();
+                        }
+                    }}>Continue to payment</button>
             </div>
+            <Modal
+                open={isOpen}
+                onClose={() => { setIsOpen(false) }}>
+                Login Modal
+            </Modal>
         </div>
     )
 }
@@ -59,7 +77,6 @@ function Cart() {
             <p className='pageHeader' style={{ color: theme === 'light' ? 'var(--black)' : 'var(--white)' }}>Cart</p>
             <div className="cart-items-container" >
                 <div className="itemList" >
-                    {/* {cartList.length > 0 ? <p style={{ color: theme === 'light' ? null : 'var(--white)' }} className="yourCart">Your cart</p> : null} */}
                     {cartList.length > 0 ? cartList : <EmptyCartMessage />}
                 </div>
                 {cartList.length > 0 ? <OrderSummary theme={theme} /> : null}

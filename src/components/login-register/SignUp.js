@@ -1,8 +1,9 @@
 import "../.././styles/SignUp.css";
 import { useContext, useState } from "react";
 import { validateEmail } from "../ValidateEmail";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { ThemeContext } from '.././useTheme';
+import { AuthContext } from "../useAuth";
 
 
 export const PasswordErrorMessage = () => {
@@ -30,6 +31,8 @@ function SignUp() {
 
     const navigate = useNavigate();
     const { theme } = useContext(ThemeContext);
+
+    const { userData, setUserData } = useContext(AuthContext);
 
     const INPUT_STYLES = {
         backgroundColor: theme === 'light' ? 'var(--white)' : 'var(--darkGray)',
@@ -74,6 +77,7 @@ function SignUp() {
 
         if (localStorage.getItem(email.value) === null) {
             localStorage.setItem(email.value, JSON.stringify(newUser));
+            setUserData({ name: firstName, email: email.value })
         }
         clearForm();
     };
@@ -180,7 +184,7 @@ function SignUp() {
                             Create account
                         </button>
                         <div className="sign-in">
-                            <p>Do you have already and account? <span onClick={() => { navigate('/'); }}>Login</span></p>
+                            <p>Do you have already and account? <span onClick={() => { navigate('/Login.js'); }}>Login</span></p>
                         </div>
                     </fieldset>
                 </form>

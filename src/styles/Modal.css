@@ -59,9 +59,9 @@
 
 .login-button:disabled,
 .login-button[disabled] {
-    border: 1px solid #999999;
-    background-color: #cccccc;
-    color: #666666;
+    border: 1px solid rgb(153, 153, 153);
+    background-color: rgb(204, 204, 204);
+    color: rgb(102, 102, 102);
     cursor: not-allowed;
 }
 
@@ -84,5 +84,11 @@
 .email-validation-message {
     margin-top: 5px;
     font-size: 0.8rem;
-    color: #FF5252;
+    color: rgb(255, 82, 82);
+}
+
+.password-email-validation {
+    font-size: 0.9rem;
+    margin-top: 5px;
+    color: rgb(255, 82, 82);
 }

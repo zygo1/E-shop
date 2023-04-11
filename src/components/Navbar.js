@@ -13,7 +13,7 @@ import Modal from './Modal'
 
 
 function Navbar() {
-    const { isAuthenticated, login, logout } = useContext(AuthContext);
+    const { isAuthenticated } = useContext(AuthContext);
     const [isOpen, setIsOpen] = useState(false);
 
     const { counter } = useContext(AddItemContext);
