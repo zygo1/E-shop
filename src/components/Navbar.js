@@ -87,7 +87,7 @@ function Navbar() {
                         <li onClick={() => { navigate('/Cart.js'); handleRemove() }}><Link><img src={cart} style={{ filter: theme === 'light' ? 'var(--blackFilter)' : 'var(--whiteFilter)' }} /></Link></li>
                         <li onClick={() => { navigate('/Cart.js'); handleRemove() }}>{counter.count > 0 ? <span className="cart-index">{counter.count}</span> : null}</li>
                         <li onClick={() => { handleRemove(); { isAuthenticated ? navigate('/Profile.js/MyAccount.js') : handleModal() } }}><Link><img src={user} style={{ filter: theme === 'light' ? 'var(--blackFilter)' : 'var(--whiteFilter)' }} /></Link></li>
-                        <li><button ><img style={{ filter: theme === 'light' ? 'var(--blackFilter)' : 'var(--whiteFilter)' }} src={language} /></button></li>
+                        {/* <li><button ><img style={{ filter: theme === 'light' ? 'var(--blackFilter)' : 'var(--whiteFilter)' }} src={language} /></button></li> */}
                         <li id='slider-button'><button><Switch /></button></li>
                     </ul>
                 </div>

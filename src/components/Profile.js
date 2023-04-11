@@ -32,7 +32,9 @@ function Profile() {
 
     const HEADER_STYLES = {
         color: theme === 'light' ? 'var(--black)' : 'var(--white)'
-    }
+    };
+
+
     return (
         <section className="profile-container">
             <div className='username-container'>

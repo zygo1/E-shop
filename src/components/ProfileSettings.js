@@ -3,6 +3,7 @@ import { useContext, useState } from 'react';
 import { ThemeContext } from './useTheme'
 import { validateEmail } from './ValidateEmail';
 import { AuthContext } from './useAuth';
+import { useEffect } from 'react';
 
 export const PasswordErrorMessage = () => {
     return (
@@ -14,16 +15,19 @@ const UsernameErrorMessage = () => {
     return (
         <p className="FieldError">Username should have at least 2 characters.</p>
     )
-}
+};
 
 const EmailErrorMessage = () => {
     return (
         <p className="FieldError">Email is not valid.</p>
     )
-}
+};
+
+
 
 function ProfileSettings() {
     const { userData, setUserData } = useContext(AuthContext);
+
 
     const [username, setUsername] = useState({ value: userData.name, isTouched: false });
     const [password, setPassword] = useState({ value: userData.password, isTouched: false });
@@ -36,14 +40,15 @@ function ProfileSettings() {
 
     const currentYear = new Date().getFullYear();
     const years = Array.from({ length: 124 }, (_, i) => currentYear - i);
-
     const { theme } = useContext(ThemeContext);
 
     const handleSaveChanges = (e) => {
         e.preventDefault();
         resetInputs();
-        alert("Changes saved successfully!")
-    }
+        alert("Changes saved successfully!");
+    };
+
+
 
     const isFormValid = () => {
         return (
@@ -161,7 +166,6 @@ function ProfileSettings() {
                             onKeyUp={() => { validatePassword(password.value); }}
                             placeholder='Password'
                             style={getThemeStyle()}></input>
-                        {/* {password.value.length < 8 ? <PasswordErrorMessage /> : null}*/}
                         <div className='validation-message' style={{ color: validationMessage.includes('valid') ? '#34A853' : '#FF5252' }}>
                             {validationMessage}
                         </div>
