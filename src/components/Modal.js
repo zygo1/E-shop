@@ -46,7 +46,7 @@ export default function Modal(props) {
             const user = JSON.parse(storedUser);
             if (user.email === email.value && user.password === password.value) {
                 // console.log('Login successfully');
-                setUserData({ ...userData, email: user.email });
+                setUserData({ ...userData, name: user.firstName, lastname: user.lastName, email: user.email, password: user.password, role: user.role, yob: user.yearOfBirth });
                 login();
                 props.onClose();
                 navigate('/');

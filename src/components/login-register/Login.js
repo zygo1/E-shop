@@ -21,7 +21,7 @@ const InvalidEmailMessage = () => {
 };
 
 export default function Login() {
-    const { login, logout, setUserData, userData } = useContext(AuthContext);
+    const { login, setUserData, userData } = useContext(AuthContext);
     const navigate = useNavigate();
     const [email, setEmail] = useState({ value: '', isTouched: false });
     const [password, setPassword] = useState({ value: '', isTouched: false });
@@ -34,7 +34,7 @@ export default function Login() {
             const user = JSON.parse(storedUser);
             if (user.email === email.value && user.password === password.value) {
                 // console.log('Login successfully');
-                setUserData({ ...userData, email: user.email });
+                setUserData({ ...userData, name: user.firstName, lastname: user.lastName, email: user.email, password: user.password, role: user.role, yob: user.yearOfBirth });
                 login();
                 navigate('/');
             }

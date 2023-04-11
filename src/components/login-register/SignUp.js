@@ -21,7 +21,7 @@ function SignUp() {
         isTouched: false,
     });
     const [address, setAddress] = useState({ value: "", isTouched: false })
-    const [role, setRole] = useState("role");
+    const [role, setRole] = useState("Role");
     const [year, setYear] = useState('');
 
     const navigate = useNavigate();

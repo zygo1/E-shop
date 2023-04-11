@@ -14,6 +14,7 @@ const AuthProvider = ({ children }) => {
         setIsAuthenticated(false);
     };
 
+    console.log(userData);
     const providerValue = { isAuthenticated, login, logout, userData, setUserData };
 
     return (
