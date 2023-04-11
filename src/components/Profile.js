@@ -1,6 +1,7 @@
 import ".././styles/Profile.css"
 import ProfileCategories from "./ProfileCategories";
-import { useLocation } from 'react-router-dom';
+import signInIcon from '.././assets/loggedout.svg';
+import { useLocation, useNavigate } from 'react-router-dom';
 import MyAccount from "./MyAccount";
 import MyOrders from "./MyOrders";
 import ProfileSettings from "./ProfileSettings";
@@ -17,8 +18,9 @@ function Profile() {
     const isOrdersPage = location.pathname.includes('/MyOrders.js');
     const isSettingsPage = location.pathname.includes('/ProfileSettings.js');
 
+    const navigate = useNavigate();
     const { theme } = useContext(ThemeContext);
-    const { userData, setUserData } = useContext(AuthContext);
+    const { userData, isAuthenticated } = useContext(AuthContext);
 
     let storedUser, user;
     if (localStorage.getItem(userData.email) !== null) {
@@ -33,6 +35,16 @@ function Profile() {
     const HEADER_STYLES = {
         color: theme === 'light' ? 'var(--black)' : 'var(--white)'
     };
+
+    if (!isAuthenticated) {
+        return (
+            <section className="signed-out">
+                <div>Oops! Looks like you need to log in to see your profile. Please log in or create an account to continue.</div>
+                <button onClick={() => { navigate('/Login.js') }}>Login</button>
+                <img src={signInIcon} />
+            </section>
+        )
+    }
 
 
     return (

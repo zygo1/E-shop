@@ -44,11 +44,20 @@ function ProfileSettings() {
 
     const handleSaveChanges = (e) => {
         e.preventDefault();
+        const changedData = {
+            firstName: username.value,
+            email: email.value,
+            password: password.value,
+            address: address.value,
+            role: role.value,
+            yearOfBirth: year.value
+        };
+
+        localStorage.setItem(email.value, JSON.stringify(changedData));
+        setUserData({ ...userData, name: username.value, email: email.value, password: password.value, address: address.value, role: role.value, yob: year.value });
         resetInputs();
         alert("Changes saved successfully!");
     };
-
-
 
     const isFormValid = () => {
         return (
