@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import Item from "./Item";
 import ProductCategories from "./ProductCategories";
 import '.././styles/Products.css';
@@ -11,7 +11,16 @@ function Products() {
     const { theme } = useContext(ThemeContext);
 
     const [filter, setFilter] = useState('Popularity');
-
+    // electronics
+    // jewelry
+    // men's clothing
+    // women's clothing
+    // toys
+    useEffect(() => {
+        fetch('https://fakestoreapi.com/products/category/electronics?limit=20')
+            .then(res => res.json())
+            .then(json => console.log(json));
+    }, [])
     const { category, changeCategory } = useContext(CategoryContext);
     let productList;
     // Rendering the items

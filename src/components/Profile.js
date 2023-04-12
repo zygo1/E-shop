@@ -5,7 +5,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import MyAccount from "./MyAccount";
 import MyOrders from "./MyOrders";
 import ProfileSettings from "./ProfileSettings";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { ThemeContext } from "./useTheme";
 import { AuthContext } from "./useAuth";
 
@@ -17,6 +17,7 @@ function Profile() {
     const isAccountPage = location.pathname.includes('/MyAccount.js');
     const isOrdersPage = location.pathname.includes('/MyOrders.js');
     const isSettingsPage = location.pathname.includes('/ProfileSettings.js');
+
 
     const navigate = useNavigate();
     const { theme } = useContext(ThemeContext);
@@ -45,6 +46,9 @@ function Profile() {
             </section>
         )
     }
+
+
+
 
 
     return (
