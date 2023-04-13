@@ -1,155 +1,70 @@
 import React, { useContext, useState, useEffect } from 'react';
+import { ThemeContext } from './useTheme';
+import { CategoryContext } from './useCategory';
 import Item from "./Item";
 import ProductCategories from "./ProductCategories";
 import '.././styles/Products.css';
-import myData from '../data/products.json';
-import { ThemeContext } from './useTheme';
-import { CategoryContext } from './useCategory';
+
 
 
 function Products() {
     const { theme } = useContext(ThemeContext);
-
-    const [filter, setFilter] = useState('Popularity');
-    // electronics
-    // jewelry
-    // men's clothing
-    // women's clothing
-    // toys
-    useEffect(() => {
-        fetch('https://fakestoreapi.com/products/category/electronics?limit=20')
-            .then(res => res.json())
-            .then(json => console.log(json));
-    }, [])
+    const [products, setProducts] = useState([]);
     const { category, changeCategory } = useContext(CategoryContext);
-    let productList;
-    // Rendering the items
-    if (category === 'Technology') {
-        productList = myData.products.technology.map(item => {
-            return (
-                <Item
-                    key={item.id}
-                    id={item.id}
-                    name={item.name}
-                    price={item.price}
-                    altsource={item.img_path}
-                    source={require(`.././${item.img_path}`)}
-                />
-            )
-        });
-    }
-    else if (category === "Home & Garden") {
-        productList = myData.products.home_and_garden.map(item => {
-            return (
-                <Item
-                    key={item.id}
-                    id={item.id}
-                    name={item.name}
-                    price={item.price}
-                    altsource={item.img_path}
-                    source={require(`.././${item.img_path}`)}
-                />
-            )
-        });
-    }
-    else if (category === "Books") {
-        productList = myData.products.books.map(item => {
-            return (
-                <Item
-                    key={item.id}
-                    id={item.id}
-                    name={item.name}
-                    price={item.price}
-                    altsource={item.img_path}
-                    source={require(`.././${item.img_path}`)}
-                />
-            )
-        });
-    }
-    else if (category === "Kids") {
-        productList = myData.products.kids.map(item => {
-            return (
-                <Item
-                    key={item.id}
-                    id={item.id}
-                    name={item.name}
-                    price={item.price}
-                    altsource={item.img_path}
-                    source={require(`.././${item.img_path}`)}
-                />
-            )
-        });
-    }
-    else if (category === "Fashion") {
-        productList = myData.products.fashion.map(item => {
-            return (
-                <Item
-                    key={item.id}
-                    id={item.id}
-                    name={item.name}
-                    price={item.price}
-                    altsource={item.img_path}
-                    source={require(`.././${item.img_path}`)}
-                />
-            )
-        });
-    }
-    else if (category === "Sports") {
-        productList = myData.products.sports.map(item => {
-            return (
-                <Item
-                    key={item.id}
-                    id={item.id}
-                    name={item.name}
-                    price={item.price}
-                    altsource={item.img_path}
-                    source={require(`.././${item.img_path}`)}
-                />
-            )
-        });
-    }
-    else if (category === "Health & Beauty") {
-        productList = myData.products.health_and_beauty.map(item => {
-            return (
-                <Item
-                    key={item.id}
-                    id={item.id}
-                    name={item.name}
-                    price={item.price}
-                    altsource={item.img_path}
-                    source={require(`.././${item.img_path}`)}
-                />
-            )
-        });
-    }
-    else {
-        changeCategory('Technology')
-        productList = myData.products.technology.map(item => {
-            return (
-                <Item
-                    key={item.id}
-                    id={item.id}
-                    name={item.name}
-                    price={item.price}
-                    altsource={item.img_path}
-                    source={require(`.././${item.img_path}`)}
-                />
-            )
-        });
-    }
+    const [filter, setFilter] = useState('Popularity');
 
-    // Sorting the items
+    useEffect(() => {
+        const fetchProducts = async () => {
+            if (category === 'Technology') {
+                const techResponse = await fetch("https://fakestoreapi.com/products/category/electronics");
+                const techData = await techResponse.json();
+                setProducts(techData);
+            }
+            else if (category === "Women's Clothing") {
+                const womenResponse = await fetch("https://fakestoreapi.com/products/category/women's clothing");
+                const womenData = await womenResponse.json();
+                setProducts(womenData);
+
+            }
+            else if (category === "Men's Clothing") {
+                const mensResponse = await fetch("https://fakestoreapi.com/products/category/men's clothing");
+                const mensData = await mensResponse.json();
+                setProducts(mensData);
+            }
+            else if (category === "Fashion") {
+                const fashionResponse = await fetch("https://fakestoreapi.com/products/category/jewelery");
+                const fashionData = await fashionResponse.json();
+                setProducts(fashionData);
+            }
+            else {
+
+            }
+        }
+        fetchProducts();
+    }, [category]);
+
+    let productList = products.map(item => {
+        return (
+            <Item
+                key={item.id}
+                id={item.id}
+                name={item.title}
+                price={item.price}
+                altsource={item.image}
+                source={item.image}
+            />
+        )
+    })
+
+    // Sorting the products
     if (filter === 'Price ascending') {
         productList.sort((a, b) => a.props.price - b.props.price);
     }
     else if (filter === 'Price descending') {
         productList.sort((a, b) => b.props.price - a.props.price);
     }
-    else {
 
-    }
-
-    return (
+    return productList.length > 0 ? (
         <>
             <div className='products-header-container'  >
                 <p className='pageHeader' style={{
@@ -183,6 +98,10 @@ function Products() {
                 </div>
             </section>
         </>
+    ) : (
+        <div className='data-pending'>
+            <h2> Please wait. Data pending...</h2>
+        </div>
     )
 };
 

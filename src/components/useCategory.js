@@ -5,8 +5,8 @@ export const CategoryContext = createContext(null);
 const CategoryProvider = ({ children }) => {
     const [category, setCategory] = useState('Technology');
 
-    const changeCategory = (textContent) => {
-        setCategory(textContent);
+    const changeCategory = (content) => {
+        setCategory(content);
     };
     // console.log(category)
     const categoryValue = { category, changeCategory };

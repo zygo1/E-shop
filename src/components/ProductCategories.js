@@ -1,5 +1,5 @@
 import React, { useContext, useRef } from "react";
-import { FaBox, FaTimes } from 'react-icons/fa';
+import { FaTimes } from 'react-icons/fa';
 import { CategoryContext } from "./useCategory";
 
 
@@ -21,8 +21,10 @@ function ProductCategories(props) {
 
     // Category list clicks
     const handleClick = (e) => {
-        const content = e.target.textContent;
-        changeCategory(content);
+        const content = e.target.dataset.category;
+        if (content) {
+            changeCategory(content);
+        }
     }
 
     const handleListClick = (e) => {
@@ -47,21 +49,16 @@ function ProductCategories(props) {
                 <ul className="categories-list" onClick={handleListClick} style={{
                     color: props.theme === 'light' ? 'var(--black)' : 'var(--itemColor)'
                 }} >
-                    <li onClick={hideCategories} className="listElements active">Technology</li>
-                    <li onClick={hideCategories} className="listElements active">Home & Garden</li>
-                    <li onClick={hideCategories} className="listElements active">Books</li>
-                    <li onClick={hideCategories} className="listElements active">Kids</li>
-                    <li onClick={hideCategories} className="listElements active">Fashion</li>
-                    <li onClick={hideCategories} className="listElements active">Sports</li>
-                    <li onClick={hideCategories} className="listElements active">Health & Beauty</li>
+                    <li onClick={hideCategories} className="listElements active" data-category="Technology">Technology</li>
+                    <li onClick={hideCategories} className="listElements active" data-category="Women's Clothing">Women's Clothing</li>
+                    <li onClick={hideCategories} className="listElements active" data-category="Men's Clothing">Men's Cloting</li>
+                    <li onClick={hideCategories} className="listElements active" data-category="Fashion">Fashion</li>
                 </ul>
                 <button onClick={showPopup} className="close-categories categ-btn"><FaTimes /></button>
             </nav>
         </div >
 
     )
-
-    // style={{ color: props.theme === 'light' ? 'var(--black)' : 'var(--itemColor)' }}
 };
 
 export default ProductCategories;
