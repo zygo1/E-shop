@@ -57,15 +57,16 @@ function Cart() {
     const { cart } = useContext(AddItemContext);
     const { theme } = useContext(ThemeContext);
 
+
+
     const cartList = cart.map(item => {
         return (
-            <div className="item-cart-container">
+            <div className="item-cart-container" key={item.id}>
                 <ItemCart
-                    key={item.id}
                     id={item.id}
                     name={item.name}
                     price={item.price}
-                    altsource={item.altsource}
+                    source={item.source}
                     quantity={item.quantity}
                 />
             </div>

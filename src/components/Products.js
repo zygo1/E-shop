@@ -45,14 +45,15 @@ function Products() {
 
     let productList = products.map(item => {
         return (
-            <Item
-                key={item.id}
-                id={item.id}
-                name={item.title}
-                price={item.price}
-                altsource={item.image}
-                source={item.image}
-            />
+            <div key={item.id}>
+                <Item
+                    id={item.id}
+                    name={item.title}
+                    price={item.price}
+                    source={item.image}
+                />
+            </div>
+
         )
     })
 

@@ -3,7 +3,6 @@ import { useContext, useState } from 'react';
 import { ThemeContext } from './useTheme'
 import { validateEmail } from './ValidateEmail';
 import { AuthContext } from './useAuth';
-import { useEffect } from 'react';
 
 export const PasswordErrorMessage = () => {
     return (
@@ -64,7 +63,6 @@ function ProfileSettings() {
             username.value &&
             password.value.length >= 8 &&
             validateEmail(email.value) &&
-            // phone.value &&
             address.value &&
             gender.value &&
             year.value !== "" &&

@@ -17,7 +17,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* background-color: red; */
   height: 100vh;
 }
 
@@ -157,6 +156,21 @@
     height: 70vh;
     width: 100%;
     z-index: 9999;
+  }
+
+  .signed-out {
+    font-size: 0.9rem;
+    margin-left: 40px;
+    margin-right: 40px;
+    flex-wrap: wrap;
+  }
+
+  .signed-out>button {
+    margin-top: 20px;
+  }
+
+  .signed-out>img {
+    width: 250px;
   }
 
   .categoriesProfile li {

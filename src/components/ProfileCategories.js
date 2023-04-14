@@ -9,6 +9,9 @@ import settings from '.././assets/settings.svg';
 import help from '.././assets/help.svg';
 import { ThemeContext } from './useTheme';
 
+
+
+
 function ProfileCategories() {
     const navigate = useNavigate();
     const { theme } = useContext(ThemeContext);

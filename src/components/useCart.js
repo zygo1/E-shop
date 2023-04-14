@@ -18,7 +18,7 @@ const AddItemProvider = ({ children }) => {
         counter.count > 0 ? setCounter({ ...counter, count: counter.count - 1 }) : setCounter(0);
     };
 
-    const handleRemoveClick = (id, name, price, source, quantity, altsource) => {
+    const handleRemoveClick = (id) => {
         const updatedCart = cart.map(item => {
             if (item.id === id && item.quantity > 0) {
                 item.quantity--;
@@ -26,12 +26,12 @@ const AddItemProvider = ({ children }) => {
             return item;
         }).filter(item => item.quantity > 0);
         setCart(updatedCart);
-    }
+    };
 
-    const handleAddClick = (id, name, price, source, quantity, altsource) => {
+    const handleAddClick = (id, name, price, source, quantity) => {
         const itemExists = cart.some(item => item.id === id);
         if (!itemExists) {
-            setCart([...cart, { id, name, price, source, quantity, altsource }]);
+            setCart([...cart, { id, name, price, source, quantity }]);
         } else {
             const updatedCart = cart.map(item => {
                 if (item.id === id) {

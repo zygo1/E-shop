@@ -1,20 +1,32 @@
 import Item from './Item';
 import ".././styles/RecomOffers.css";
-import myData from '../data/recommendations.json';
+import { useEffect, useState } from 'react';
 
 function Recommendations() {
-    const recomList = myData.recommendations.map(item => {
+    const [recomProducts, setRecomProducts] = useState([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const response = await fetch('https://fakestoreapi.com/products');
+            const data = await response.json();
+            setRecomProducts(data);
+        };
+        fetchData();
+    }, []);
+
+
+    const recomList = recomProducts.map(item => {
         return (
-            <Item
-                key={item.id}
-                id={item.id}
-                name={item.name}
-                price={item.price}
-                altsource={item.img_path}
-                source={require(`.././${item.img_path}`)}
-            />
+            <div key={item.id}>
+                <Item
+                    id={item.id}
+                    name={item.title}
+                    price={item.price}
+                    source={item.image}
+                />
+            </div>
         )
-    })
+    });
 
     return (
         <section className='mainRecomm'>

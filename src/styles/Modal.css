@@ -92,3 +92,10 @@
     margin-top: 5px;
     color: rgb(255, 82, 82);
 }
+
+
+@media (max-width:768px) {
+    .fieldset-signup {
+        /* sto SignUp.css */
+    }
+}

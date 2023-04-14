@@ -18,7 +18,7 @@ function Item(props) {
             <p>Price: {props.price} €</p>
             <button onClick={() => {
                 addItem(props.id);
-                handleAddClick(props.id, props.name, props.price, props.source, 1, props.altsource);
+                handleAddClick(props.id, props.name, props.price, props.source, 1);
             }}>
                 Add to Cart</button>
         </div>

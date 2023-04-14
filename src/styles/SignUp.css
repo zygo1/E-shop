@@ -109,4 +109,8 @@
         font-size: 1.9rem;
         margin: 15px 0px 30px 20px;
     }
+
+    .fieldset-signup {
+        width: 200px;
+    }
 }
