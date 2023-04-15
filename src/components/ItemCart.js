@@ -6,7 +6,7 @@ import { ThemeContext } from './useTheme';
 function Item(props) {
     const { handleAddClick, handleRemoveClick, addItem, removeItem } = useContext(AddItemContext);
     const { theme } = useContext(ThemeContext);
-    console.log(props.source);
+
     return (
         <div className='item-container' style={{
             backgroundColor: theme === 'light' ? 'var(--itemColor)' : 'var(--darkGray)',

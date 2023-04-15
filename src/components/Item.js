@@ -11,13 +11,13 @@ function Item(props) {
 
     return (
         <>
-            <div className="item" onClick={() => {
-                setIsOpen(true);
-            }} style={{
+            <div className="item" style={{
                 backgroundColor: theme === 'light' ? 'var(--itemColor)' : 'var(--darkGray)',
                 boxShadow: theme === 'light' ? '0px 0px 3px rgb(104, 104, 104)' : 'none'
             }}>
-                <img src={props.source} alt="" />
+                <img src={props.source} onClick={() => {
+                    setIsOpen(true);
+                }} alt="" />
                 <p>{props.name}</p>
                 <p>Price: {props.price} €</p>
                 <button onClick={() => {
@@ -27,9 +27,13 @@ function Item(props) {
                     Add to Cart</button>
             </div>
             <ModalItems
+                source={props.source}
+                id={props.id}
+                name={props.name}
+                price={props.price}
+                description={props.description}
                 open={isOpen}
-                onClose={() => { setIsOpen(false) }}>
-                hello world
+                Close={() => { setIsOpen(false) }}>
             </ModalItems>
         </>
 

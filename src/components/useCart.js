@@ -44,6 +44,8 @@ const AddItemProvider = ({ children }) => {
         }
     };
 
+
+
     const providerValue = { addItem, removeItem, counter, handleRemoveClick, handleAddClick, cart }; // Oi times entos tou object tha einai diathesimes se oli tin efarmogi
 
     return (                                                 // afou to authcontext.provider kanei wrap to App

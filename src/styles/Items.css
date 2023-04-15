@@ -35,7 +35,7 @@
   font-family: 'Arial';
 }
 
-.item:hover {
+.item img:hover {
   cursor: pointer;
 }
 
@@ -50,9 +50,7 @@
   font-weight: 700;
 }
 
-/* ! */
 .item img {
-  /* width: 100px; */
   max-width: 300px;
   max-height: 200px;
   margin: auto;

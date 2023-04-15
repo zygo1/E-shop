@@ -51,6 +51,7 @@ function Products() {
                     name={item.title}
                     price={item.price}
                     source={item.image}
+                    description={item.description}
                 />
             </div>
 

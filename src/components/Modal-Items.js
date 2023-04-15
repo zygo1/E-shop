@@ -1,5 +1,6 @@
-
-
+import { useContext, useState } from 'react';
+import '.././styles/Modal-Items.css';
+import { AddItemContext } from './useCart';
 
 const MODAL_STYLES = {
     position: 'fixed',
@@ -8,8 +9,8 @@ const MODAL_STYLES = {
     transform: 'translate(-50%,-50%)',
     backgroundColor: 'white',
     padding: '50px 25px',
-    width: "500px",
-    height: "500px",
+    width: "600px",
+    height: "auto",
     zIndex: 1000,
 };
 
@@ -29,6 +30,16 @@ const BUTTON_STYLES = {
 }
 
 export default function ModalItems(props) {
+    const { addItem, handleAddClick } = useContext(AddItemContext);
+    const [showPopUp, setShowPopUp] = useState(false);
+
+    const handlePopUp = () => {
+        setShowPopUp(true);
+        setTimeout(() => {
+            setShowPopUp(false);
+        }, 2000);
+    };
+
     if (!props.open) {
         return null
     }
@@ -36,8 +47,27 @@ export default function ModalItems(props) {
     return (
         <>
             <div style={OVERLAY_STYLES} />
-            <div style={MODAL_STYLES}>
-                <button style={BUTTON_STYLES} onClick={props.onClose}>Close modal</button>
+            <div className="item-details" style={MODAL_STYLES}>
+                <div className='item-image'>
+                    <h4>{props.name}</h4>
+                    <img src={props.source} />
+                    <p>Price: {props.price} €</p>
+                </div>
+                <div className='item-content'>
+                    <h4>Description</h4>
+                    <p>{props.description}</p>
+                    <div className='content-buttons'>
+                        <button onClick={() => {
+                            addItem(props.id);
+                            handleAddClick(props.id, props.name, props.price, props.source, 1);
+                            handlePopUp();
+                        }} style={BUTTON_STYLES}>
+                            Add to cart
+                        </button>
+                        <button style={BUTTON_STYLES} onClick={props.Close}>Close</button>
+                        {showPopUp ? <div className='popup-message'>Product added to cart!</div> : null}
+                    </div>
+                </div>
             </div>
         </>
     )
