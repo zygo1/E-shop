@@ -10,6 +10,21 @@
   background-color: var(--secondary);
 }
 
+.popup {
+  position: absolute;
+  /* 1 */
+  bottom: 70px;
+  left: 50px;
+  border: none;
+  border-radius: 6px;
+  padding: 8px;
+  font-size: 0.9rem;
+  box-shadow: 0px 0px 5px var(--black);
+  color: var(--white);
+  background-color: rgb(0, 177, 0);
+  z-index: 99;
+}
+
 .items h2 {
   width: 100%;
   color: var(--black);
@@ -23,6 +38,8 @@
   align-items: start;
   justify-content: center;
   flex-wrap: wrap;
+  position: relative;
+  /* 1 */
   flex-basis: calc(33.33% - 100px);
   max-width: 350px;
   max-height: 400px;
@@ -81,6 +98,13 @@
 }
 
 @media (max-width:968px) {
+  .popup {
+    bottom: 50px;
+    left: 5px;
+    font-size: 0.7rem;
+    padding: 6px;
+  }
+
   .items h2 {
     font-size: 0.95rem;
   }

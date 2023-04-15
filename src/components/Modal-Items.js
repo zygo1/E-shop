@@ -2,18 +2,6 @@ import { useContext, useState } from 'react';
 import '.././styles/Modal-Items.css';
 import { AddItemContext } from './useCart';
 
-const MODAL_STYLES = {
-    position: 'fixed',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%,-50%)',
-    backgroundColor: 'white',
-    padding: '50px 25px',
-    width: "600px",
-    height: "auto",
-    zIndex: 1000,
-};
-
 const OVERLAY_STYLES = {
     position: 'fixed',
     top: 0,
@@ -45,9 +33,9 @@ export default function ModalItems(props) {
     }
 
     return (
-        <>
+        <section className='modal-item-section'>
             <div style={OVERLAY_STYLES} />
-            <div className="item-details" style={MODAL_STYLES}>
+            <div className="item-details">
                 <div className='item-image'>
                     <h4>{props.name}</h4>
                     <img src={props.source} />
@@ -69,6 +57,6 @@ export default function ModalItems(props) {
                     </div>
                 </div>
             </div>
-        </>
+        </section>
     )
 };

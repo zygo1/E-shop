@@ -25,6 +25,7 @@ function MyAccount() {
                     name={item.title}
                     price={item.price}
                     source={item.image}
+                    description={item.description}
                 />
             </div>
         )

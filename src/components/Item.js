@@ -8,6 +8,14 @@ function Item(props) {
     const { addItem, handleAddClick } = useContext(AddItemContext);
     const [isOpen, setIsOpen] = useState(false);
     const { theme } = useContext(ThemeContext);
+    const [popUp, setPopUp] = useState(false);
+
+    const handlePopUp = () => {
+        setPopUp(true);
+        setTimeout(() => {
+            setPopUp(false);
+        }, 1500)
+    };
 
     return (
         <>
@@ -23,8 +31,10 @@ function Item(props) {
                 <button onClick={() => {
                     addItem(props.id);
                     handleAddClick(props.id, props.name, props.price, props.source, 1);
+                    handlePopUp();
                 }}>
                     Add to Cart</button>
+                {popUp ? <div className='popup'>Product added to cart</div> : null}
             </div>
             <ModalItems
                 source={props.source}
