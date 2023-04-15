@@ -79,7 +79,8 @@
 .navbar-links li a {
   text-decoration: none;
   padding: 1rem;
-  display: block;
+  display: flex;
+  /* TEST DISPLAY BLOCK */
 }
 
 .navbar-links li button {
@@ -144,9 +145,13 @@
   height: 20px;
   z-index: 1;
   position: relative;
-  left: 12px;
-  top: -37px;
+  left: -8px;
+  top: -10px;
   font-size: 0.8rem;
+}
+
+.item-counter.active-items {
+  visibility: hidden;
 }
 
 @media (max-width:768px) {

@@ -33,7 +33,7 @@ const InvalidEmailMessage = () => {
 };
 
 export default function Modal(props) {
-    const { login, logout, userData, setUserData } = useContext(AuthContext);
+    const { login, userData, setUserData } = useContext(AuthContext);
     const navigate = useNavigate();
     const [email, setEmail] = useState({ value: '', isTouched: false });
     const [password, setPassword] = useState({ value: '', isTouched: false });
