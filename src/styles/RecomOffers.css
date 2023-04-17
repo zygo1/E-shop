@@ -1,133 +1,140 @@
-.recommendations{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    /* flex-wrap: wrap;   Wrap, if there are more than 5. */
-    margin: 0px 0px 100px 0px;
-    width: auto;
-    overflow-x: auto;
-    overflow-y: hidden;
-    overscroll-behavior-inline: contain;
-  }
-  
-  .recomHeader{
-    margin: 10px;
-    padding: 5px;
-    font-weight: 500;
-    font-family:'Montserrat', sans-serif;
-  }
+.recommendations {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* flex-wrap: wrap;   Wrap, if there are more than 5. */
+  margin: 0px 0px 100px 0px;
+  width: auto;
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-inline: contain;
+}
 
-  .offerHeader{
-    margin: 0px 0px 90px 10px;
-    padding: 5px;
-    font-weight: 500;
-    font-family:'Montserrat', sans-serif;
-  }
-  .info{
-    display: grid;
-    grid-template-columns:repeat(2,auto);
-    grid-template-rows: repeat(1,250px);
-    place-items: center;
-    gap: 50px;
-  }
-  
-  .info img {
-    margin: 20px 20px 0px 20px;
-    padding: 0px 20px 0px 20px;
-    width: 300px;
-  }
-  
-  .info .offer {
+.loading-symbol {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.recomHeader {
+  margin: 10px;
+  padding: 5px;
+  font-weight: 500;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.offerHeader {
+  margin: 0px 0px 90px 10px;
+  padding: 5px;
+  font-weight: 500;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.info {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(1, 250px);
+  place-items: center;
+  gap: 50px;
+}
+
+.info img {
+  margin: 20px 20px 0px 20px;
+  padding: 0px 20px 0px 20px;
+  width: 300px;
+}
+
+.info .offer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  border: none;
+  border-radius: 6px;
+  margin: 30px 50px 30px 50px;
+  background-color: var(--itemColor);
+  padding: 20px;
+  box-shadow: 0px 0px 4px rgb(104, 104, 104);
+  gap: 10px;
+}
+
+.info div h4 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  padding: 10px 0px 0px 20px;
+  margin: 0px 0px 30px 0px;
+}
+
+.info div>p {
+  margin-bottom: 30px;
+}
+
+.infoButton {
+  width: 100px;
+  height: 30px;
+  border: none;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  margin: 0px 20px 10px 10px;
+  padding: 5px;
+  background-color: var(--primary);
+  color: var(--itemColor);
+  font-size: 0.825rem;
+  font-weight: 500;
+  font-family: 'Montserrat', sans-serif;
+}
+
+@media (max-width:768px) {
+  .info {
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    position: relative;
-    border: none;
-    border-radius: 6px;
-    margin: 30px 50px 30px 50px;
-    background-color: var(--itemColor);
-    padding: 20px;
-    box-shadow: 0px 0px 4px rgb(104, 104, 104);
-    gap: 10px;
-  }
-  
-  .info div h4 {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    padding: 10px 0px 0px 20px;
-    margin: 0px 0px 30px 0px;
-  }
-  
-  .info div > p{
-    margin-bottom: 30px;
-  }
-  
-  .infoButton{
-    width: 100px;
-    height: 30px;
-    border: none;
-    border-radius: 10px;
-    position: absolute;
-    bottom: 0px;
-    right: 0px;
-    margin: 0px 20px 10px 10px;
-    padding:5px;
-    background-color: var(--primary);
-    color:var(--itemColor);
+    padding-bottom: 60px;
     font-size: 0.825rem;
-    font-weight: 500;
-    font-family: 'Montserrat', sans-serif;
   }
-  
-  @media (max-width:768px){
-    .info{
-      display: flex;
-      flex-direction: column;
-      padding-bottom: 60px;
-      font-size: 0.825rem;
-    }
-  
-    .offerHeader{
-      margin: 30px 0px -10px 10px;
-      padding: 5px;
-      font-size: 1.1rem;
-    }
 
-    .offer{
-      min-width: 35vh;
-      margin: 0px auto 0px auto;
-    }
-  
-    .recomHeader{
-      font-size: 1.1rem;
-    }
-    
-    .recommendations{
-      margin: 5px auto 10px auto;
-    }
-
-    .info div{
-        margin: 4px;
-    }
-  
-    .info img{
-      width: 60px;
-    }
-
-    .info div h4{
-      font-size: 0.825rem;
-      padding-top: 2px;
-    }
-
-    .infoButton{
-        width: 80px;
-        height: 30px;
-        font-size: 0.675rem;
-        text-align: center;
-        padding: 4px;
-    }
+  .offerHeader {
+    margin: 30px 0px -10px 10px;
+    padding: 5px;
+    font-size: 1.1rem;
   }
+
+  .offer {
+    min-width: 35vh;
+    margin: 0px auto 0px auto;
+  }
+
+  .recomHeader {
+    font-size: 1.1rem;
+  }
+
+  .recommendations {
+    margin: 5px auto 10px auto;
+  }
+
+  .info div {
+    margin: 4px;
+  }
+
+  .info img {
+    width: 60px;
+  }
+
+  .info div h4 {
+    font-size: 0.825rem;
+    padding-top: 2px;
+  }
+
+  .infoButton {
+    width: 80px;
+    height: 30px;
+    font-size: 0.675rem;
+    text-align: center;
+    padding: 4px;
+  }
+}

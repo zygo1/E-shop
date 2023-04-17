@@ -1,9 +1,17 @@
 import Item from './Item';
+import { css } from '@emotion/react';
+import { ClipLoader } from 'react-spinners';
 import ".././styles/RecomOffers.css";
 import { useEffect, useState } from 'react';
 
 function Recommendations() {
     const [recomProducts, setRecomProducts] = useState([]);
+
+    const loading_symbol = css`
+    display:block;
+    margin: 0 auto;
+    border-color:red;
+    `;
 
     useEffect(() => {
         const fetchData = async () => {
@@ -29,14 +37,16 @@ function Recommendations() {
         )
     });
 
-    return (
+    return recomList.length > 0 ? (
         <section className='mainRecomm'>
             <h2 className='recomHeader'>Recommendations for you!</h2>
             <div className="recommendations">
                 {recomList}
             </div>
         </section>
-    )
+    ) : <div className='loading-symbol'>
+        <ClipLoader css={loading_symbol} size={100} color='#123abc' />
+    </div>
 };
 
 export default Recommendations;

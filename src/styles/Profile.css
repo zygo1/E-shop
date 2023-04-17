@@ -12,6 +12,10 @@
 
 }
 
+.profile-categories-wrapper {
+  z-index: 999;
+}
+
 .signed-out {
   display: flex;
   flex-direction: column;

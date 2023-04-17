@@ -1,4 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react';
+import { css } from '@emotion/react';
+import { ClipLoader } from 'react-spinners';
 import { ThemeContext } from './useTheme';
 import { CategoryContext } from './useCategory';
 import Item from "./Item";
@@ -10,11 +12,19 @@ import '.././styles/Products.css';
 function Products() {
     const { theme } = useContext(ThemeContext);
     const [products, setProducts] = useState([]);
+    const [loading, setLoading] = useState(true);
     const { category, changeCategory } = useContext(CategoryContext);
     const [filter, setFilter] = useState('Popularity');
 
+    const loading_symbol = css`
+    display:block;
+    margin: 0 auto;
+    border-color:red;
+    `;
+
     useEffect(() => {
         const fetchProducts = async () => {
+            setLoading(true);
             if (category === 'Technology') {
                 const techResponse = await fetch("https://fakestoreapi.com/products/category/electronics");
                 const techData = await techResponse.json();
@@ -36,11 +46,10 @@ function Products() {
                 const fashionData = await fashionResponse.json();
                 setProducts(fashionData);
             }
-            else {
-
-            }
+            setLoading(false)
         }
         fetchProducts();
+
     }, [category]);
 
     let productList = products.map(item => {
@@ -56,15 +65,16 @@ function Products() {
             </div>
 
         )
-    })
+    });
 
     // Sorting the products
     if (filter === 'Price ascending') {
-        productList.sort((a, b) => a.props.price - b.props.price);
+        productList.sort((a, b) => a.props.children.props.price - b.props.children.props.price);
     }
     else if (filter === 'Price descending') {
-        productList.sort((a, b) => b.props.price - a.props.price);
+        productList.sort((a, b) => b.props.children.props.price - a.props.children.props.price);
     }
+
 
     return productList.length > 0 ? (
         <>
@@ -96,14 +106,15 @@ function Products() {
                 <div className="items" style={{
                     backgroundColor: theme === 'light' ? null : 'var(--veryDarkGray)'
                 }}>
-                    {productList}
+                    {loading ? <div className='loading-symbol-products'><ClipLoader css={loading_symbol} size={100} color='#123abc' /></div> : productList}
                 </div>
             </section>
         </>
     ) : (
         <div className='data-pending'>
-            <h2> Please wait. Data pending...</h2>
-        </div>
+            <h2> Please wait...</h2>
+            <ClipLoader css={loading_symbol} size={100} color='#123abc' />
+        </div >
     )
 };
 

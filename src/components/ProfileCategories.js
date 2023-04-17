@@ -9,9 +9,6 @@ import settings from '.././assets/settings.svg';
 import help from '.././assets/help.svg';
 import { ThemeContext } from './useTheme';
 
-
-
-
 function ProfileCategories() {
     const navigate = useNavigate();
     const { theme } = useContext(ThemeContext);
@@ -24,7 +21,6 @@ function ProfileCategories() {
     const hideProfileCategories = () => {
         profileRef.current.classList.remove('responsive-categories');
     };
-
 
     return (
         <div className='profile-categories-container' >

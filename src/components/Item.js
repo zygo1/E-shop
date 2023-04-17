@@ -3,9 +3,13 @@ import ".././styles/Items.css";
 import { AddItemContext } from './useCart';
 import { ThemeContext } from './useTheme';
 import ModalItems from './Modal-Items'
+import Modal from './Modal';
+import { AuthContext } from './useAuth';
 
 function Item(props) {
     const { addItem, handleAddClick } = useContext(AddItemContext);
+    const { isAuthenticated } = useContext(AuthContext);
+    const [isLoginOpen, setIsLoginOpen] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
     const { theme } = useContext(ThemeContext);
     const [popUp, setPopUp] = useState(false);
@@ -15,6 +19,10 @@ function Item(props) {
         setTimeout(() => {
             setPopUp(false);
         }, 1500)
+    };
+
+    const handleModal = () => {
+        isAuthenticated ? setIsLoginOpen(false) : setIsLoginOpen(true);
     };
 
     return (
@@ -29,13 +37,25 @@ function Item(props) {
                 <p>{props.name}</p>
                 <p>Price: {props.price} €</p>
                 <button onClick={() => {
-                    addItem(props.id);
-                    handleAddClick(props.id, props.name, props.price, props.source, 1);
-                    handlePopUp();
+                    if (!isAuthenticated) {
+                        setIsLoginOpen(true);
+                    }
+                    else {
+                        addItem(props.id);
+                        handleAddClick(props.id, props.name, props.price, props.source, 1);
+                        handlePopUp();
+                        setIsLoginOpen(false);
+                    }
                 }}>
                     Add to Cart</button>
                 {popUp ? <div className='popup'>Product added to cart</div> : null}
             </div>
+            <Modal
+                open={isLoginOpen}
+                onClose={() => { setIsLoginOpen(false) }}>
+                Login Modal
+            </Modal>
+
             <ModalItems
                 source={props.source}
                 id={props.id}
@@ -46,8 +66,6 @@ function Item(props) {
                 Close={() => { setIsOpen(false) }}>
             </ModalItems>
         </>
-
-
     );
 }
 
