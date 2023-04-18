@@ -4,7 +4,7 @@ The current project is not completely functionable.
 
 You have to create an account first and then to login, in order to have full access to the current functionality
 
-# IMPORTANT NOTICE:
+## IMPORTANT NOTICE
 User Data Storage
 Please note that the user data entered during sign up and login is stored in the local storage of your device. This means that the data is not secure and can potentially be accessed by anyone with access to your device.
 
