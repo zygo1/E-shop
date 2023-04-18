@@ -2,6 +2,12 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## About
+
+The current project is not completely functionable.
+
+You have to create an account first and then to login, in order to have full access to the current functionality
+
 ## Available Scripts
 
 In the project directory, you can run:
