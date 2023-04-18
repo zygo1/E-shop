@@ -10,6 +10,8 @@
     width: 600px;
     height: auto;
     z-index: 1000;
+    max-height: 80vh;
+    overflow-y: scroll;
 }
 
 .item-image img {
@@ -49,10 +51,9 @@
 
 .content-buttons {
     display: flex;
-    position: absolute;
-    bottom: 20px;
+    bottom: 10px;
     right: 10px;
-    gap: 60px;
+    gap: 50px;
 }
 
 .content-buttons button:nth-child(1) {

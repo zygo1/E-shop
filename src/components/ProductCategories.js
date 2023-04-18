@@ -14,11 +14,6 @@ function ProductCategories(props) {
         categRef.current.classList.remove('responsive-categories');
     };
 
-    // test
-    const hide = (e) => {
-        console.log(e.target)
-    }
-
     // Category list clicks
     const handleClick = (e) => {
         const content = e.target.dataset.category;
