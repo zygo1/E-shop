@@ -18,8 +18,21 @@ function Item(props) {
         setPopUp(true);
         setTimeout(() => {
             setPopUp(false);
-        }, 1500)
+        }, 1000)
     };
+
+    // Old button
+    // <button onClick={() => {
+    //     if (!isAuthenticated) {
+    //         setIsLoginOpen(true);
+    //     }
+    //     else {
+    //         addItem(props.id);
+    //         handleAddClick(props.id, props.name, props.price, props.source, 1);
+    //         handlePopUp();
+    //         setIsLoginOpen(false);
+    //     }
+    // }}>
 
     const handleModal = () => {
         isAuthenticated ? setIsLoginOpen(false) : setIsLoginOpen(true);
@@ -37,15 +50,9 @@ function Item(props) {
                 <p>{props.name}</p>
                 <p>Price: {props.price} €</p>
                 <button onClick={() => {
-                    if (!isAuthenticated) {
-                        setIsLoginOpen(true);
-                    }
-                    else {
-                        addItem(props.id);
-                        handleAddClick(props.id, props.name, props.price, props.source, 1);
-                        handlePopUp();
-                        setIsLoginOpen(false);
-                    }
+                    addItem(props.id);
+                    handleAddClick(props.id, props.name, props.price, props.source, 1);
+                    handlePopUp();
                 }}>
                     Add to Cart</button>
                 {popUp ? <div className='popup'>Product added to cart</div> : null}
@@ -70,3 +77,4 @@ function Item(props) {
 }
 
 export default Item;
+

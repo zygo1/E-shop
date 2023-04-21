@@ -16,10 +16,8 @@ function SignUp() {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState({ value: "", isTouched: false });
-    const [password, setPassword] = useState({
-        value: "",
-        isTouched: false,
-    });
+    const [password, setPassword] = useState({ value: "", isTouched: false, });
+    const [confirmPassword, setConfirmPassword] = useState({ value: "", isTouched: false });
     const [address, setAddress] = useState({ value: "", isTouched: false })
     const [role, setRole] = useState("Role");
     const [year, setYear] = useState('');
@@ -27,7 +25,8 @@ function SignUp() {
     const navigate = useNavigate();
     const { theme } = useContext(ThemeContext);
 
-    const { userData, setUserData } = useContext(AuthContext);
+
+    const { userData, setUserData, login } = useContext(AuthContext);
 
     const INPUT_STYLES = {
         backgroundColor: theme === 'light' ? 'var(--white)' : 'var(--darkGray)',
@@ -46,6 +45,7 @@ function SignUp() {
             firstName &&
             validateEmail(email.value) &&
             password.value.length >= 8 &&
+            confirmPassword.value.length >= 8 &&
             address.value !== '' &&
             role !== "role" &&
             year !== ""
@@ -76,11 +76,18 @@ function SignUp() {
         if (localStorage.getItem(email.value) === null) {
             localStorage.setItem(email.value, JSON.stringify(newUser));
             setUserData({ name: firstName, lastname: lastName, email: email.value, password: password.value, address: address.value, role: role, yob: year });
+            login()
+            alert('Account created successfully!');
+            setTimeout(navigate('/'), 2000);
+        }
+        else {
+            alert('A user with this email already exists.')
         }
         clearForm();
     };
 
-    const [validationMessage, setValidationMessage] = useState('')
+    const [validationMessage, setValidationMessage] = useState('');
+
 
     const validatePassword = () => {
         const hasCapitalLetter = /[A-Z]/.test(password.value);
@@ -107,6 +114,38 @@ function SignUp() {
             setValidationMessage(message);
         }
     };
+
+    const [confirmValidationMessage, setConfirmValidationMessage] = useState('');
+
+    const validateConfirmPassword = () => {
+        const hasCapitalLetter = /[A-Z]/.test(confirmPassword.value);
+        const hasNumber = /\d/.test(confirmPassword.value);
+        const hasSpecialChar = /[!@#$%^&*]/.test(confirmPassword.value);
+
+        if (hasCapitalLetter && hasNumber && hasSpecialChar && confirmPassword.value.length >= 8 && (password.value === confirmPassword.value)) {
+            setConfirmValidationMessage('Password is valid.');
+        }
+        else {
+            let message = 'Password must contain:\n'
+            if (!hasCapitalLetter) {
+                message += '- at least one capital letter\n'
+            }
+            if (!hasNumber) {
+                message += '- at least one number\n'
+            }
+            if (!hasSpecialChar) {
+                message += '- at least one special character\n'
+            }
+            if (confirmPassword.value.length < 8) {
+                message += '- should have at least 8 characters.\n'
+            }
+            if (password.value !== confirmPassword.value) {
+                message += '- Passwords do NOT match.'
+            }
+            setConfirmValidationMessage(message);
+        }
+    };
+
 
     return (
         <section className="sign-up-container">
@@ -150,7 +189,19 @@ function SignUp() {
                                 {validationMessage}
                             </div>
                         </div>
-
+                        <div className="Field">
+                            <label className="label-signup">
+                                Confirm Password <sup className="sup-signup">*</sup>
+                            </label>
+                            <input className="input-signup" placeholder="Confirm password" type="password" style={INPUT_STYLES} value={confirmPassword.value}
+                                onChange={(e) => { setConfirmPassword({ ...confirmPassword, value: e.target.value }); }}
+                                onKeyUp={() => { validateConfirmPassword(confirmPassword.value); }}
+                                onBlur={() => { setConfirmPassword({ ...confirmPassword, isTouched: true }); }} />
+                            <div className='validation-message' style={{ color: confirmValidationMessage.includes('valid') ? '#34A853' : '#FF5252' }}>
+                                {confirmValidationMessage}
+                            </div>
+                        </div>
+                        {/* {} */}
                         <div className="Field">
                             <label className="label-signup">
                                 Address <sup className="sup-signup">*</sup>

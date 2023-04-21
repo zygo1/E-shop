@@ -34,7 +34,6 @@ function Products() {
                 const womenResponse = await fetch("https://fakestoreapi.com/products/category/women's clothing");
                 const womenData = await womenResponse.json();
                 setProducts(womenData);
-
             }
             else if (category === "Men's Clothing") {
                 const mensResponse = await fetch("https://fakestoreapi.com/products/category/men's clothing");

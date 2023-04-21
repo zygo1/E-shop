@@ -33,7 +33,7 @@ function ProductCategories(props) {
         <div>
             <button onClick={showPopup} className="open-categories categ-btn" style={{
                 color: props.theme === 'light' ? 'var(--black)' : 'var(--white)',
-                backgroundColor: props.theme === 'light' ? 'var(--secondary)' : 'var(--darkGray)'
+                backgroundColor: props.theme === 'light' ? 'var(--secondary)' : 'var(--categoriesColor)'
             }}>Categories
             </button>
             <nav className="categories" ref={categRef} style={{
