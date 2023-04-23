@@ -1,7 +1,7 @@
 import ItemCart from "./ItemCart.js"
 import emptyCart from '.././assets/empty_cart.svg';
 import '.././styles/Cart.css';
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AddItemContext } from "./useCart";
 import { ThemeContext } from './useTheme';
 import Modal from './Modal.js';
@@ -19,7 +19,7 @@ const EmptyCartMessage = () => {
 const OrderSummary = (props) => {
     const { cart } = useContext(AddItemContext);
     const [isOpen, setIsOpen] = useState(false);
-    const { isAuthenticated } = useContext(AuthContext);
+    const { isAuthenticated, userData } = useContext(AuthContext);
 
     const handleModal = () => {
         isAuthenticated ? setIsOpen(false) : setIsOpen(true);
@@ -35,7 +35,7 @@ const OrderSummary = (props) => {
         <div className="summary" >
             <p style={{ color: props.theme === 'light' ? null : 'var(--white)' }}>Order Summary</p>
             <div className="sum-info">
-                <p>Location: <span className="city">Thessaloniki</span></p>
+                <p>Location: {isAuthenticated ? userData.address : <span className="city">Sign in to add your location</span>} </p>
                 <p>Total: <span className="totalCost">{totalSum}</span> €</p>
                 <button style={{ boxShadow: props.theme === 'light' ? null : 'none' }}
                     onClick={() => {
@@ -56,8 +56,6 @@ const OrderSummary = (props) => {
 function Cart() {
     const { cart } = useContext(AddItemContext);
     const { theme } = useContext(ThemeContext);
-
-
 
     const cartList = cart.map(item => {
         return (
