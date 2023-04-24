@@ -7,7 +7,7 @@ Please note that the user data entered during sign up and login is stored in the
 
 I would like to emphasize that this is only for the purpose of this project, and not for any malicious intent. I have chosen to store the data locally to simplify the process while the main functionality it's pretty much the same by sending a request to a server. 
 
-## Available Scripts
+## Starting the project 
 
 In the project directory, you can run:
 
