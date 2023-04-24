@@ -1,7 +1,5 @@
 ## About
 
-The current project is not completely functionable.
-
 You have to create an account first and then to login, in order to have full access to the current functionality
 
 ## Important notice 
