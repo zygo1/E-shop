@@ -1,8 +1,8 @@
 import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { AuthContext } from '.././useAuth';
+import { AuthContext } from '../useAuth';
 import '../.././styles/Modal.css';
-import { validateEmail } from '.././ValidateEmail';
+import { validateEmail } from '../ValidateEmail';
 
 const MODAL_STYLES = {
     position: 'fixed',

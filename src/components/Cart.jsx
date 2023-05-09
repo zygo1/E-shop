@@ -1,11 +1,11 @@
-import ItemCart from "./ItemCart.js"
+import ItemCart from "./ItemCart.jsx"
 import emptyCart from '.././assets/empty_cart.svg';
 import '.././styles/Cart.css';
 import { useContext, useEffect, useState } from "react";
-import { AddItemContext } from "./useCart";
-import { ThemeContext } from './useTheme';
-import Modal from './Modal.js';
-import { AuthContext } from "./useAuth.js";
+import { AddItemContext } from "./useCart.jsx";
+import { ThemeContext } from './useTheme.jsx';
+import Modal from './Modal.jsx';
+import { AuthContext } from "./useAuth.jsx";
 
 const EmptyCartMessage = () => {
     return (

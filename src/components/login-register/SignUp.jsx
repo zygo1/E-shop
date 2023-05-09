@@ -2,7 +2,7 @@ import "../.././styles/SignUp.css";
 import { useContext, useState } from "react";
 import { validateEmail } from "../ValidateEmail";
 import { useNavigate } from "react-router-dom";
-import { ThemeContext } from '.././useTheme';
+import { ThemeContext } from '../useTheme';
 import { AuthContext } from "../useAuth";
 
 
