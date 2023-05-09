@@ -20,6 +20,9 @@ function Navbar() {
     const [isActive, setIsActive] = useState(false);
     const navRef = useRef(null);
     const navigate = useNavigate();
+    const [prevScrollPos, setPrevScrollPos] = useState(0);
+    const [visible, setVisible] = useState(true);
+
 
     const handleModal = () => {
         isAuthenticated ? setIsOpen(false) : setIsOpen(true);
@@ -47,9 +50,34 @@ function Navbar() {
         };
     }, []);
 
+
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollPos = window.pageYOffset;
+
+            setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 200);
+            setPrevScrollPos(currentScrollPos);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        }
+    }, [prevScrollPos, visible]);
+
+
+
     return (
         <>
-            <nav className="navbar" ref={navRef} style={{ backgroundColor: theme === 'light' ? 'var(--navWhite)' : 'var(--darkGray)' }}>
+            <nav className="navbar" ref={navRef} style={{
+                backgroundColor: theme === 'light' ? 'var(--navWhite)' : 'var(--darkGray)',
+                transform: `translateY(${visible ? "0" : "-200px"})`,
+                transitionProperty: "transform",
+                transitionDuration: ".4s",
+                transitionTimingFunction: "ease-in-out"
+            }}>
                 {/* Brand Name */}
                 <div onClick={() => { navigate('/'); handleRemove() }} className="brand-title"><Link>Quickmart</Link></div>
                 {/* Search */}
