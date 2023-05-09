@@ -1,6 +1,7 @@
 import chat from '.././assets/chat.svg';
 
 function ContactChat(props) {
+
     return (
         <section className='contactItemChat' style={{
             backgroundColor: props.theme === 'light' ? 'var(--itemColor)' : 'var(--darkGray)',

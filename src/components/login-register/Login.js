@@ -34,7 +34,7 @@ export default function Login() {
             const user = JSON.parse(storedUser);
             if (user.email === email.value && user.password === password.value) {
                 // console.log('Login successfully');
-                setUserData({ ...userData, name: user.firstName, lastname: user.lastName, email: user.email, password: user.password, role: user.role, yob: user.yearOfBirth });
+                setUserData({ ...userData, name: user.firstName, lastname: user.lastName, email: user.email, address: user.address, password: user.password, role: user.role, yob: user.yearOfBirth });
                 login();
                 navigate('/');
             }

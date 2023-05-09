@@ -4,14 +4,16 @@ import { useNavigate } from 'react-router-dom';
 import { FaTimes } from 'react-icons/fa';
 import profileimg from '.././assets/user.svg';
 import order from '.././assets/order.svg';
-import logout from '.././assets/exit.svg';
+import logoutImg from '.././assets/exit.svg';
 import settings from '.././assets/settings.svg';
 import help from '.././assets/help.svg';
 import { ThemeContext } from './useTheme';
+import { AuthContext } from './useAuth';
 
 function ProfileCategories() {
     const navigate = useNavigate();
     const { theme } = useContext(ThemeContext);
+    const { logout } = useContext(AuthContext);
 
     const profileRef = useRef();
     const toggleProfileCategories = () => {
@@ -65,7 +67,7 @@ function ProfileCategories() {
                         <Link style={{ color: theme === 'light' ? 'var(--black)' : 'var(--white)' }} to="/Contact.js">Help</Link>
                     </li>
                     <li onClick={() => { navigate('/Login.js'); hideProfileCategories(); }} className='profile-categ-items'>
-                        <img style={{ filter: theme === 'light' ? 'var(--blackFilter)' : 'var(--whiteFilter)' }} src={logout} />
+                        <img style={{ filter: theme === 'light' ? 'var(--blackFilter)' : 'var(--whiteFilter)' }} src={logoutImg} />
                         <Link style={{ color: theme === 'light' ? 'var(--black)' : 'var(--white)' }} to={'/Login.js'} onClick={() => { logout() }} className='logout-button'>Logout</Link>
                     </li>
                 </ul>

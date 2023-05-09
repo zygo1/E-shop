@@ -22,8 +22,6 @@ const EmailErrorMessage = () => {
     )
 };
 
-
-
 function ProfileSettings() {
     const { userData, setUserData } = useContext(AuthContext);
 

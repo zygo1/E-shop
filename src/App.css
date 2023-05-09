@@ -14,7 +14,7 @@
   /* dark theme */
   --veryDarkGray: rgb(34, 40, 49);
   --darkGray: rgb(57, 62, 70);
-  --categoriesColor:rgb(83, 87, 92);
+  --categoriesColor: rgb(83, 87, 92);
   --whiteFilter: invert(100%) sepia(70%) saturate(0%) hue-rotate(206deg) brightness(103%) contrast(101%);
   --blackFilter: invert(31%) sepia(0%) saturate(0%) hue-rotate(206deg) brightness(100%) contrast(83%);
 }
